@@ -282,6 +282,18 @@
     background-position: center 1px;
     background-size: 90%;
   }
+  .dog-hi-5 {
+    background-image: url(./images/dog-hi-5.gif);
+    background-repeat: no-repeat;
+    background-position: center 1px;
+    background-size: 90%;
+  }
+  .hooray {
+    background-image: url(./images/hooray.gif);
+    background-repeat: no-repeat;
+    background-position: center 1px;
+    background-size: 90%;
+  }
   .mapshaper {
     background-image: url(./images/mapshaper.png);
     background-repeat: no-repeat;
@@ -311,12 +323,18 @@
 
 <div>Web Mapping <em>Quick Start</em> <strong>Session 2</strong>!</div>
 <div>Last week I gave you some <em>homework</em>. Let's see some of those <strong>web maps</strong>.</div>
-<div>The <strong>URL</strong> if you want to <em>follow along</em> is <a href='http://danswick.com/web-map-quickstart/spring2016/session-2/'>http://danswick.com/web-map-quickstart/spring2016/session-2/</a></div>
+<div>Head to <a href="http://bit.ly/wmqs-map-samples">bit.ly/wmqs-map-samples</a> and add your name and map to the list.</div>
+<div>Which map did you add and <em>why?</em></div>
+<div>Let's get into <strong>groups of ~4</strong>. Pick one of the maps and <em>talk about it together</em>. What <strong>cartographic elements</strong> do you notice? What <em>story</em> does the map tell? What do you <strong>like</strong> or <strong>dislike</strong> about it?</div>
+
+<div data-bodyclass="dog-hi-5">Nice work!</div>
+
+<div>The <strong>URL</strong> if you want to <em>follow along</em> is <a href='http://bit.ly/wmqs-f16-s2'>bit.ly/wmqs-f16-s2</a></div>
 <div><em>Today</em> we are going to talk about <strong>tools for web mapping</strong>.</div>
 <div>Some of these we call <em>platforms</em>.</div>
 <div>What is a <strong>web mapping platform</strong>?</div>
 <div>Think of the <strong>tools</strong> people use to make <em>quick and dirty</em> web maps.</div>
-<div><a href="https://cartodb.com">CartoDB</a></div>
+<div><a href="https://cartodb.com">CARTO</a></div>
 <div><a href="https://mapbox.com">Mapbox</a></div>
 <div><a href="https://arcgis.com">ArcGIS Online</a></div>
 <div>Common features of <em>web mapping platforms</em>:</div>
@@ -369,14 +387,14 @@
 <div>Today we will play with some <strong>web mapping platforms</strong>:</div>
 <div><a href='https://maps.google.com'>Google Maps</a></div>
 <div><a href='https://mapbox.com'>Mapbox</a></div>
-<div><a href="https://cartodb.com">CartoDB</a></div>
+<div><a href="https://cartodb.com">CARTO</a></div>
 <div>You might be asking, <em>"What about Leaflet? What about JavaScript?"</em></div>
 <div><strong>Today</strong> we are going to focus on building maps <em>without</em> doing any <strong>programming</strong>.</div>
 <div>You can definitely do <em>more</em> with code, but it's <strong>important</strong> to see what you can do <em>without</em> it.</div>
 <div>We will also do <em>three exercises</em>.</div>
 <div>In <strong>Exercise 1</strong> we will play with static maps from the <em>Google Maps API</em> in the browser.</div>
 <div>In <strong>Exercise 2</strong> we will <em>compare</em> the <a href="https://mapbox.com">Mapbox</a> static API.</div>
-<div>In <strong>Exercise 3</strong> we will <em>get fancy</em> with <a href="https://cartodb.com">CartoDB</a>.</div>
+<div>In <strong>Exercise 3</strong> we will <em>get fancy</em> with <a href="https://cartodb.com">CARTO</a>.</div>
 <div>If we we have time and the lab computers are willing, we'll also take a look at some <strong>GL</strong> functionality and styling examples with Mapbox Studio</div>
 <div><strong>Before</strong> we start our <em>first exercise</em>, let's <strong>recap</strong>.</div>
 <div><em>Web mapping platforms</em> take away some ability to <strong>customize</strong>, but they are <strong>great</strong> for making <em>quick and dirty</em> web maps.</div>
@@ -476,7 +494,7 @@
 
 <div>Real quick diversion! I'm going to borrow from a great <em>Maptime</em> presentation, then we'll come back here<br><a href="http://maptime.io/anatomy-of-a-web-map/#33">LINK</a></div>
 
-<div>To recap: <br> <ul><li>Tiles are raster images</li><li>Tiles are standardized so that a given z/x/y coordinate will always give you a tile at the same location</li><li>Tiles allow maps to load fast</li></div>
+<div><strong>RECAP</strong>: <br> <ul><li>Tiles are <em>raster images</em></li><li>Tiles are <em>standardized</em> so that a given z/x/y coordinate will always give you a tile at the same location</li><li>Tiles allow maps to <em>load fast</em></li></div>
 
 <div>One more thing: <br> <em>Nowadays</em> we also have <strong>vector tiles</strong></div>
 
@@ -605,10 +623,22 @@
 <div>Customize away! And don't forget to <strong>SAVE</strong>!</div>
 <div>Want to <strong>keep going?</strong> Check out the <a href="https://docs.cartodb.com/tutorials.html">tutorials</a>.</div>
 <div>When you're done, <strong>save</strong> your map.</div>
+
+
+<div data-bodyclass="hooray">One more activity!</div>
+
+<div>Step 1: <br>Take <em>5 minutes</em> to write out a <em>description</em> for a map you'd like to make.<ul><li>Is it <strong>static or interactive</strong>?</li><li>What <strong>story</strong> will your map tell?</li><li>What will be <strong>challenging</strong> about making your map?</li><li>Etc</li></div>
+
+<div>Got your description down?</div>
+
+<div>Let's get into groups of ~4 and share our ideas</div>
+<div>Here's your <em>homework</em> for next week</div>
+<div><em>On paper</em>, <strong>sketch</strong> out what your map will look like. Be sure to include things like <em>interactive controls</em>, the surrounding <strong>context</strong> on the page, and any <em>map design</em> choices you would like to explore.</div>
+
 <div><strong>That's it for this week!</strong></div>
-<div>If you have some time in the next week, use <em>one of the techniques</em> we used today to make <strong>your own map</strong>.</div>
-<div>Some GL demos: <ul><li><a href="http://bl.ocks.org/danswick/raw/7f76b15f7ef80391e933/5d81898a2438e33ce20410003c8ba9624563fff0/">GL Style sandbox</a></li><li><a href="http://bl.ocks.org/danswick/raw/6309077117d356e44da9/e162bd3db36321c93f2d44e779d8c53977d963ff/">Drunk map</a></li><li><a href="https://www.mapbox.com/mapbox-gl-js/example/color-switcher/">Change a layer's fill color</a></li><li><a href="https://www.mapbox.com/mapbox-gl-js/example/language-switch/">Change a layer's label language</a></li></ul></div>
+
+<!-- <div>Some GL demos: <ul><li><a href="http://bl.ocks.org/danswick/raw/7f76b15f7ef80391e933/5d81898a2438e33ce20410003c8ba9624563fff0/">GL Style sandbox</a></li><li><a href="http://bl.ocks.org/danswick/raw/6309077117d356e44da9/e162bd3db36321c93f2d44e779d8c53977d963ff/">Drunk map</a></li><li><a href="https://www.mapbox.com/mapbox-gl-js/example/color-switcher/">Change a layer's fill color</a></li><li><a href="https://www.mapbox.com/mapbox-gl-js/example/language-switch/">Change a layer's label language</a></li></ul></div> -->
 <div><em>Thanks!</em></div>
-<div>To log your attendance, please fill out today's <a href="https://docs.google.com/a/mapbox.com/forms/d/1b-7qns1oULEwJ5O8b96-PQgPbDw5-lQQWeC7JsJ1K2Q/viewform" alt="session-2 exit survey">exit survey</a></div>
-<div>Presentation made with <a href="https://www.macwright.org/big/">big</a></div>
+
+<div>To log your attendance, please fill out today's <a href="https://docs.google.com/forms/d/e/1FAIpQLSerpOfZQlQSEyDe8xzCGQhNgSBi0rNiVqMkZA7P2JNKLM75YQ/viewform" alt="session-2 exit survey">exit survey</a></div>
 </body></html>
