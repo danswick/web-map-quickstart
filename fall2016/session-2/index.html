@@ -282,6 +282,12 @@
     background-position: center 1px;
     background-size: 90%;
   }
+  .mapshaper {
+    background-image: url(./images/mapshaper.png);
+    background-repeat: no-repeat;
+    background-position: center 1px;
+    background-size: 60%;
+  }
   .quote {
     font-family: serif;
     letter-spacing: 2px;
@@ -569,18 +575,27 @@
 
 <div>So now let's create a <em>free</em> CARTO account at <a href='https://carto.com/signup'>https://carto.com/signup</a>.</div>
 <div><strong>Side note:</strong> CARTO used to be called <em>CartoDB</em>.</div>
-<div>And check out the <a href="https://cartodb.com/gallery/">gallery</a> of other stuff people have done with <em>CartoDB</em></div>
+<div>And check out the <a href="https://cartodb.com/gallery/">gallery</a> of other stuff people have done with <em>CARTO</em></div>
 <div><em>Exercise 3:</em> Make a <em>web map</em> of <strong>recent earthquakes</strong> using <a href='https://carto.com/'>CARTO</a>.</div>
 
-<div>Open a <em>new tab</em> and head to <a href='http://bit.ly/earthquakes-45'>bit.ly /earthquakes-45</a>.</div>
+<div>Open a <em>new tab</em> and head to <a href='http://danswick.com/web-map-quickstart/fall2016/session-2/data/earthquakes.zip'>this link</a> to download a zipped shapefile of earthquake locations.</div>
 
-<div data-bodyclass='earthquakes-45'>You should see a page that looks like this.</div>
-<div>Back on <strong>CartoDB</strong>, click <em>MAPS</em> in the top right, then click the <strong>green</strong> button that says <em>NEW MAP</em>.</div>
+<div>CARTO can import <em>shapefiles</em>, but we'll want our data to be in <strong>GeoJSON</strong> format for later, so le'ts <em>convert it</em>!</div>
+<div>There are <em>lots of</em> tools for converting shapefiles. We're going to use one called <strong>mapshaper</strong>.</div>
+<div>In a new tab, head to <a href="http://www.mapshaper.org/">mapshaper.org</a>.</div>
+<div>Drag and drop the zip file we downloaded earlier, or click the <em>select</em> button.</div>
+<div>Next, click the <strong>import</strong> button.</div>
+<div data-bodyclass="mapshaper"></div>
+<div>If you see <strong>a bunch of little dots</strong> on a white background, your import was <em>successful</em>!</div>
+<div>Next, click the <strong>export</strong> buttong in the <em>upper right</em> and choose the <strong>GeoJSON</strong> option</div>
+<div><strong>BOOM GEOJSON</strong></div>
+
+<div>Back on <strong>CARTO</strong>, click <em>MAPS</em> in the top right, then click the <strong>blue</strong> button that says <em>NEW MAP</em>.</div>
 
 <div data-bodyclass='cdb-new-map'></div>
-<div>On the <strong>new map</strong> page, go to the <strong>Connect dataset</strong> tab, then <em>copy</em> and <em>paste</em> the <strong>GeoJSON URL</strong> from the <em>other tab</em> into the <strong>URL box</strong>.</div>
+<div>On the <strong>new map</strong> page, go to the <strong>Connect dataset</strong> tab, then click the <em>browse</em> button and navigate to the <em>GeoJSON</em> file we downloaded from <strong>mapshaper</strong> earlier.</div>
 <div data-bodyclass='cdb-url'></div>
-<div>Click <em>submit</em> and then <strong>CONNECT DATASET</strong>.</div>
+<div>Click <em>CONNECT DATASET</em>.</div>
 <div data-bodyclass='cdb-earthquakes'>BOOM!</div>
 <div>Let's change the <strong>basemap</strong> to one from <em>Mapbox</em>. Click the <strong>Change basemap</strong> button at bottom left, click the <strong>+</strong> button, then go to the <strong>Mapbox </strong>tab.</div>
 <div data-bodyclass='basemap-cartodb'><br><br><br>Remember <em>Map IDs</em> from the Mapbox exercise? Let's go with <strong>mapbox.outdoors</strong>. Also add your <em>access token</em>.</div>
