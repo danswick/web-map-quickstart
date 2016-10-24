@@ -1,594 +1,716 @@
-<!DOCTYPE html><html><head><title>Web-Mapping Quickstart: Session 1</title><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-<link href='../../big.css' rel='stylesheet' type='text/css' />
-<style>
-  .catmap {
-    background-image: url(./images/catmap.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
-  }
-  .google {
-    background-image: url(./images/google.png);
-    background-repeat: no-repeat;
-  }
-  .paper-maps {
-    background-image: url(./images/paper_maps.jpg);
-    background-repeat: no-repeat;
-    background-position: center 5px;
-    background-size: 80%;
-  }
-  .digital-maps {
-    background-image: url(./images/1-arcGIS.jpg);
-    background-repeat: no-repeat;
-    background-position: center 5px;
-  }
-  .internet-maps {
-    background-image: url(./images/internetmaps.png);
-    background-repeat: no-repeat;
-    background-position: center 25px;
-    background-size: 50%;
-  }
-  .html {
-    background-image: url(./images/html.png);
-    background-repeat: no-repeat;
-    background-position: center 25px;
-  }
-  .team-gb {
-    background-image: url(./images/TeamGB_medalists.png);
-    background-repeat: no-repeat;
-    background-position: center 50px;
-    background-size: 75%;
-    background-color: #fff;
-  }
-  .cartogram {
-    background-image: url(./images/cartogram.jpg);
-    background-repeat: no-repeat;
-    background-position: center 120px;
-    background-color: #fff;
-  }
-  .dot-density {
-    background-image: url(./images/dotdensity.png);
-    background-repeat: no-repeat;
-    background-position: center 2px;
-    background-size: 75%;
-  }
-  .dotmap {
-    background-image: url(./images/dotmap.png);
-    background-repeat: no-repeat;
-    background-position: center 2px;
-  }
-  .wayfinding1 {
-    background-image: url(./images/wayfinding.png);
-    background-repeat: no-repeat;
-    background-position: center 5px;
-  }
-  .wayfinding2 {
-    background-image: url(./images/wayfinding2.png);
-    background-repeat: no-repeat;
-    background-position: center 5px;
-  }
-  .transit {
-    background-image: url(./images/transit.png);
-    background-repeat: no-repeat;
-    background-position: center 5px;
-  }
-  .navigation {
-    background-image: url(./images/navigation.png);
-    background-repeat: no-repeat;
-    background-position: center 5px;
-  }
-  .topographic {
-    background-image: url(./images/topographic.png);
-    background-repeat: no-repeat;
-    background-position: center 5px;
-  }
-  .editathon {
-    background-image: url(./images/editathon.jpeg);
-    background-repeat: no-repeat;
-    background-position: center 75px;
-    background-size: 100%;
-  }
-  .mapkibera {
-    background-image: url(./images/mapkibera.jpeg);
-    background-repeat: no-repeat;
-    background-position: center 150px;
-  }
-  .sotmus {
-    background-image: url(./images/sotmus.jpg);
-    background-repeat: no-repeat;
-    background-position: center 1px;
-    background-size: 37%;
-  }
-  .signup {
-    background-image: url(./images/signup.png);
-    background-repeat: no-repeat;
-    background-position: center 1px;
-    background-size: 100%;
-  }
-  .cityhall {
-    background-image: url(./images/sf_cityhall.png);
-    background-repeat: no-repeat;
-    background-position: center 10px;
-    background-size: 70%;
-  }
-  .cityhall-editing {
-    background-image: url(./images/sf_cityhall_editing.png);
-    background-repeat: no-repeat;
-    background-position: center 10px;
-    background-size: 70%;
-  }
-  .cityhall-josm {
-    background-image: url(./images/sf_cityhall_editing_josm.png);
-    background-repeat: no-repeat;
-    background-position: center 1px;
-    background-size: 75%;
-  }
-  .maproulette {
-    background-image: url(./images/maproulette.png);
-    background-repeat: no-repeat;
-    background-position: center 10px;
-    background-size: 70%;
-  }
-  .hot {
-    background-image: url(./images/hot.png);
-    background-repeat: no-repeat;
-    background-position: center 10px;
-    background-size: 80%;
-  }
-  .pushpin {
-    background-image: url(./images/pushpin.png);
-    background-repeat: no-repeat;
-    background-position: center 40px;
-  }
-  .fieldpapers1 {
-    background-image: url(./images/fieldpapers.png);
-    background-repeat: no-repeat;
-    background-position: center 1px;
-    background-size: 75%;
-  }
-  .fieldpapers2 {
-    background-image: url(./images/field-paper-3.png);
-    background-repeat: no-repeat;
-    background-position: center 1px;
-    background-size: 75%;
-  }
-  .data-sfgov {
-    background-image: url(./images/data-sfgov.png);
-    background-repeat: no-repeat;
-    background-position: center 5px;
-    background-size: 96%;
-  }
-  .data-gov {
-    background-image: url(./images/data-gov.png);
-    background-repeat: no-repeat;
-    background-position: center 5px;
-    background-size: 95%;
-  }
-  .oregon-geo {
-    background-image: url(./images/oregon-geo.png);
-    background-repeat: no-repeat;
-    background-position: center 5px;
-    background-size: 95%;
-  }
-  .awesome {
-    background-image: url(./images/OpenAwesome.jpg);
-    background-repeat: no-repeat;
-    background-position: center 200px;
-  }
-  .mashups {
-    background-image: url(./images/mashup.jpg);
-    background-repeat: no-repeat;
-    background-position: center 40px;
-  }
-  .credit {
-    font-size: 12;
-    font-family: serif;
-  }
-  .quote {
-    font-family: serif;
-    letter-spacing: 2px;
-  }
-  .webdotmap {
-    background-image: url(./images/webdotmap.png);
-    background-repeat: no-repeat;
-    background-position: center 150px;
-  }
-  .poly {
-    background-image: url(./images/poly.png);
-    background-repeat: no-repeat;
-    background-position: center 100px;
-  }
-  .heatmap2 {
-    background-image: url(./images/heatmap.png);
-    background-repeat: no-repeat;
-    background-position: center 40px;
-    background-size: 50%;
-    background-color: #fff;
-  }
-  .interpolation {
-    background-image: url(./images/interpolation.png);
-    background-repeat: no-repeat;
-    background-position: center 5px;
-    background-size: 55%;
-  }
-  .xkcd {
-    background-image: url(./images/heatmap_xkcd.png);
-    background-repeat: no-repeat;
-    background-position: center 1px;
-    background-size: 50%;
-    background-color: #fff;
-  }
-  .kerneldensity {
-    background-image: url(./images/kerneldensity.png);
-    background-repeat: no-repeat;
-    background-position: center 40px;
-    background-size: 90%;
-    background-color: #fff;
-  }
-  .tackyangryrainbow {
-    background-image: url(./images/tackyangryrainbow.png);
-    background-repeat: no-repeat;
-    background-position: center 45px;
-    background-size: 100%;
-    background-color: #fff;
-    color: #000;
-  }
-  .angryfruitsalad {
-    background-image: url(./images/arbitraryheatmap.png);
-    background-repeat: no-repeat;
-    background-position: center 40px;
-    background-size: 60%;
-    background-color: #fff;
-    color: #000;
-  }
-  .googlegeo {
-    background-image: url(./images/googlegeo.png);
-    background-repeat: no-repeat;
-    background-position: center 10px;
-    background-color: #fff;
-    background-size: 50%;
-  }
-  .enfnyc {
-    background-image: url(./images/enf_nyc.jpg);
-    background-repeat: no-repeat;
-    background-position: center 50px;
-    background-color: #fff;
-  }
-  .enflondon {
-    background-image: url(./images/enf_london.jpg);
-    background-repeat: no-repeat;
-    background-position: center 50px;
-    background-color: #fff;
-  }
-  .enfsf {
-    background-image: url(./images/enf_sf.jpg);
-    background-repeat: no-repeat;
-    background-position: center 50px;
-    background-color: #fff;
-  }
-  .vis-variables {
-    background-image: url(./images/visual_variables.png);
-    background-repeat: no-repeat;
-    background-size: 50%;
-    background-position: center 50px;
-    background-color: #fff;
-  }
-  .vis-variables2 {
-    background-image: url(./images/visual_variables2.png);
-    background-repeat: no-repeat;
-    background-position: center 50px;
-    background-size: 50%;
-    background-color: #fff;
-  }
-  .vis-argument {
-    background-image: url(./images/visual_argument.png);
-    background-repeat: no-repeat;
-    background-size: 75%;
-    background-position: center 1px;
-    background-color: #fff;
-  }
-  .phonemap {
-    background-image: url(./images/phonemap.jpg);
-    background-repeat: no-repeat;
-    background-size: 25%;
-    background-position: center 40px;
-    background-color: #fff;
-  }
-  .panzoom {
-    background-image: url(./images/panzoom.png);
-    background-repeat: no-repeat;
-    background-position: center 40px;
-    background-color: #fff;
-  }
-  .infobox {
-    background-image: url(./images/infobox.png);
-    background-repeat: no-repeat;
-    background-position: center 40px;
-    background-color: #fff;
-  }
-  .chart {
-    background-image: url(./images/chart.png);
-    background-repeat: no-repeat;
-    background-position: center 40px;
-    background-color: #fff;
-  }
-  .embed {
-    background-image: url(./images/embed.png);
-    background-repeat: no-repeat;
-    background-position: center 20px;
-    background-color: #fff;
-    background-size: 85%;
-  }
-  .geocode {
-    background-image: url(./images/geocode.png);
-    background-repeat: no-repeat;
-    background-position: center 40px;
-    background-color: #fff;
-  }
-  .gotolocation {
-    background-image: url(./images/gotolocation.png);
-    background-repeat: no-repeat;
-    background-position: center 40px;
-    background-color: #fff;
-  }
-  .puppy {
-    background-image: url(http://i.giphy.com/LPQ943m8yMcpy.gif);
-    background-repeat: no-repeat;
-    background-position: center 255px;
-  }
-  .webmap {
-    background-image: url(./images/webmap.png);
-    background-repeat: no-repeat;
-    background-position: center 40px;
-    background-color: #fff;
-  }
-  .mapboxworld {
-    background-image: url(./images/mapboxworld.png);
-    background-position: center 25px;
-    background-size: 99%;
-    background-repeat: no-repeat;
-  }
-</style>
-<script src='../../big.js'></script>
-</head><body>
-<div>Web Mapping <em>Quick Start</em></div>
-<div>Hi! I'm Dan. You can reach me at <a href='https://twitter.com/danswick'>@danswick</a> or <strong>dan.swick@gmail.com</strong>.</div>
+<!DOCTYPE html>
+<html>
 
-<div>I used to do <strong>GIS</strong> for an environmental NGO and city government. Now I work at <a href='https://mapbox.com/'>Mapbox</a>!</div>
+<head>
+    <title>Web-Mapping Quickstart: Session 1</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link href='../../big.css' rel='stylesheet' type='text/css' />
+    <style>
+    .catmap {
+        background-image: url(./images/catmap.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+    
+    .google {
+        background-image: url(./images/google.png);
+        background-repeat: no-repeat;
+    }
+    
+    .paper-maps {
+        background-image: url(./images/paper_maps.jpg);
+        background-repeat: no-repeat;
+        background-position: center 5px;
+        background-size: 80%;
+    }
+    
+    .digital-maps {
+        background-image: url(./images/1-arcGIS.jpg);
+        background-repeat: no-repeat;
+        background-position: center 5px;
+    }
+    
+    .internet-maps {
+        background-image: url(./images/internetmaps.png);
+        background-repeat: no-repeat;
+        background-position: center 25px;
+        background-size: 50%;
+    }
+    
+    .html {
+        background-image: url(./images/html.png);
+        background-repeat: no-repeat;
+        background-position: center 25px;
+    }
+    
+    .team-gb {
+        background-image: url(./images/TeamGB_medalists.png);
+        background-repeat: no-repeat;
+        background-position: center 50px;
+        background-size: 75%;
+        background-color: #fff;
+    }
+    
+    .cartogram {
+        background-image: url(./images/cartogram.jpg);
+        background-repeat: no-repeat;
+        background-position: center 120px;
+        background-color: #fff;
+    }
+    
+    .dot-density {
+        background-image: url(./images/dotdensity.png);
+        background-repeat: no-repeat;
+        background-position: center 2px;
+        background-size: 75%;
+    }
+    
+    .dotmap {
+        background-image: url(./images/dotmap.png);
+        background-repeat: no-repeat;
+        background-position: center 2px;
+    }
+    
+    .wayfinding1 {
+        background-image: url(./images/wayfinding.png);
+        background-repeat: no-repeat;
+        background-position: center 5px;
+    }
+    
+    .wayfinding2 {
+        background-image: url(./images/wayfinding2.png);
+        background-repeat: no-repeat;
+        background-position: center 5px;
+    }
+    
+    .transit {
+        background-image: url(./images/transit.png);
+        background-repeat: no-repeat;
+        background-position: center 5px;
+    }
+    
+    .navigation {
+        background-image: url(./images/navigation.png);
+        background-repeat: no-repeat;
+        background-position: center 5px;
+    }
+    
+    .topographic {
+        background-image: url(./images/topographic.png);
+        background-repeat: no-repeat;
+        background-position: center 5px;
+    }
+    
+    .editathon {
+        background-image: url(./images/editathon.jpeg);
+        background-repeat: no-repeat;
+        background-position: center 75px;
+        background-size: 100%;
+    }
+    
+    .mapkibera {
+        background-image: url(./images/mapkibera.jpeg);
+        background-repeat: no-repeat;
+        background-position: center 150px;
+    }
+    
+    .sotmus {
+        background-image: url(./images/sotmus.jpg);
+        background-repeat: no-repeat;
+        background-position: center 1px;
+        background-size: 37%;
+    }
+    
+    .signup {
+        background-image: url(./images/signup.png);
+        background-repeat: no-repeat;
+        background-position: center 1px;
+        background-size: 100%;
+    }
+    
+    .cityhall {
+        background-image: url(./images/sf_cityhall.png);
+        background-repeat: no-repeat;
+        background-position: center 10px;
+        background-size: 70%;
+    }
+    
+    .cityhall-editing {
+        background-image: url(./images/sf_cityhall_editing.png);
+        background-repeat: no-repeat;
+        background-position: center 10px;
+        background-size: 70%;
+    }
+    
+    .cityhall-josm {
+        background-image: url(./images/sf_cityhall_editing_josm.png);
+        background-repeat: no-repeat;
+        background-position: center 1px;
+        background-size: 75%;
+    }
+    
+    .maproulette {
+        background-image: url(./images/maproulette.png);
+        background-repeat: no-repeat;
+        background-position: center 10px;
+        background-size: 70%;
+    }
+    
+    .hot {
+        background-image: url(./images/hot.png);
+        background-repeat: no-repeat;
+        background-position: center 10px;
+        background-size: 80%;
+    }
+    
+    .pushpin {
+        background-image: url(./images/pushpin.png);
+        background-repeat: no-repeat;
+        background-position: center 40px;
+    }
+    
+    .fieldpapers1 {
+        background-image: url(./images/fieldpapers.png);
+        background-repeat: no-repeat;
+        background-position: center 1px;
+        background-size: 75%;
+    }
+    
+    .fieldpapers2 {
+        background-image: url(./images/field-paper-3.png);
+        background-repeat: no-repeat;
+        background-position: center 1px;
+        background-size: 75%;
+    }
+    
+    .data-sfgov {
+        background-image: url(./images/data-sfgov.png);
+        background-repeat: no-repeat;
+        background-position: center 5px;
+        background-size: 96%;
+    }
+    
+    .data-gov {
+        background-image: url(./images/data-gov.png);
+        background-repeat: no-repeat;
+        background-position: center 5px;
+        background-size: 95%;
+    }
+    
+    .oregon-geo {
+        background-image: url(./images/oregon-geo.png);
+        background-repeat: no-repeat;
+        background-position: center 5px;
+        background-size: 95%;
+    }
+    
+    .awesome {
+        background-image: url(./images/OpenAwesome.jpg);
+        background-repeat: no-repeat;
+        background-position: center 200px;
+    }
+    
+    .mashups {
+        background-image: url(./images/mashup.jpg);
+        background-repeat: no-repeat;
+        background-position: center 40px;
+    }
+    
+    .credit {
+        font-size: 12;
+        font-family: serif;
+    }
+    
+    .quote {
+        font-family: serif;
+        letter-spacing: 2px;
+    }
+    
+    .webdotmap {
+        background-image: url(./images/webdotmap.png);
+        background-repeat: no-repeat;
+        background-position: center 150px;
+    }
+    
+    .poly {
+        background-image: url(./images/poly.png);
+        background-repeat: no-repeat;
+        background-position: center 100px;
+    }
+    
+    .heatmap2 {
+        background-image: url(./images/heatmap.png);
+        background-repeat: no-repeat;
+        background-position: center 40px;
+        background-size: 50%;
+        background-color: #fff;
+    }
+    
+    .interpolation {
+        background-image: url(./images/interpolation.png);
+        background-repeat: no-repeat;
+        background-position: center 5px;
+        background-size: 55%;
+    }
+    
+    .xkcd {
+        background-image: url(./images/heatmap_xkcd.png);
+        background-repeat: no-repeat;
+        background-position: center 1px;
+        background-size: 50%;
+        background-color: #fff;
+    }
+    
+    .kerneldensity {
+        background-image: url(./images/kerneldensity.png);
+        background-repeat: no-repeat;
+        background-position: center 40px;
+        background-size: 90%;
+        background-color: #fff;
+    }
+    
+    .tackyangryrainbow {
+        background-image: url(./images/tackyangryrainbow.png);
+        background-repeat: no-repeat;
+        background-position: center 45px;
+        background-size: 100%;
+        background-color: #fff;
+        color: #000;
+    }
+    
+    .angryfruitsalad {
+        background-image: url(./images/arbitraryheatmap.png);
+        background-repeat: no-repeat;
+        background-position: center 40px;
+        background-size: 60%;
+        background-color: #fff;
+        color: #000;
+    }
+    
+    .googlegeo {
+        background-image: url(./images/googlegeo.png);
+        background-repeat: no-repeat;
+        background-position: center 10px;
+        background-color: #fff;
+        background-size: 50%;
+    }
+    
+    .enfnyc {
+        background-image: url(./images/enf_nyc.jpg);
+        background-repeat: no-repeat;
+        background-position: center 50px;
+        background-color: #fff;
+    }
+    
+    .enflondon {
+        background-image: url(./images/enf_london.jpg);
+        background-repeat: no-repeat;
+        background-position: center 50px;
+        background-color: #fff;
+    }
+    
+    .enfsf {
+        background-image: url(./images/enf_sf.jpg);
+        background-repeat: no-repeat;
+        background-position: center 50px;
+        background-color: #fff;
+    }
+    
+    .vis-variables {
+        background-image: url(./images/visual_variables.png);
+        background-repeat: no-repeat;
+        background-size: 50%;
+        background-position: center 50px;
+        background-color: #fff;
+    }
+    
+    .vis-variables2 {
+        background-image: url(./images/visual_variables2.png);
+        background-repeat: no-repeat;
+        background-position: center 50px;
+        background-size: 50%;
+        background-color: #fff;
+    }
+    
+    .vis-argument {
+        background-image: url(./images/visual_argument.png);
+        background-repeat: no-repeat;
+        background-size: 75%;
+        background-position: center 1px;
+        background-color: #fff;
+    }
+    
+    .phonemap {
+        background-image: url(./images/phonemap.jpg);
+        background-repeat: no-repeat;
+        background-size: 25%;
+        background-position: center 40px;
+        background-color: #fff;
+    }
+    
+    .panzoom {
+        background-image: url(./images/panzoom.png);
+        background-repeat: no-repeat;
+        background-position: center 40px;
+        background-color: #fff;
+    }
+    
+    .infobox {
+        background-image: url(./images/infobox.png);
+        background-repeat: no-repeat;
+        background-position: center 40px;
+        background-color: #fff;
+    }
+    
+    .chart {
+        background-image: url(./images/chart.png);
+        background-repeat: no-repeat;
+        background-position: center 40px;
+        background-color: #fff;
+    }
+    
+    .embed {
+        background-image: url(./images/embed.png);
+        background-repeat: no-repeat;
+        background-position: center 20px;
+        background-color: #fff;
+        background-size: 85%;
+    }
+    
+    .geocode {
+        background-image: url(./images/geocode.png);
+        background-repeat: no-repeat;
+        background-position: center 40px;
+        background-color: #fff;
+    }
+    
+    .gotolocation {
+        background-image: url(./images/gotolocation.png);
+        background-repeat: no-repeat;
+        background-position: center 40px;
+        background-color: #fff;
+    }
+    
+    .puppy {
+        background-image: url(http://i.giphy.com/LPQ943m8yMcpy.gif);
+        background-repeat: no-repeat;
+        background-position: center 255px;
+    }
+    
+    .webmap {
+        background-image: url(./images/webmap.png);
+        background-repeat: no-repeat;
+        background-position: center 40px;
+        background-color: #fff;
+    }
+    
+    .mapboxworld {
+        background-image: url(./images/mapboxworld.png);
+        background-position: center 25px;
+        background-size: 99%;
+        background-repeat: no-repeat;
+    }
+    </style>
+    <script src='../../big.js'></script>
+</head>
 
-<div><em>Who</em> are you? <em>Why</em> are you here?</div>
-<div><em>This course</em> is about what <strong>you</strong> want to learn.</div>
-<div>But the <em>goals</em> and <em>objectives</em> of this course remain the <strong>same</strong> regardless. By the end you should:</div>
-<div>Be able to <em>think critically</em> about web maps</div>
-<div><strong>Understand</strong> how web maps are <em>built</em></div>
-<div>Have a <strong>semi-thorough vocabulary</strong></div>
-<div>Feel <em>confident</em> and <em>stoked</em> about what you've accomplished!</div>
-<div data-bodyclass='puppy'><notes>We'll be keeping things lighthearted throughout the class, so expect plenty of cute puppy gifs along the way</notes></div>
-<div>So <strong>what is a web map</strong>?</div>
-<div>Most literally: <em>a map on the web</em>.</div>
-<div>We can make maps <strong>anywhere</strong> and put them on the <em>web</em>...</div>
-<div data-bodyclass='webmap'></div>
-<div>... or we can use the <strong>web</strong> to make <em>maps</em>.</div>
-<div data-bodyclass='mapboxworld'></div>
-<div>So <strong>what</strong> makes a <em>map</em>?</div>
-<div>Maps are made of <strong>styled geographic data</strong>.</div>
-<div>There are <em>many</em> <strong>geographic data formats</strong>.</div>
-<div>They typically link <em>shapes and locations</em> with <em>attributes</em>, and sometimes encode <strong>styling</strong>.</div>
-<div>Now, <strong>what data formats</strong> might you encounter when making a <em>web map</em>?</div>
-<div>Get into groups of 4 or so and discuss what kinds of formats you're familiar with. What kinds of challenges have you encountered?</div>
-<div>By <em>a show of hands</em>, <strong>which of these you have encountered already</strong>?</div>
-<div><a href="http://en.wikipedia.org/wiki/Shapefile">Shapefile</a></div>
-<div><a href="http://help.arcgis.com/en/arcgisdesktop/10.0/help/index.html#//003n00000007000000">File geodatabases</a></div>
-<div><a href="http://en.wikipedia.org/wiki/Comma-separated_values">CSV (comma-separated values)</a></div>
-<div><a href="https://developers.google.com/kml/documentation/">KML</a></div>
-<div><a href="http://geojson.org">GeoJSON</a></div>
-<div>You might also encounter <strong>geospatial databases</strong> like <em>PostGIS</em> or <em>SpatiaLite</em> that <strong>store</strong> and <strong>serve</strong> data dynamically.</div>
-<div><strong>All of these formats</strong> find themselves in the web mapping conversation. Often because you need to <em>convert</em> data between them.</div>
-<div>When it comes to <strong>data</strong> and <strong>web mapping</strong>, another <em>crucial</em> part of the conversation is <a href="http://osm.org">OpenStreetMap (OSM)</a>.</div>
+<body>
+    <div>Web Mapping <em>Quick Start</em></div>
+    <div>Hi! I'm Dan. You can reach me at <a href='https://twitter.com/danswick'>@danswick</a> or <strong>dan.swick@gmail.com</strong>.</div>
+    <div>I used to do <strong>GIS</strong> for an environmental NGO and city government. Now I work at <a href='https://mapbox.com/'>Mapbox</a>!</div>
+    <div><em>Who</em> are you? <em>Why</em> are you here?</div>
+    <div><em>This course</em> is about what <strong>you</strong> want to learn.</div>
+    <div>But the <em>goals</em> and <em>objectives</em> of this course remain the <strong>same</strong> regardless. By the end you should:</div>
+    <div>Be able to <em>think critically</em> about web maps</div>
+    <div><strong>Understand</strong> how web maps are <em>built</em></div>
+    <div>Have a <strong>semi-thorough vocabulary</strong></div>
+    <div>Feel <em>confident</em> and <em>stoked</em> about what you've accomplished!</div>
+    <div data-bodyclass='puppy'>
+        <notes>We'll be keeping things lighthearted throughout the class, so expect plenty of cute puppy gifs along the way</notes>
+    </div>
+    <div>So <strong>what is a web map</strong>?</div>
+    <div>Most literally: <em>a map on the web</em>.</div>
+    <div>We can make maps <strong>anywhere</strong> and put them on the <em>web</em>...</div>
+    <div data-bodyclass='webmap'></div>
+    <div>... or we can use the <strong>web</strong> to make <em>maps</em>.</div>
+    <div data-bodyclass='mapboxworld'></div>
+    <div>So <strong>what</strong> makes a <em>map</em>?</div>
+    <div>Maps are made of <strong>styled geographic data</strong>.</div>
+    <div>There are <em>many</em> <strong>geographic data formats</strong>.</div>
+    <div>They typically link <em>shapes and locations</em> with <em>attributes</em>, and sometimes encode <strong>styling</strong>.</div>
+    <div>Now, <strong>what data formats</strong> might you encounter when making a <em>web map</em>?</div>
+    <div>Get into groups of 4 or so and discuss what kinds of formats you're familiar with. What kinds of challenges have you encountered?</div>
+    <div>By <em>a show of hands</em>, <strong>which of these you have encountered already</strong>?</div>
+    <div><a href="http://en.wikipedia.org/wiki/Shapefile">Shapefile</a></div>
+    <div><a href="http://help.arcgis.com/en/arcgisdesktop/10.0/help/index.html#//003n00000007000000">File geodatabases</a></div>
+    <div><a href="http://en.wikipedia.org/wiki/Comma-separated_values">CSV (comma-separated values)</a></div>
+    <div><a href="https://developers.google.com/kml/documentation/">KML</a></div>
+    <div><a href="http://geojson.org">GeoJSON</a></div>
+    <div>You might also encounter <strong>geospatial databases</strong> like <em>PostGIS</em> or <em>SpatiaLite</em> that <strong>store</strong> and <strong>serve</strong> data dynamically.</div>
+    <div><strong>All of these formats</strong> find themselves in the web mapping conversation. Often because you need to <em>convert</em> data between them.</div>
+    <div>When it comes to <strong>data</strong> and <strong>web mapping</strong>, another <em>crucial</em> part of the conversation is <a href="http://osm.org">OpenStreetMap (OSM)</a>.</div>
+    <div>
+        <iframe width="1280" height="720" text-align="center" display="block" src="http://www.youtube.com/embed/poMGRbfgp38?t=7m5s" frameborder="0" allowfullscreen></iframe>
+        <notes>geospatial revolution video. How road maps are made --> Ushahidi and OSM for Haiti response. Start at 7m5s.</div>
+    <div>What is <strong>OpenStreetMap</strong>?</div>
+    <div>... a <em>crowd-sourced</em> reference map</div>
+    <div>"The <a href="https://www.google.com/search?q=%22wikipedia+of+maps%22">Wikipedia</a> of maps"</div>
+    <div>... a <em>community</em> of mappers</div>
+    <div data-bodyclass='editathon'></div>
+    <div data-bodyclass='mapkibera'>
+        <notes>Map Kibera (kih-bear-uh) (http://mapkibera.org/) is a projet to map the Kibera division of Nairobi, Kenya, the largest urban slum in Africa.</notes>
+    </div>
+    <div data-bodyclass='sotmus'></div>
+    <div>Now including <strong>you</strong>!</div>
+    <div>Exercise 1: <em>OSM</em></div>
+    <div>Go to <a href='http://osm.org'>OpenStreetMap.org</a>.</div>
+    <div>Search for a <strong>place</strong> or an <strong>address</strong>.</div>
+    <div>Find the <em>best match</em> from <strong>Nominatim</strong>.
+        <notes>Both nominatum and geonames results. We're going with Nominatum to keep things consistent.</notes>
+    </div>
+    <div><strong>Click</strong> on it to <em>zoom</em> there.</div>
+    <div><strong>Toggle</strong> through the different <em>reference</em> layers.</div>
+    <div>Each emphasizes a different set of <em>mappable features</em>.</div>
+    <div data-bodyclass='signup'>Create an account...</div>
+    <div><strong>Two ways</strong> to edit OSM: web editor <a href="https://wiki.openstreetmap.org/wiki/ID">iD</a> or advanced editor <a href="https://josm.openstreetmap.de/">JOSM</a>.</div>
+    <div data-bodyclass='cityhall'>
+        <br><em>iD</em>: just click edit up in the corner︎</div>
+    <div data-bodyclass='cityhall-editing'></div>
+    <div data-bodyclass='cityhall-josm'>JOSM</div>
+    <div>(let's stick with iD for today)</div>
+    <div>But <strong>what</strong> to edit? <em>Suggestions:</em></div>
+    <div>Trace some <em>buildings</em></div>
+    <div>Add some <em>addresses</em></div>
+    <div>Add some <em>POIs (points of interest)</em></div>
+    <div>To learn how to <strong>tag</strong> anything you add to the map: <a href="http://wiki.openstreetmap.org/wiki/Map_Features">wiki.osm.org / wiki / Map_Features</a></div>
+    <div>Am I doing it the <em>right way</em>? Read about <a href="http://wiki.openstreetmap.org/wiki/Good_practice">wiki.osm.org / wiki / Good_practice</a></div>
+    <div>Most important rule is to make <a href="http://wiki.openstreetmap.org/wiki/Good_changeset_comments">wiki.osm.org / wiki / Good_changeset_comments</a></div>
+    <div>Let's <strong>give it a try</strong>!</div>
+    <div>But first, a quick overview of the iD editor interface, courtesy the <em>State Department's</em> <strong>MapGive</strong> program.</div>
+    <div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Ir-3K0pjwOI" frameborder="0" allowfullscreen></iframe>
+        <notes>start MapGive video at 2:21</notes>
+    </div>
+    <div><strong>Important things to know</strong>:</div>
+    <div><strong>ONE.</strong> No copying from <span style="color:blue">G</span><span style="color:red">o</span><span style="color:yellow">o</span><span style="color:blue">g</span><span style="color:green">l</span><span style="color:red">e</span> products!</div>
+    <div><strong>TWO.</strong> OSM is licensed under the <em>Open Database License</em>. There are certain <a href="http://www.openstreetmap.org/copyright">restrictions and requirements</a> when <em>using</em> or <em>modifying</em> OSM data.</div>
+    <div>Get some edits in! Head to your <em>hometown</em> and add a building.</div>
+    <div>Time for <em>advanced maneuvers</em>.</div>
+    <div>Play <a href="http://maproulette.org">MapRoulette</a></div>
+    <div data-bodyclass='maproulette'></div>
+    <div>- OR -</div>
+    <div>Do some <a href="http://tasks.hotosm.org/">HOT tasks</a> (<strong>Humanitarian OSM Team</strong>)</div>
+    <div data-bodyclass='hot'></div>
+    <div>You know when <em>OSM</em> gets <strong>really cool</strong>?</div>
+    <div data-bodyclass='pushpin'>
+        <br>
+        <br>
+        <br>When you get <em>outside</em>!</div>
+    <div data-bodyclass='fieldpapers1'></div>
+    <div data-bodyclass='fieldpapers2'></div>
+    <div>Some places to <strong>learn more</strong>: <a href="http://learnosm.org">learnosm.org</a> / <a href="http://wiki.openstreetmap.org">wiki.osm.org</a> / <a href="http://help.openstreetmap.org">help.osm.org</a></div>
+    <div><em>OSM</em> portion of this presentation borrows from <a href="maptime.github.io/osm-101">OSM 101</a>.</div>
+    <div>BREAK</div>
+    <div>Apart from the <strong>OSM</strong> project itself, <em>why</em> is <strong>OSM</strong> so <em>crucial</em> to web mapping?</div>
+    <div>Because <strong>getting data is hard</strong>.</div>
+    <div>But <em>OSM</em> makes it <strong>easy</strong>!
+        <notes>You will often find yourself in need of data for a project and unable to find a comprehensive dataset. This is where OSM comes in. If OSM doesn't have the data you're looking for, you can add it yourself, then pull the newly-created data into your project from OSM. No database required and you've given back to the community!</notes>
+    </div>
+    <div>You can download <em>the whole planet</em> from <strong>OpenStreetMap</strong> for <em>free</em>!</div>
+    <div data-bodyclass='awesome'></div>
+    <div>(that drawing by <a href="https://twitter.com/meghanhade">Meghan Hade</a>)</div>
+    <div>Planet.osm</div>
+    <div>(This is <strong>not</strong> recommended. The file is <em>huge</em>.)</div>
+    <div><strong>But:</strong> If you see geodata with the file extension <em>.osm</em>, <strong>don't panic</strong>.</div>
+    <div>OSM has <em>its own data format</em>.</div>
+    <div>Though it is <em>not commonly</em> used in GIS, an increasing number of tools support <strong>.osm</strong> files to a degree, including <em>ArcGIS</em> and <em>QGIS</em> and <em>CARTO</em>.</div>
+    <div>The <strong>planet</strong> is huge, but you can <a href="http://www.openstreetmap.org/export#map=18/37.75451/-122.42030">download a small portion of the planet</a> via a bounding box.</div>
+    <div>Thankfully, you can also download <em>metro regions</em> as shapefiles via <a href="https://mapzen.com/metro-extracts/">Metro Extracts</a>. (Here's a <a href='https://mapzen.com/blog/metro-extracts-101'>help guide</a>.)</div>
+    <div>Other great sources for <em>free</em> data:</div>
+    <div>Open data portals!</div>
+    <div data-bodyclass='data-sfgov'></div>
+    <div><strong>Government agencies</strong> create and maintain <em>lots</em> of geodata.</div>
+    <div><em>Sometimes</em> they put it <em>online</em> for download on an <strong>open data portal</strong>.</div>
+    <div data-bodyclass='data-gov'></div>
+    <div data-bodyclass='oregon-geo'></div>
+    <div><strong>Open data portals</strong> typically have <em>shapefile</em> data and <em>tabular</em> data (like in <strong>CSVs</strong>).</div>
+    <div>Even <strong>outside</strong> of <em>open data portals</em>, the Internet at large is <strong>full</strong> of geodata.</div>
+    <div>Now that we've talked about <strong>data formats</strong> and <strong>getting data</strong>, we're basically ready to make a <em>map</em>, right?</div>
+    <div>What <strong>tools</strong> do people use to make <em>quick and dirty</em> web maps?</div>
+    <div><a href="http://maps.google.com">Google Maps</a></div>
+    <div><a href="http://carto.com">CARTO</a></div>
+    <div><a href="http://mapbox.com">Mapbox</a></div>
+    <div><a href="http://arcgis.com">ArcGIS Online</a></div>
+    <div>You can take things <em>much further</em> with <strong>JavaScript libraries</strong> like <a href="http://leafletjs.com">Leaflet</a>, <a href="http://d3js.com">D3</a>, and <a href="http://gis.stackexchange.com/questions/8032/how-do-various-javascript-mapping-libraries-compare">many others</a>.</div>
+    <div>LET <strong>ME</strong> <em>STOP</em> YOU <strong>RIGHT</strong> <em>THERE</em>!</div>
+    <div>It's <strong>cartography time</strong>!</div>
+    <div>In print or on the web, <strong>maps</strong> are <em>information design</em>.</div>
+    <div><em>Cartographers</em> have been thinking about how to do that effectively in print for <strong>hundreds of years</strong>.</div>
+    <div>Too often in web mapping, design decisions are <em>constrained</em> by the <strong>tools available</strong>.</div>
+    <div data-bodyclass='quote'>"Cartographers limit themselves – because of a lack of software skills or a client’s desired final product – to using <em>pre-fabricated tools</em> for Web map design (e.g., Google Maps, Esri’s ArcGIS Online). By the time data-organization and design decisions are considered, the potential efficacy of the map’s communication is already <em>grossly constrained</em> by the <em>limitations of the tool chosen</em>." - <a href="https://twitter.com/iMuehlenhaus">Ian Muehlenhaus</a> in <a href="http://utpjournals.metapress.com/content/q765k1l7423732l6/?p=81fc8c6f7eb8460f9ec9aba4318ddb07">Going Viral: The Look of Online Persuasive Maps</a></div>
+    <div><em>Developers</em> and <strong>mappers</strong> don't always speak the same language, which leads to poor information design decisions.</div>
+    <div>We're gonna <strong>change</strong> all that. Starting next time, we will talk more about <em>magical languages</em> of web mapping introduced earlier.</div>
+    <div>(<strong>Don't</strong> be intimidated!)</div>
+    <div><em>For the rest of today:</em> some <strong>vocabulary</strong> and <strong>key concepts</strong> in mapping to help us <em>think more critically</em> about web maps.</div>
+    <div>There are <strong>several</strong> types of maps, but we can mostly break them down into <em>two</em> categories:</div>
+    <div><em>Thematic maps</em></div>
+    <div>and <strong>Reference maps</strong>.</div>
+    <div data-bodyclass='quote'>"<strong>Thematic maps</strong> are data maps of a <em>specific subject</em> or for a <em>specific purpose</em>. Statistical thematic maps include a variety of different <strong>map types</strong> such as choropleth or shaded maps, dot maps, proportional symbol maps, and isarithmic maps." - <a href="https://www.census.gov/geo/maps-data/maps/thematic.html">U.S. Census Bureau</a></div>
+    <div>Some <em>examples</em>:</div>
+    <div data-bodyclass='team-gb'></div>
+    <div data-bodyclass='cartogram'></div>
+    <div data-bodyclass='dot-density'></div>
+    <div data-bodyclass='dotmap'></div>
+    <div data-bodyclass='quote'>"A <strong>reference map</strong> is a map that emphasizes the <em>geographic location</em> of features. ... For these maps, the goal is to display a lot of <em>different kinds of information</em> without drawing the reader's attention to any one theme of information more than any other theme." - <a href="http://mappingcenter.esri.com/index.cfm?fa=maps.aboutReference">Esri Mapping Center</a></div>
+    <div><em>Why</em> might you use a <strong>reference map</strong>?</div>
+    <div data-bodyclass='wayfinding1'>Wayfinding</div>
+    <div data-bodyclass='wayfinding2'></div>
+    <div data-bodyclass='transit'>Transit</div>
+    <div data-bodyclass='navigation'>Navigation</div>
+    <div data-bodyclass='topographic'>Topographic</div>
+    <div>All of these <strong>map classes</strong> are well described in <em>print cartography</em>, but they have corollaries in <em>web cartography</em> as well.</div>
+    <div><strong>Historically</strong>, web mapping has evolved without much <em>cartographic theory</em>.</div>
+    <div>There was <strong>Google</strong>, and then there were <em>mashups</em>....</div>
+    <div data-bodyclass='mashups'>
+        <br>
+        <br><a href="http://www.programmableweb.com/news/5-years-ago-today-web-mashup-was-born/2010/04/08">HousingMaps.com</a>, by <strong>Paul Rademacher</strong>, 2005</div>
+    <div>... which led to an <em>explosion</em> in <strong>special thematic maps</strong>...</div>
+    <div data-bodyclass='catmap'></div>
+    <div>... that <em>defy classification</em>.</div>
+    <div>
+        <ul>
+            <li><a href="http://en.wikipedia.org/wiki/Dot_distribution_map#One-to-one" target="_blank">one-to-one dot maps</a></li>
+            <li><a href="http://en.wikipedia.org/wiki/Choropleth_map" target="_blank">choropleth</a> or <a href="http://wiki.gis.com/wiki/index.php/Chorochromatic_Maps" target="_blank">chorochromatic</a> maps</li>
+            <li>"<a href="http://xkcd.com/1138/" target="_blank">heat maps</a>"</li>
+        </ul>
+    </div>
+    <div data-bodyclass='webdotmap'></div>
+    <div data-bodyclass='poly'></div>
+    <div data-bodyclass='heatmap2'></div>
+    <div>Many cartographers <strong>not fond</strong> of heat maps.</div>
+    <div>The term <em>"heatmap"</em> is imprecise. <strong>Isopleth</strong>? <strong>Point density</strong>? <strong>Interpolation</strong>?</div>
+    <div data-bodyclass='interpolation'></div>
+    <div>On the web it usually means <em>kernel density</em> and usually just shows <a href="http://xkcd.com/1138/" target="_blank">population density</a>.</div>
+    <div data-bodyclass='xkcd'></div>
+    <div>Where the points are <strong>sparse</strong> or <strong>coincident</strong>, <em>kernel density</em> generates a <em>meaningless blur</em>:</div>
+    <div>
+        <table>
+            <tr>
+                <td><img src="./images/hmblur2.png"></td>
+            </tr>
+            <tr>
+                <td><img src="./images/hmblur.png"></td>
+            </tr>
+        </table>
+    </div>
+    <div>Common JavaScript libraries that generate <em>"heat maps"</em> dynamically use <strong>zoom level</strong> as a proxy for <strong>kernel size</strong>, which <em>makes no sense</em> analytically.</div>
+    <!-- <div data-bodyclass='kerneldensity'></div> -->
+    <div>The default color scheme is <strong>horrid</strong>. (Nicknames: <em>"Tacky Angry Rainbow"</em> and <em>"Angry Fruit Salad"</em>.)</div>
+    <div data-bodyclass='tackyangryrainbow'>Tacky Angry Rainbow</div>
+    <div data-bodyclass='angryfruitsalad'>Angry
+        <br>Fruit
+        <br>Salad</div>
+    <div>They arise from demand from people who <strong>don't know what they are doing</strong>, but know they want to <em>show a lot of points on a map</em>.</div>
+    <div>Alternative: <strong>clustering</strong>.</div>
+    <div data-bodyclass='googlegeo'></div>
+    <div>Entirely <em>different</em> (although they <strong>look similar</strong>): <a href="http://support.esri.com/en/knowledgebase/GISDictionary/term/dot%20density%20map">dot density maps</a>.</div>
+    <div>
+        <iframe src="http://demographics.coopercenter.org/DotMap/index.html" width="1200" height="800" frameborder="0" scrolling="no"></iframe>
+    </div>
+    <div>Someone <em>clever</em> putting <strong>a lot of points</strong> on maps quite <strong>artfully</strong>: <a href="https://www.flickr.com/photos/walkingsf/sets/">Eric Fischer</a>.</div>
+    <div data-bodyclass='enfnyc'></div>
+    <div data-bodyclass='enflondon'></div>
+    <div data-bodyclass='enfsf'></div>
+    <div>We should still strive for <strong>sound cartography</strong> in <em>mashups</em>.</div>
+    <div>A few <strong>high level concepts</strong> from cartography, which is a <em>visual</em> enterprise:</div>
+    <div>Don't worry if you don't catch all of this right away. We're glossing over topics that people dedicate entire careers to. There are links along the way for you to explore later if you want more!</div>
+    <div>1. Visual variables
+        <notes>The differences in map elements as perceived by the human eye. There are 7 classical categories of visual variables: position, size, shape, value, color, orientation, and texture.</notes>
+    </div>
+    <div>A French cartographer named Jacques Bertin identified seven main categories of visual variables: <em>position</em>, <strong>size</strong>, <em>shape</em>, <strong>value</strong>, <em>color</em>, <strong>orientation</strong>, and <em>texture</em>.</div>
+    <div data-bodyclass='vis-variables'></div>
+    <div data-bodyclass='vis-variables2'></div>
+    <div><a href="http://wiki.gis.com/wiki/index.php/Visual_Variables">Further reading</a> on visual variables.</div>
+    <div>2. Visual hierarchy
+        <notes>Visual hierarchy is the order in which the human eye (brain) perceives what it sees. As cartographyers, this helps us prioritize information and help guide our viewers and users through the information we've designed. How is this concept different from visual variables?</notes>
+    </div>
+    <div>
+        <table>
+            <tr>
+                <td><img src="./images/82_congo_elements_plopped.gif"></td>
+                <td>BAD
+                    <br>←
+                    <br>
+                    <br>GOOD
+                    <br>→ </td>
+                <td><img src="./images/83_congo_portrait.gif"></td>
+            </tr>
+        </table>
+    </div>
+    <div><a href="http://wiki.gis.com/wiki/index.php/Visual_hierarchy">Further reading</a> on visual hierarchy.</div>
+    <div>3. Visual argument
+        <notes>Use visual elements to map relationships between map elements from one image, the base, to another image(s), the target. https://books.google.com/books?id=29uSBQAAQBAJ&pg=PA54&lpg=PA54&dq=cartography+%22visual+argument%22&source=bl&ots=u0-7yaF8aJ&sig=WncXbrfxVAjFmuxQnFDGCy-2b7I&hl=en&sa=X&ved=0ahUKEwjyhvLCptfKAhULw2MKHYLtByIQ6AEIIjAB#v=onepage&q=cartography%20%22visual%20argument%22&f=false. Not a single transfer of features or properties, but a mapping of a whole web of relations between nodes. Also visual analogy.</notes>
+    </div>
+    <div data-bodyclass='vis-argument'></div>
+    <div>An <strong>important concept</strong> for web cartography is <em>"screen real-estate"</em>.</div>
+    <div data-bodyclass='phonemap'></div>
+    <div>
+        <ul>
+            <li>Space is <em>scarce</em></li>
+            <li><strong>Mobile</strong> vs. <strong>desktop</strong></li>
+            <li><em>Fluid</em> vs. <em>compartmentalized</em> layout</li>
+    </div>
+    <div><em>Panning</em> and <em>zooming</em>, which we will talk more about next time, are a way <strong>around</strong> all of this but.... for some maps it is <strong>overkill</strong> & potentially a <strong>cop-out</strong>.</div>
+    <div>
+        <iframe src="http://leafletjs.com/examples/choropleth-example.html" width="1200" height="800" frameborder="0" scrolling="no"></iframe>
+    </div>
+    <div>The main thing the <strong>web</strong> brings to <strong>cartography</strong> is <em>interactivity</em>, which can take many forms.</div>
+    <div>In <em>web design and development</em>, people make <strong>entire careers</strong> out of <em>designing for interactivity</em>.</div>
+    <div>The field is called <strong>UI/UX</strong>, which is shorthand for <em>user interface and user experience</em>.</div>
+    <div>It means you <strong>think through</strong> how people who visit your site will <em>interact</em> with it, and you design the <strong>interface</strong> to guide the user toward the <em>experience</em> you want them to have.</div>
+    <div>UI/UX is a <strong>really important</strong> component in web mapping.</div>
+    <div>(<strong>Project managers</strong> creating government web portals for geospatial data, <em>I am talking to you</em>.)</div>
+    <div>For this reason, while it makes sense in <strong>print cartography</strong> to talk about <em>map readers</em>, in <strong>web cartography</strong> we talk about <em>map users</em>.</div>
+    <div><strong>Next time</strong> we will explore some forms of <em>interactivity</em> that are <em>standard</em> in out-of-the-box tools.</div>
+    <div>Panning & Zooming</div>
+    <div data-bodyclass='panzoom'></div>
+    <div>Info Boxes</div>
+    <div data-bodyclass='infobox'></div>
+    <div>Tooltips</div>
+    <div>
+        <iframe src="http://www.greenpeace.org/international/Global/international/code/2012/marine-reserves-map/index.html" width="1200" height="800" frameborder="0" scrolling="no"></iframe>
+    </div>
+    <div>Highlighting</div>
+    <div>
+        <iframe src="http://cf.datawrapper.de/YI8Ha/22/" frameborder="0" allowtransparency="true" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen width="800" height="600"></iframe>
+    </div>
+    <div>Charts</div>
+    <div data-bodyclass='chart'></div>
+    <div>Embedded images/video</div>
+    <div data-bodyclass='embed'></div>
+    <div>Geocode box</div>
+    <div data-bodyclass='geocode'></div>
+    <div>"Zoom to my location" button</div>
+    <div data-bodyclass='gotolocation'></div>
+    <div>Animation</div>
+    <div>
+        <iframe src="http://cartodb.github.com/oldweather_wwi/" width="1000" height="800" frameborder="0" scrolling="no"></iframe>
+    </div>
+    <div>All these <em>whizz-bangs</em> are <strong>neato</strong>!</div>
+    <div>But we must use them <strong>sparingly</strong>, <strong>wisely</strong>, and <strong>with purpose</strong>.</div>
+    <div>So, you have some <em>homework</em>. But it's <em>fun homework</em>.</div>
+    <div><em>FIRST:</em> Find a <strong>cool web map</strong> online and <em>bring the link</em> with you next week.</div>
+    <div>Think about what <em>type</em> of web map it is and <strong>why</strong> you think it's a cool web map.</div>
+    <div>Also think about how it could be <em>better</em>.</div>
+    <div><em>THEN:</em> Send me an <strong>email</strong> (dan.swick@gmail.com) and tell me <em>what you want to learn</em> in the next few weeks.</div>
+    <div><strong>Before you leave!</strong>
+    </div>
+    <div><em>Please fill out today's exit survey: </em>
+        <br><a href="https://docs.google.com/forms/d/e/1FAIpQLSdpjQGtsaQp0FjspT3dy3G9Cb1kf3KhFmoigqOwV0TBFOYy8A/viewform">LINK</a>
+    </div>
+    <div>See you next week!</div>
+    <div>Presentation made with <a href="http://www.macwright.org/big/">big</a></div>
+</body>
 
-<div><iframe width="1280" height="720" text-align="center" display="block" src="http://www.youtube.com/embed/poMGRbfgp38?t=7m5s" frameborder="0" allowfullscreen></iframe><notes>geospatial revolution video. How road maps are made --> Ushahidi and OSM for Haiti response. Start at 7m5s.</div>
-
-<div>What is <strong>OpenStreetMap</strong>?</div>
-<div>... a <em>crowd-sourced</em> reference map</div>
-<div>"The <a href="https://www.google.com/search?q=%22wikipedia+of+maps%22">Wikipedia</a> of maps"</div>
-<div>... a <em>community</em> of mappers</div>
-<div data-bodyclass='editathon'></div>
-
-<div data-bodyclass='mapkibera'><notes>Map Kibera (kih-bear-uh) (http://mapkibera.org/) is a projet to map the Kibera division of Nairobi, Kenya, the largest urban slum in Africa.</notes></div>
-
-<div data-bodyclass='sotmus'></div>
-
-<div>Now including <strong>you</strong>!</div>
-<div>Exercise 1: <em>OSM</em></div>
-<div>Go to <a href='http://osm.org'>OpenStreetMap.org</a>.</div>
-<div>Search for a <strong>place</strong> or an <strong>address</strong>.</div>
-<div>Find the <em>best match</em> from <strong>Nominatim</strong>.<notes>Both nominatum and geonames results. We're going with Nominatum to keep things consistent.</notes></div>
-<div><strong>Click</strong> on it to <em>zoom</em> there.</div>
-<div><strong>Toggle</strong> through the different <em>reference</em> layers.</div>
-<div>Each emphasizes a different set of <em>mappable features</em>.</div>
-<div data-bodyclass='signup'>Create an account...</div>
-<div><strong>Two ways</strong> to edit OSM: web editor <a href="https://wiki.openstreetmap.org/wiki/ID">iD</a> or advanced editor <a href="https://josm.openstreetmap.de/">JOSM</a>.</div>
-<div data-bodyclass='cityhall'><br><em>iD</em>: just click edit up in the corner︎</div>
-<div data-bodyclass='cityhall-editing'></div>
-<div data-bodyclass='cityhall-josm'>JOSM</div>
-<div>(let's stick with iD for today)</div>
-<div>But <strong>what</strong> to edit? <em>Suggestions:</em></div>
-<div>Trace some <em>buildings</em></div>
-<div>Add some <em>addresses</em></div>
-<div>Add some <em>POIs (points of interest)</em></div>
-<div>To learn how to <strong>tag</strong> anything you add to the map: <a href="http://wiki.openstreetmap.org/wiki/Map_Features">wiki.osm.org / wiki / Map_Features</a></div>
-<div>Am I doing it the <em>right way</em>? Read about <a href="http://wiki.openstreetmap.org/wiki/Good_practice">wiki.osm.org / wiki / Good_practice</a></div>
-<div>Most important rule is to make <a href="http://wiki.openstreetmap.org/wiki/Good_changeset_comments">wiki.osm.org / wiki / Good_changeset_comments</a></div>
-<div>Let's <strong>give it a try</strong>!</div>
-
-<div>But first, a quick overview of the iD editor interface, courtesy the <em>State Department's</em> <strong>MapGive</strong> program.</div>
-
-<div><iframe width="560" height="315" src="https://www.youtube.com/embed/Ir-3K0pjwOI" frameborder="0" allowfullscreen></iframe><notes>start MapGive video at 2:21</notes></div>
-
-<div><strong>Important things to know</strong>:</div>
-<div><strong>ONE.</strong> No copying from <span style="color:blue">G</span><span style="color:red">o</span><span style="color:yellow">o</span><span style="color:blue">g</span><span style="color:green">l</span><span style="color:red">e</span> products!</div>
-<div><strong>TWO.</strong> OSM is licensed under the <em>Open Database License</em>. There are certain <a href="http://www.openstreetmap.org/copyright">restrictions and requirements</a> when <em>using</em> or <em>modifying</em> OSM data.</div>
-<div>Get some edits in! Head to your <em>hometown</em> and add a building.</div>
-<div>Time for <em>advanced maneuvers</em>.</div>
-<div>Play <a href="http://maproulette.org">MapRoulette</a></div>
-<div data-bodyclass='maproulette'></div>
-<div>- OR -</div>
-<div>Do some <a href="http://tasks.hotosm.org/">HOT tasks</a> (<strong>Humanitarian OSM Team</strong>)</div>
-<div data-bodyclass='hot'></div>
-<div>You know when <em>OSM</em> gets <strong>really cool</strong>?</div>
-<div data-bodyclass='pushpin'><br><br><br>When you get <em>outside</em>!</div>
-<div data-bodyclass='fieldpapers1'></div>
-<div data-bodyclass='fieldpapers2'></div>
-<div>Some places to <strong>learn more</strong>: <a href="http://learnosm.org">learnosm.org</a> / <a href="http://wiki.openstreetmap.org">wiki.osm.org</a> / <a href="http://help.openstreetmap.org">help.osm.org</a></div>
-<div><em>OSM</em> portion of this presentation borrows from <a href="maptime.github.io/osm-101">OSM 101</a>.</div>
-<div>BREAK</div>
-
-
-<div>Apart from the <strong>OSM</strong> project itself, <em>why</em> is <strong>OSM</strong> so <em>crucial</em> to web mapping?</div>
-<div>Because <strong>getting data is hard</strong>.</div>
-<div>But <em>OSM</em> makes it <strong>easy</strong>!<notes>You will often find yourself in need of data for a project and unable to find a comprehensive dataset. This is where OSM comes in. If OSM doesn't have the data you're looking for, you can add it yourself, then pull the newly-created data into your project from OSM. No database required and you've given back to the community!</notes></div>
-<div>You can download <em>the whole planet</em> from <strong>OpenStreetMap</strong> for <em>free</em>!</div>
-<div data-bodyclass='awesome'></div>
-<div>(that drawing by <a href="https://twitter.com/meghanhade">Meghan Hade</a>)</div>
-<div>Planet.osm</div>
-<div>(This is <strong>not</strong> recommended. The file is <em>huge</em>.)</div>
-<div><strong>But:</strong> If you see geodata with the file extension <em>.osm</em>, <strong>don't panic</strong>.</div>
-<div>OSM has <em>its own data format</em>.</div>
-<div>Though it is <em>not commonly</em> used in GIS, an increasing number of tools support <strong>.osm</strong> files to a degree, including <em>ArcGIS</em> and <em>QGIS</em> and <em>CARTO</em>.</div>
-<div>The <strong>planet</strong> is huge, but you can <a href="http://www.openstreetmap.org/export#map=18/37.75451/-122.42030">download a small portion of the planet</a> via a bounding box.</div>
-<div>Thankfully, you can also download <em>metro regions</em> as shapefiles via <a href="https://mapzen.com/metro-extracts/">Metro Extracts</a>. (Here's a <a href='https://mapzen.com/blog/metro-extracts-101'>help guide</a>.)</div>
-<div>Other great sources for <em>free</em> data:</div>
-<div>Open data portals!</div>
-<div data-bodyclass='data-sfgov'></div>
-<div><strong>Government agencies</strong> create and maintain <em>lots</em> of geodata.</div>
-<div><em>Sometimes</em> they put it <em>online</em> for download on an <strong>open data portal</strong>.</div>
-<div data-bodyclass='data-gov'></div>
-<div data-bodyclass='oregon-geo'></div>
-<div><strong>Open data portals</strong> typically have <em>shapefile</em> data and <em>tabular</em> data (like in <strong>CSVs</strong>).</div>
-<div>Even <strong>outside</strong> of <em>open data portals</em>, the Internet at large is <strong>full</strong> of geodata.</div>
-<div>Now that we've talked about <strong>data formats</strong> and <strong>getting data</strong>, we're basically ready to make a <em>map</em>, right?</div>
-<div>What <strong>tools</strong> do people use to make <em>quick and dirty</em> web maps?</div>
-<div><a href="http://maps.google.com">Google Maps</a></div>
-<div><a href="http://carto.com">CARTO</a></div>
-<div><a href="http://mapbox.com">Mapbox</a></div>
-<div><a href="http://arcgis.com">ArcGIS Online</a></div>
-<div>You can take things <em>much further</em> with <strong>JavaScript libraries</strong> like <a href="http://leafletjs.com">Leaflet</a>, <a href="http://d3js.com">D3</a>, and <a href="http://gis.stackexchange.com/questions/8032/how-do-various-javascript-mapping-libraries-compare">many others</a>.</div>
-
-
-
-
-<div>LET <strong>ME</strong> <em>STOP</em> YOU <strong>RIGHT</strong> <em>THERE</em>!</div>
-<div>It's <strong>cartography time</strong>!</div>
-<div>In print or on the web, <strong>maps</strong> are <em>information design</em>.</div>
-<div><em>Cartographers</em> have been thinking about how to do that effectively in print for <strong>hundreds of years</strong>.</div>
-<div>Too often in web mapping, design decisions are <em>constrained</em> by the <strong>tools available</strong>.</div>
-<div data-bodyclass='quote'>"Cartographers limit themselves – because of a lack of software skills or a client’s desired final product – to using <em>pre-fabricated tools</em> for Web map design (e.g., Google Maps, Esri’s ArcGIS Online). By the time data-organization and design decisions are considered, the potential efficacy of the map’s communication is already <em>grossly constrained</em> by the <em>limitations of the tool chosen</em>." - <a href="https://twitter.com/iMuehlenhaus">Ian Muehlenhaus</a> in <a href="http://utpjournals.metapress.com/content/q765k1l7423732l6/?p=81fc8c6f7eb8460f9ec9aba4318ddb07">Going Viral: The Look of Online Persuasive Maps</a></div>
-<div><em>Developers</em> and <strong>mappers</strong> don't always speak the same language, which leads to poor information design decisions.</div>
-<div>We're gonna <strong>change</strong> all that. Starting next time, we will talk more about <em>magical languages</em> of web mapping introduced earlier.</div>
-<div>(<strong>Don't</strong> be intimidated!)</div>
-<div><em>For the rest of today:</em> some <strong>vocabulary</strong> and <strong>key concepts</strong> in mapping to help us <em>think more critically</em> about web maps.</div>
-<div>There are <strong>several</strong> types of maps, but we can mostly break them down into <em>two</em> categories:</div>
-<div><em>Thematic maps</em></div>
-<div>and <strong>Reference maps</strong>.</div>
-<div data-bodyclass='quote'>"<strong>Thematic maps</strong> are data maps of a <em>specific subject</em> or for a <em>specific purpose</em>. Statistical thematic maps include a variety of different <strong>map types</strong> such as choropleth or shaded maps, dot maps, proportional symbol maps, and isarithmic maps." - <a href="https://www.census.gov/geo/maps-data/maps/thematic.html">U.S. Census Bureau</a></div>
-<div>Some <em>examples</em>:</div>
-<div data-bodyclass='team-gb'></div>
-<div data-bodyclass='cartogram'></div>
-<div data-bodyclass='dot-density'></div>
-<div data-bodyclass='dotmap'></div>
-<div data-bodyclass='quote'>"A <strong>reference map</strong> is a map that emphasizes the <em>geographic location</em> of features. ... For these maps, the goal is to display a lot of <em>different kinds of information</em> without drawing the reader's attention to any one theme of information more than any other theme." - <a href="http://mappingcenter.esri.com/index.cfm?fa=maps.aboutReference">Esri Mapping Center</a></div>
-<div><em>Why</em> might you use a <strong>reference map</strong>?</div>
-<div data-bodyclass='wayfinding1'>Wayfinding</div>
-<div data-bodyclass='wayfinding2'></div>
-<div data-bodyclass='transit'>Transit</div>
-<div data-bodyclass='navigation'>Navigation</div>
-<div data-bodyclass='topographic'>Topographic</div>
-<div>All of these <strong>map classes</strong> are well described in <em>print cartography</em>, but they have corollaries in <em>web cartography</em> as well.</div>
-<div><strong>Historically</strong>, web mapping has evolved without much <em>cartographic theory</em>.</div>
-<div>There was <strong>Google</strong>, and then there were <em>mashups</em>....</div>
-<div data-bodyclass='mashups'><br><br><a href="http://www.programmableweb.com/news/5-years-ago-today-web-mashup-was-born/2010/04/08">HousingMaps.com</a>, by <strong>Paul Rademacher</strong>, 2005</div>
-<div>... which led to an <em>explosion</em> in <strong>special thematic maps</strong>...</div>
-<div data-bodyclass='catmap'></div>
-<div>... that <em>defy classification</em>.</div>
-<div><ul><li><a href="http://en.wikipedia.org/wiki/Dot_distribution_map#One-to-one" target="_blank">one-to-one dot maps</a></li><li><a href="http://en.wikipedia.org/wiki/Choropleth_map" target="_blank">choropleth</a> or <a href="http://wiki.gis.com/wiki/index.php/Chorochromatic_Maps" target="_blank">chorochromatic</a> maps</li><li>"<a href="http://xkcd.com/1138/" target="_blank">heat maps</a>"</li></ul></div>
-<div data-bodyclass='webdotmap'></div>
-<div data-bodyclass='poly'></div>
-<div data-bodyclass='heatmap2'></div>
-<div>Many cartographers <strong>not fond</strong> of heat maps.</div>
-<div>The term <em>"heatmap"</em> is imprecise. <strong>Isopleth</strong>? <strong>Point density</strong>? <strong>Interpolation</strong>?</div>
-<div data-bodyclass='interpolation'></div>
-<div>On the web it usually means <em>kernel density</em> and usually just shows <a href="http://xkcd.com/1138/" target="_blank">population density</a>.</div>
-<div data-bodyclass='xkcd'></div>
-<div>Where the points are <strong>sparse</strong> or <strong>coincident</strong>, <em>kernel density</em> generates a <em>meaningless blur</em>:</div>
-<div><table><tr><td><img src="./images/hmblur2.png"></td></tr><tr><td><img src="./images/hmblur.png"></td></tr></table></div>
-<div>Common JavaScript libraries that generate <em>"heat maps"</em> dynamically use <strong>zoom level</strong> as a proxy for <strong>kernel size</strong>, which <em>makes no sense</em> analytically.</div>
-<!-- <div data-bodyclass='kerneldensity'></div> -->
-<div>The default color scheme is <strong>horrid</strong>. (Nicknames: <em>"Tacky Angry Rainbow"</em> and <em>"Angry Fruit Salad"</em>.)</div>
-<div data-bodyclass='tackyangryrainbow'>Tacky Angry Rainbow</div>
-<div data-bodyclass='angryfruitsalad'>Angry<br>Fruit<br>Salad</div>
-<div>They arise from demand from people who <strong>don't know what they are doing</strong>, but know they want to <em>show a lot of points on a map</em>.</div>
-<div>Alternative: <strong>clustering</strong>.</div>
-<div data-bodyclass='googlegeo'></div>
-<div>Entirely <em>different</em> (although they <strong>look similar</strong>): <a href="http://support.esri.com/en/knowledgebase/GISDictionary/term/dot%20density%20map">dot density maps</a>.</div>
-<div><iframe src="http://demographics.coopercenter.org/DotMap/index.html" width="1200" height="800" frameborder="0" scrolling="no"></iframe></div>
-<div>Someone <em>clever</em> putting <strong>a lot of points</strong> on maps quite <strong>artfully</strong>: <a href="https://www.flickr.com/photos/walkingsf/sets/">Eric Fischer</a>.</div>
-<div data-bodyclass='enfnyc'></div>
-<div data-bodyclass='enflondon'></div>
-<div data-bodyclass='enfsf'></div>
-<div>We should still strive for <strong>sound cartography</strong> in <em>mashups</em>.</div>
-<div>A few <strong>high level concepts</strong> from cartography, which is a <em>visual</em> enterprise:</div>
-<div>Don't worry if you don't catch all of this right away. We're glossing over topics that people dedicate entire careers to. There are links along the way for you to explore later if you want more!</div>
-<div>1. Visual variables<notes>The differences in map elements as perceived by the human eye. There are 7 classical categories of visual variables: position, size, shape, value, color, orientation, and texture.</notes></div>
-<div>A French cartographer named Jacques Bertin identified seven main categories of visual variables: <em>position</em>, <strong>size</strong>, <em>shape</em>, <strong>value</strong>, <em>color</em>, <strong>orientation</strong>, and <em>texture</em>.</div>
-<div data-bodyclass='vis-variables'></div>
-<div data-bodyclass='vis-variables2'></div>
-<div><a href="http://wiki.gis.com/wiki/index.php/Visual_Variables">Further reading</a> on visual variables.</div>
-<div>2. Visual hierarchy<notes>Visual hierarchy is the order in which the human eye (brain) perceives what it sees. As cartographyers, this helps us prioritize information and help guide our viewers and users through the information we've designed. How is this concept different from visual variables?</notes></div>
-<div><table><tr><td><img src="./images/82_congo_elements_plopped.gif"></td><td>BAD<br>←<br><br>GOOD <br>→ </td><td><img src="./images/83_congo_portrait.gif"></td></tr></table></div>
-<div><a href="http://wiki.gis.com/wiki/index.php/Visual_hierarchy">Further reading</a> on visual hierarchy.</div>
-<div>3. Visual argument<notes>Use visual elements to map relationships between map elements from one image, the base, to another image(s), the target. https://books.google.com/books?id=29uSBQAAQBAJ&pg=PA54&lpg=PA54&dq=cartography+%22visual+argument%22&source=bl&ots=u0-7yaF8aJ&sig=WncXbrfxVAjFmuxQnFDGCy-2b7I&hl=en&sa=X&ved=0ahUKEwjyhvLCptfKAhULw2MKHYLtByIQ6AEIIjAB#v=onepage&q=cartography%20%22visual%20argument%22&f=false. Not a single transfer of features or properties, but a mapping of a whole web of relations between nodes. Also visual analogy.</notes></div>
-<div data-bodyclass='vis-argument'></div>
-<div>An <strong>important concept</strong> for web cartography is <em>"screen real-estate"</em>.</div>
-<div data-bodyclass='phonemap'></div>
-<div><ul><li>Space is <em>scarce</em></li><li><strong>Mobile</strong> vs. <strong>desktop</strong></li><li><em>Fluid</em> vs. <em>compartmentalized</em> layout</li></div>
-<div><em>Panning</em> and <em>zooming</em>, which we will talk more about next time, are a way <strong>around</strong> all of this but.... for some maps it is <strong>overkill</strong> & potentially a <strong>cop-out</strong>.</div>
-<div><iframe src="http://leafletjs.com/examples/choropleth-example.html" width="1200" height="800" frameborder="0" scrolling="no"></iframe></div>
-<div>The main thing the <strong>web</strong> brings to <strong>cartography</strong> is <em>interactivity</em>, which can take many forms.</div>
-<div>In <em>web design and development</em>, people make <strong>entire careers</strong> out of <em>designing for interactivity</em>.</div>
-<div>The field is called <strong>UI/UX</strong>, which is shorthand for <em>user interface and user experience</em>.</div>
-<div>It means you <strong>think through</strong> how people who visit your site will <em>interact</em> with it, and you design the <strong>interface</strong> to guide the user toward the <em>experience</em> you want them to have.</div>
-<div>UI/UX is a <strong>really important</strong> component in web mapping.</div>
-<div>(<strong>Project managers</strong> creating government web portals for geospatial data, <em>I am talking to you</em>.)</div>
-<div>For this reason, while it makes sense in <strong>print cartography</strong> to talk about <em>map readers</em>, in <strong>web cartography</strong> we talk about <em>map users</em>.</div>
-<div><strong>Next time</strong> we will explore some forms of <em>interactivity</em> that are <em>standard</em> in out-of-the-box tools.</div>
-<div>Panning & Zooming</div>
-<div data-bodyclass='panzoom'></div>
-<div>Info Boxes</div>
-<div data-bodyclass='infobox'></div>
-<div>Tooltips</div>
-<div><iframe src="http://www.greenpeace.org/international/Global/international/code/2012/marine-reserves-map/index.html" width="1200" height="800" frameborder="0" scrolling="no"></iframe></div>
-<div>Highlighting</div>
-<div><iframe src="http://cf.datawrapper.de/YI8Ha/22/" frameborder="0" allowtransparency="true" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen width="800" height="600"></iframe></div>
-<div>Charts</div>
-<div data-bodyclass='chart'></div>
-<div>Embedded images/video</div>
-<div data-bodyclass='embed'></div>
-<div>Geocode box</div>
-<div data-bodyclass='geocode'></div>
-<div>"Zoom to my location" button</div>
-<div data-bodyclass='gotolocation'></div>
-<div>Animation</div>
-<div><iframe src="http://cartodb.github.com/oldweather_wwi/" width="1000" height="800" frameborder="0" scrolling="no"></iframe></div>
-<div>All these <em>whizz-bangs</em> are <strong>neato</strong>!</div>
-<div>But we must use them <strong>sparingly</strong>, <strong>wisely</strong>, and <strong>with purpose</strong>.</div>
-<div>So, you have some <em>homework</em>. But it's <em>fun homework</em>.</div>
-<div><em>FIRST:</em> Find a <strong>cool web map</strong> online and <em>bring the link</em> with you next week.</div>
-<div>Think about what <em>type</em> of web map it is and <strong>why</strong> you think it's a cool web map.</div>
-<div>Also think about how it could be <em>better</em>.</div>
-<div><em>THEN:</em> Send me an <strong>email</strong> (dan.swick@gmail.com) and tell me <em>what you want to learn</em> in the next few weeks.</div>
-<div><strong>Before you leave!</strong>
-</div>
-<div><em>Please fill out today's exit survey: </em><br><a href="https://docs.google.com/forms/d/e/1FAIpQLSdpjQGtsaQp0FjspT3dy3G9Cb1kf3KhFmoigqOwV0TBFOYy8A/viewform">LINK</a>
-</div>
-<div>See you next week!</div>
-<div>Presentation made with <a href="http://www.macwright.org/big/">big</a></div>
-</body></html>
+</html>

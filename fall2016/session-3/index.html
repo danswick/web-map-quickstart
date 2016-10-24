@@ -254,6 +254,19 @@
     background-image: url(./images/selection.gif);
     background-repeat: no-repeat;
   }
+  .eyeroll {
+    background-image: url(./images/eyeroll.gif);
+    background-repeat: no-repeat; 
+  }
+  .mindblown {
+    background-image: url(./images/mindblown.gif);
+    background-repeat: no-repeat; 
+  }
+  .stylestab {
+    background-image: url(./images/stylestab.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
 </style>
 <script src='../../big.js'></script>
 </head><body>
@@ -264,70 +277,54 @@
 <div><em>Today</em> we is going to be broken up into <strong>four parts:</strong></div>
 <div><ul><li>Homework!</li><li>What is a webpage?</li><li>Planning your web map</li><li>Make a map from scratch</li></ul></div>
 
+<div><em>Homework</em>! Tell us about your project - what is the goal? <strong>Who is the audience</strong>? <em>What kinds of cartographic concepts will you explore</em>? Etc.</div>
+
 <!-- WHAT IS A WEBPAGE? HTML, CSS, AND JAVASCRIPT -->
 
-
-
-<!-- PLANNING YOUR MAP -->
-
-<div><strong>Before</strong> you start making your map, ask yourself: <em>Why are you making your map?</em></div>
-<div data-bodyclass='quote'>"Prior to making a map, clarify your intent. Simply writing out the purpose of the map prior to making it will clarify goals; help determine relevant data, map design, and symbolization choices; and will lead to a better map."</div>
-<div>An <strong>example</strong> of intent (Krygier and Wood):</div>
-<div>A map showing a proposed Black Heritage Trail in Eli County, VA. The map is the visual centerpiece for a proposal for grants to develop the trail ad its associated sites, and must visually tantalize granting agencies.</div>
-<div>Note that the <em>intent</em> includes both what you want to <strong>show</strong> as well as the <em>story</em> you want to tell.</div>
-<div data-bodyclass='map-intent'></div>
-<div>Think about your <strong>map project</strong> and its <em>intent</em>.</div>
-<div>The <strong>intent</strong> of the map helps us to consider <em>other</em> parts of the map.</div>
-<div>For example: <em>data</em>!</div>
-<div><strong>What</strong> data do you need? <strong>Where</strong> will you get it? <strong>How</strong> will you need to <em>process</em> it to work in your map?</div>
-<div>Some sources for data include:<br><ul><li><a href='https://osm.org'>OpenStreetMap</a></li><li>government open data portals</li><li>individuals/groups</li><li>self-created data</li></ul></div>
-<div>Once you <strong>have</strong> data, you should <em>inspect it</em>.</div>
-<div>Questions to ask:<br><ul><li>Is it <strong>vector</strong> or <em>raster</em> data?</li><li>Is it <strong>qualitative</strong> or <em>quantitative</em>?</li><li>Do I have to <em>transform</em> the data at all?</li><li>Is it <strong>accurate</strong> and <em>complete</em>?</li></ul></div>
-<div data-bodyclass='oakland-parking'></div>
-<div>Based on the <strong>map intent</strong> you wrote down earlier, what kinds of <em>data</em> would you need? <strong>Where</strong> might you find that data? Let's talk about some examples from our <em>projects</em>. How do they <strong>answer</strong> these <em>questions</em>:</div>
-<div><ul><li><strong>What</strong> data do you need?</li><li><strong>Where</strong> will you get it?</li><li><strong>How</strong> will you need to <em>process</em> it to work in your map?</li><li>Is it <strong>vector</strong> or <em>raster</em> data?</li><li>Is it <strong>qualitative</strong> or <em>quantitative</em>?</li><li>Do I have to <em>transform</em> the data at all?</li><li>Is it <strong>accurate</strong> and <em>complete</em>?</li></div>
-<div>So once you <em>have</em> your data, you have to figure out how to <strong>display</strong> it.</div>
-
-<!-- used to be more cartography here -->
-
-<div>Data classification!</div>
-<div>Is your data <strong>quantitative</strong> or <em>qualitative</em>?</div>
-<div>What <strong>design choices</strong> must you make to maintain your <em>cartographic integrity</em>?</div>
-<div data-bodyclass='quote'>"Choropleth maps portray geographic patterns for regions composed of areal units such as states, counties, and voting precincts. Usually two to six graytone symbols, on a scale from light to dark, represent two to six nonoverlapping categories for an intensity index such as population density or the percentage of the adult population voting in the last election."</div>
-<div data-bodyclass='quote'>"The breaks between these categories can markedly affect the mapped pattern, and the cautious map author tests the effects of different sets of class breaks. ... Too commonly, the naive or noncritical user accepts this arbitrary display as the standard solution, not merely as a starting point, and ignores the invitation ... to explore other approaches to data classification." - Mark Monmonier, <strong>How To Lie With Maps</strong></div>
-<div data-bodyclass='quant-data'></div>
-<div>What <strong>colors</strong> do you use? What <em>symbols</em>?</div>
-<div><a href='http://misguidedmaps.com/'>Misguided Maps</a></div>
-<div><strong>How</strong> do you avoid making an <em>ugly</em> or <strong>confusing</strong> map?</div>
-<div>Guess what?</div>
-<div>It's <em>really</em>, <strong>really</strong> hard.</div>
-<div>A fun exercise: do a search for <em>"cool maps"</em> or <em>"buzzfeed maps"</em> or <em>"40 maps"</em> and pick out the <strong>design flaws</strong> in each of them.</div>
-<div>BREAK</div>
-
-
-
-
-
-
 <div><em>How</em> do we put maps on the web?</div>
+<div>Hold up a sec. <strong>What is a webpage</strong>?</div>
+<div>A <em>hypertext document</em> that <strong>is connected to the World Wide Web</strong> <a target="blank" href="https://en.wikipedia.org/wiki/Web_page">link</a></div>
+<div data-bodyclass="eyeroll"></div>
+<div>A webpage is a <em>document</em> that is usually written in <strong>three</strong> languages:</div>
 <div data-bodyclass="html">HTML!</div>
 <div><strong>HTML</strong> is the <em>language</em> of websites.</div>
+<div><strong>HTML</strong> gives your document <em>structure</em>.</div>
 <div><strong>CSS</strong> is the <em>styling language</em> of websites.</div>
+<div><strong>CSS</strong> describes the way your document should <em>look</em>.</div>
 <div><strong>JavaScript</strong> is the <em>dynamic language</em> of websites.</div>
-<div>So. Let's think about <strong>web pages</strong>.</div>
+<div><strong>JavaScript</strong> makes your document <em>do stuff</em>.</div>
 <div>If you think about a web page like a <em>sentence</em>, <strong>HTML</strong> is the <strong>noun</strong>, <strong>CSS</strong> is the <strong>adjective</strong>, and <strong>JavaScript</strong> is the <strong>verb</strong>.</div>
 <div>HTML makes up the <em>skeleton</em> of everything on the page, CSS gives it <em>style</em>, and JavaScript makes it <em>do things</em>.</div>
 <div>We can't add <strong>JavaScript</strong> to a web page without adding <em>HTML</em>, because then there would be <strong>nothing</strong> for us to work with!</div>
 <div><strong>Every</strong> website is made up of these three things, whether it has a <em>map</em> or <strong>images</strong> or <em>input boxes</em> or <strong>forms</strong> or...</div>
-<div>Open up <em>Chrome</em> and head to <a href='http://lyzidiamond.com'>lyzidiamond.com</a></div>
-<div><strong>Right click</strong> on the picture and click <em>Inspect Element</em>.</div>
+<div>ANYWAY</div>
+
+<div>Let's learn more about webpages by <em>breaking</em> one.</div>
+<div>Open up <em>Chrome</em> and head to <a target="blank" href='http://ccsfgis.org/'>ccsfgis.org/</a></div>
+<div><strong>Right click</strong> on the first article's title and click <em>Inspect Element</em>.</div>
 <div data-bodyclass='devtools'></div>
 <div>These are the <strong>Chrome Developer Tools</strong>. They are <em>super</em> helpful.</div>
 <div>Let's start by looking at <strong>Elements</strong>.</div>
 <div data-bodyclass='devgif'></div>
+
+<div>Time to vandalize!</div>
+<div>Double click on the highlighted element that we <strong>inspected</strong> earlier.</div>
+<div>WHAT? I CAN EDIT THIS?</div>
+<div>Yep! <strong>type a message</strong> and hit <em>enter/return</em>.</div>
+<div data-bodyclass="mindblown"></div>
+<div><strong>What else</strong> can we do?</div>
+<div>See the <em>styles</em> tab? Click over there.</div>
+<div data-bodyclass="stylestab"></div>
+<div>Click where it says <strong>element.style</strong> and type: <br><em>color</em>, then hit <strong>tab</strong>, then type <em>pink</em>.</div>
+<div data-bodyclass="mindblown"></div>
+
+<div>Take a few minutes and try to <em>break</em> some other stuff. Can you <strong>delete</strong> elements? What else?</div>
+
 <div>Click over to <strong>Network</strong> and then <em>reload</em> the page.</div>
 <div data-bodyclass='network'></div>
+<div><em>What</em> do you think this tab is telling us? <em>Why</em> might you use this tool?</div>
 <div>Click <strong>Sources</strong>. What do you <em>see</em> here?</div>
+
 <div>Now click <strong>Console</strong>.</div>
 <div>The <strong>Console</strong> is a <em>JavaScript environment</em>. You can put <code><pre>console.log()</pre></code> in your code to print to the Console.</div>
 <div>You can <em>also</em> use it to <strong>play around with JavaScript</strong>!</div>
@@ -346,15 +343,61 @@
 <div>When we create a <strong>string</strong>, it is automatically given some properties.</div>
 <div>Type <code>name.length</code> and hit enter. What happens?</div>
 <div>Neat!</div>
-<div>Head to <a href='http://lyzidiamond.com/leaflet.html'>lyzidiamond.com/leaflet.html</a> and open up the <em>Console</em> (right click, <strong>Inspect Element</strong>).</div>
+<div>Let's play a <strong>game</strong>.</div>
+<div>Head to <a target="blank" href="http://danswick.com/floppybird/">danswick.com/floppybird/</a>.</div>
+<div>Look familar? :) This game is <em>infuriating</em>, but with our new JavaScript knowledge, we can <strong>cheat</strong>.</div>
+<div>In another tab, open <a target="blank" href="https://github.com/danswick/floppybird/blob/gh-pages/js/main.js">github.com/danswick/floppybird/blob/gh-pages/js/main.js</a></div>
+<div>See anything in here that looks <em>useful</em>?</div>
+<div>Head back to the <em>game</em> and open your <strong>console</strong>.</div>
+<div>Start <em>breaking</em> things!</div>
+
+<div>BREAK</div>
+
+<!-- PLANNING YOUR MAP -->
+
+<div>Earlier, we talked about your <em>project ideas</em>. Let's talk more about <strong>planning</strong> your web maps before we get any deeper down the <em>code</em> rabbit hole.</div>
+<div><strong>Before</strong> you start making your map, ask yourself: <em>Why are you making your map?</em></div>
+<div data-bodyclass='quote'>"Prior to making a map, clarify your intent. Simply writing out the purpose of the map prior to making it will clarify goals; help determine relevant data, map design, and symbolization choices; and will lead to a better map."</div>
+<div>An <strong>example</strong> of intent (Krygier and Wood):</div>
+<div>A map showing a proposed Black Heritage Trail in Eli County, VA. The map is the visual centerpiece for a proposal for grants to develop the trail ad its associated sites, and must visually tantalize granting agencies.</div>
+<div>Note that the <em>intent</em> includes both what you want to <strong>show</strong> as well as the <em>story</em> you want to tell.</div>
+<div data-bodyclass='map-intent'></div>
+<div>Think about your <strong>map project</strong> and its <em>intent</em>.</div>
+<div>The <strong>intent</strong> of the map helps us to consider <em>other</em> parts of the map.</div>
+<div>For example: <em>data</em>!</div>
+<div><strong>What</strong> data do you need? <strong>Where</strong> will you get it? <strong>How</strong> will you need to <em>process</em> it to work in your map?</div>
+<div>Some sources for data include:<br><ul><li><a target="blank" href='https://osm.org'>OpenStreetMap</a></li><li>government open data portals</li><li>individuals/groups</li><li>self-created data</li></ul></div>
+<div>Once you <strong>have</strong> data, you should <em>inspect it</em>.</div>
+<div>Questions to ask:<br><ul><li>Is it <strong>vector</strong> or <em>raster</em> data?</li><li>Is it <strong>qualitative</strong> or <em>quantitative</em>?</li><li>Do I have to <em>transform</em> the data at all?</li><li>Is it <strong>accurate</strong> and <em>complete</em>?</li></ul></div>
+<div data-bodyclass='oakland-parking'></div>
+<div>Based on the <strong>map intent</strong> you wrote down earlier, what kinds of <em>data</em> would you need? <strong>Where</strong> might you find that data? Let's talk about some examples from our <em>projects</em>. How do they <strong>answer</strong> these <em>questions</em>:</div>
+<div><ul><li><strong>What</strong> data do you need?</li><li><strong>Where</strong> will you get it?</li><li><strong>How</strong> will you need to <em>process</em> it to work in your map?</li><li>Is it <strong>vector</strong> or <em>raster</em> data?</li><li>Is it <strong>qualitative</strong> or <em>quantitative</em>?</li><li>Do I have to <em>transform</em> the data at all?</li><li>Is it <strong>accurate</strong> and <em>complete</em>?</li></div>
+<div>So once you <em>have</em> your data, you have to figure out how to <strong>display</strong> it.</div>
+
+<!-- used to be more cartography here -->
+
+<div>Data classification!</div>
+<div>Is your data <strong>quantitative</strong> or <em>qualitative</em>?</div>
+<div>What <strong>design choices</strong> must you make to maintain your <em>cartographic integrity</em>?</div>
+<div data-bodyclass='quote'>"Choropleth maps portray geographic patterns for regions composed of areal units such as states, counties, and voting precincts. Usually two to six graytone symbols, on a scale from light to dark, represent two to six nonoverlapping categories for an intensity index such as population density or the percentage of the adult population voting in the last election."</div>
+<div data-bodyclass='quote'>"The breaks between these categories can markedly affect the mapped pattern, and the cautious map author tests the effects of different sets of class breaks. ... Too commonly, the naive or noncritical user accepts this arbitrary display as the standard solution, not merely as a starting point, and ignores the invitation ... to explore other approaches to data classification." - Mark Monmonier, <strong>How To Lie With Maps</strong></div>
+<div data-bodyclass='quant-data'></div>
+<div>What <strong>colors</strong> do you use? What <em>symbols</em>?</div>
+<div><a target="blank" href='http://misguidedmaps.com/'>Misguided Maps</a></div>
+<div><strong>How</strong> do you avoid making an <em>ugly</em> or <strong>confusing</strong> map?</div>
+<div>Guess what?</div>
+<div>It's <em>really</em>, <strong>really</strong> hard.</div>
+<div>A fun exercise: do a search for <em>"cool maps"</em> or <em>"buzzfeed maps"</em> or <em>"40 maps"</em> and pick out the <strong>design flaws</strong> in each of them.</div>
+<div>BREAK</div>
+
+<!-- MAP FROM SCRATCH -->
+
+<div>Head to <a target="blank" href='http://danswick.com/leaflet.html'>danswick.com/leaflet.html</a> and open up the <em>Console</em> (right click, <strong>Inspect Element</strong>).</div>
 <div>Now right-click anywhere on the page and click <em>View Page Source</em>. The <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong> that make up the page should open in a new tab.</div>
 <div>Let's talk through this <em>line by line</em> and talk about what's happening.</div>
-<div>The library we're going to see today is called <a href='https://leafletjs.com'>Leaflet</a>. It is <em>by far</em> the most popular web mapping library.</div>
-<div><a href='https://mapbox.com/mapbox.js'>Mapbox.js</a> is just an extension of <strong>Leaflet</strong>. <em>CartoDB</em> uses Leaflet to power its maps.</div>
-
-
-
-
+<div>The library we're going to see today is called <a target="blank" href='https://leafletjs.com'>Leaflet</a>. It is <em>by far</em> the most popular web mapping library and lots of <em>companies</em> build off of it.</div>
+<div><a target="blank" href='https://mapbox.com/mapbox.js'>Mapbox.js</a> is just an extension of <strong>Leaflet</strong>. <em>CARTO</em> uses Leaflet to power its maps and even <em>Esri</em> is getting in on the Leaflet fun.</div>
+<div>Back to the webpage.</div>
 <div>An <em>HTML</em> file is broken into two parts: <code>head</code> and <code>body</code>.</div>
 <div>The <code>head</code> section includes styling, links to external resources, and other things the page might need to load properly.</div>
 <div>The <code>body</code> section includes all the elements that will be rendered on the page.</div>
@@ -375,24 +418,24 @@
 <div>Let's also give that point a <strong>popup</strong>.</div>
 <div><em>Leaflet really likes popups.</em> They're baked right into the JavaScript library! Let's <strong>add</strong> one for our marker that says "CCSF" on it.</div>
 <div><em>Woohoo!</em> That's how this map works!</div>
-<div>(This is based off of the <a href='http://leafletjs.com/examples/quick-start.html'>Leaflet Quick Start Guide</a> which goes further in depth if you want to check it out.)</div>
+<div>(This is based off of the <a target="blank" href='http://leafletjs.com/examples/quick-start.html'>Leaflet Quick Start Guide</a> which goes further in depth if you want to check it out.)</div>
 <div>So <strong>usually</strong> you want to add <em>more</em> than one marker on a map.</div>
 <div>There are a <strong>few</strong> different formats for adding <em>interactive data</em> to maps.</div>
-<div>But the most <em>popular</em> by far is <a href='http://geojson.org'>GeoJSON</a>.</div>
-<div><strong>As mentioned</strong>, <em>GeoJSON</em> is an extension of a format called <a href="http://json.org">JSON</a>, which stands for <strong>JavaScript Object Notation</strong>.</div>
+<div>But the most <em>popular</em> by far is <a target="blank" href='http://geojson.org'>GeoJSON</a>.</div>
+<div><strong>As mentioned</strong>, <em>GeoJSON</em> is an extension of a format called <a target="blank" href="http://json.org">JSON</a>, which stands for <strong>JavaScript Object Notation</strong>.</div>
 <div>Because <em>GeoJSON</em> is basically just <strong>JavaScript</strong>, it can easily be used in <em>web maps</em>!</div>
 <div data-bodyclass='leaflet-gj'>For example, Leaflet loves GeoJSON.</div>
 
-<div>(To learn more about GeoJSON's specificities, check out <a href="http://github.com/lyzidiamond/learn-geojson">Learn GeoJSON</a>.)</div>
+<div>(To learn more about GeoJSON's specificities, check out my colleague Lyzi's excellent guide, <a target="blank" href="http://github.com/lyzidiamond/learn-geojson">Learn GeoJSON</a>.)</div>
 <div data-bodyclass='geojson'></div>
 <div><strong>Note:</strong> GeoJSON files can have one of <strong>three</strong> different file extensions: <em>.geojson</em>, <em>.json</em>, and <em>.js</em>.</div>
 <div>Let's play with some <strong>existing</strong> GeoJSON, then make our <em>own</em> GeoJSON.</div>
-<div>Let's go back to the <em>earthquakes</em> dataset we used with <strong>CartoDB</strong> before.</div>
-  <div>We used <a href='https://cartodb.com'>CartoDB</a> to put that on a map. Let's look at <em>another</em> way to do it.</div>
-<div>Open a <strong>new tab</strong> and head to <a href='http://bit.ly/earthquakes-45'>bit.ly /earthquakes-45</a>.</div>
-<div>Now let's <strong>put them on a map</strong>. In another tab, head over to <a href="http://gist.github.com">gist.github.com</a>.</div>
+<div>Let's go back to the <em>earthquakes</em> dataset we used with <strong>CARTO</strong> before.</div>
+<div>We used <a target="blank" href='https://cartodb.com'>CARTO</a> to put that on a map. Let's look at <em>another</em> way to do it.</div>
+<div>Open a <strong>new tab</strong> and head to <a target="blank" href='http://bit.ly/earthquakes-45'>bit.ly /earthquakes-45</a>.</div>
+<div>Now let's <strong>put them on a map</strong>. In another tab, head over to <a target="blank" href="http://gist.github.com">gist.github.com</a>.</div>
 <div><em>Quickly:</em> What is <strong>GitHub</strong>?</div>
-<div><a href='http://github.com'>GitHub</a> is an <em>online repository</em> for <strong>code</strong> and a system for <em>collaborating</em> on projects.</div>
+<div><a target="blank" href='http://github.com'>GitHub</a> is an <em>online repository</em> for <strong>code</strong> and a system for <em>collaborating</em> on projects.</div>
 <div>It has <em>lots</em> of <strong>cool features</strong>, which we'll see here in <em>a minute</em>.</div>
 <div><em>Copy</em> and <em>paste</em> the GeoJSON into the box.</div>
 <div>Where it says <strong>Name this file...</strong>, type <em>earthquakes.json</em>.</div>
@@ -401,16 +444,16 @@
 <div data-bodyclass='gistmap'>Woohoo!</div>
 <div>If you <em>click</em> on one of the map markers, you will see the information in <strong>properties</strong> for each earthquake.</div>
 <div data-bodyclass='earthquakeprops'></div>
-<div><em>This map</em>, like some of the others we've seen, is <strong>embeddable</strong>. Head to <a href="http://bit.ly/github-maps">bit.ly/github-maps</a> to learn more about that.</div>
+<div><em>This map</em>, like some of the others we've seen, is <strong>embeddable</strong>. Head to <a target="blank" href="http://bit.ly/github-maps">bit.ly/github-maps</a> to learn more about that.</div>
 <div>This is <em>super handy</em> if you have a <strong>GeoJSON file</strong> and want to make a <em>quick map</em>.</div>
 <div>But <em>as you can see</em>, there aren't any tools for <strong>customizing</strong> this map.</div>
 <div>And maybe we want to make our <strong>own</strong> data as well.</div>
-<div>So let's make our <strong>own</strong> GeoJSON! Head to <a href='http://geojson.io'>geojson.io</a>. This is a tool for <em>creating</em> and <em>editing</em> GeoJSON files.</div>
+<div>So let's make our <strong>own</strong> GeoJSON! Head to <a target="blank" href='http://geojson.io'>geojson.io</a>. This is a tool for <em>creating</em> and <em>editing</em> GeoJSON files.</div>
 <div data-bodyclass='geojsonio1'></div>
 <div>You can add <em>points</em>, <strong>lines</strong>, and <em>polygons</em> to the map, and the <strong>resulting GeoJSON</strong> is generated! You can also add <strong>attributes</strong>.</div>
 <div>You can then <strong>save</strong> this and <em>use</em> it later.</div>
 <div><strong>Add</strong> some features to the map and add some <em>properties</em> as well. <strong>Save</strong> the data as a <code>.geojson</code> file.</div>
-<div>Now head to <a href='http://bit.ly/mapbox-ex'>bit.ly/mapbox-ex</a>. This is an <strong>example</strong> of adding <em>GeoJSON</em> to a Mapbox.js map.</div>
+<div>Now head to <a target="blank" href='http://bit.ly/mapbox-ex'>bit.ly/mapbox-ex</a>. This is an <strong>example</strong> of adding <em>GeoJSON</em> to a Mapbox.js map.</div>
 <div>At the <em>bottom</em> of the example, click <strong>Edit in jsFiddle</strong>.</div>
 <div>If you <em>don't</em> see a map in the bottom right, click <strong>Run</strong> at the top.</div>
 <div><em>jsFiddle</em> is an <strong>in-browser editing environment</strong> for HTML, CSS, and JavaScript.</div>
@@ -429,22 +472,7 @@
 <div>Next week I will <strong>also</strong> show you how to get your maps <em>up on the web</em> so you can <strong>share them</strong>.</div>
 <div data-bodyclass='cactus'></div>
 <div>Thanks!</div>
-<div>To log your attendance, please fill out today's <a href="https://docs.google.com/a/mapbox.com/forms/d/1MWsVM69KiMzFNuoe3h_2Ozqc3ivv7jMrTscWsffz9BE/viewform" alt="session-2 exit survey">exit survey</a></div>
+<div>To log your attendance, please fill out today's <a target="blank" href="https://docs.google.com/a/mapbox.com/forms/d/1MWsVM69KiMzFNuoe3h_2Ozqc3ivv7jMrTscWsffz9BE/viewform" alt="session-2 exit survey">exit survey</a></div>
 
 </body></html>
-
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-47757349-1', 'lyzidiamond.com');
-  ga('send', 'pageview');
-
-</script>
-
-
-
-
 
