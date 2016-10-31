@@ -1,0 +1,84 @@
+/*this is needed for transparent image overlays for some reason*/
+html { height: 100%; }
+
+body {
+  font-family:'Helvetica';
+  letter-spacing:-2px;
+  background:#EAE8E2;
+  background-size:100%;
+  color:#333;
+  margin:0;
+  padding:0;
+  font-weight:bold;
+}
+
+body.center {
+  font-family:'Helvetica';
+  letter-spacing:-2px;
+  background-position: center;
+  background:#EAE8E2;
+  background-size:100%;
+  color:#333;
+  margin:0;
+  padding: 2em;
+  font-weight:bold; 
+  text-align: center;
+}
+
+h1, h2, h3, p {
+  margin:0;
+}
+
+em, a {
+  font-style:normal;
+  color:#8A163A;
+}
+
+strong {
+  font-style: normal;
+  color: #278585;
+}
+
+a {
+  background:#278585;
+  color:#fff;
+  text-decoration:none;
+}
+
+img {
+  width:100%;
+}
+
+div {
+  cursor:pointer;
+  cursor:hand;
+  position:absolute;
+  top:0px;
+  left:0px;
+  padding:75px;
+  line-height:97%;
+}
+
+div.center {
+  text-align:center;
+}
+
+div.imageText {
+  color: #fff;
+  text-shadow:0px 0px 10px rgba(0,0,0,0.5);
+}
+
+div.imageText strong {
+  color: #6AD2D2;
+}
+div.imageText em {
+  color: #FF9BBB;
+}
+
+notes {
+    display:none;
+}
+/* normally not good, but ok in context of full screen directional navigation */
+:focus {
+    outline: 0;
+}

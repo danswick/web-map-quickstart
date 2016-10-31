@@ -1,0 +1,532 @@
+<!DOCTYPE html><html><head><title>Github for maptime organizers</title><meta charset='utf-8'><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<link href='big.css' rel='stylesheet' type='text/css' />
+<style>
+  /*from gl prez*/
+
+  .img-float {
+      padding: 0 2em 2em 2em;
+    }
+    .img-float img {
+      float: right;
+      width: 50%
+    }
+    .img-float p {
+      font-size: 2.5em;
+      line-height: 1em;
+      float: left;
+      display: block;
+      width: 47%
+    }
+
+    .quote {
+        font-family: serif;
+        letter-spacing: 2px;
+    }
+    
+    .roadtrippers {
+        background-image: url(./images/roadtrippers.png);
+        background-size: 100%;
+    }
+    
+    .wheatpaste {
+        background-image: url(./images/wheatpaste.png);
+        background-size: 100%;
+    }
+    
+    .pencil {
+        background-image: url(./images/pencil.png);
+        background-size: 100%;
+    }
+    
+    .studio {
+        background-image: url(./images/mapbox-studio.png);
+        background-position: center 5px;
+        background-size: 20%;
+    }
+    
+    .vector {
+        background-image: url(./images/vectortiles.png);
+        background-position: center 5px;
+        background-size: 20%;
+        text-shadow: 3px 3px 5px #222;
+    }
+    
+    .ready {
+        background-image: url(http://i.giphy.com/75yYfqYy5tmHm.gif);
+        background-position: center 5px;
+    }
+    
+    .tiles {
+        background-image: url(http://i.giphy.com/J2LWi9tyE2xeE.gif);
+        text-shadow: 3px 3px 5px #222;
+        color: #eee;
+    }
+    
+    .tilegif {
+        background-image: url(./images/tiles.gif);
+        background-repeat: no-repeat;
+        background-position: center 60px;
+    }
+    
+    .jstile {
+        background-image: url(./images/jstile.png);
+    }
+    
+    .mindblown {
+        background-image: url(http://i.giphy.com/DqSw5gyRQ5yPC.gif);
+        background-repeat: repeat;
+    }
+    
+    .studio {
+        background-image: url(./images/studio.png);
+        background-size: 100%;
+    }
+    
+    .save {
+        background-image: url(./images/save.png);
+        background-position: center 5px;
+        background-size: 80%;
+        color: #eee;
+        text-shadow: 3px 3px 5px #222;
+        background-repeat: no-repeat;
+    }
+    
+    .tour {
+        background-image: url(./images/tour.png);
+        background-position: center 5px;
+        background-size: 30%;
+        background-repeat: no-repeat;
+    }
+    
+    .style-editor {
+        background-image: url(./images/style-editor.png);
+        background-position: center 5px;
+        background-size: 35%;
+        background-repeat: no-repeat;
+        text-shadow: 3px 3px 5px #222;
+    }
+    
+    .inspecting {
+        background-image: url(./images/inspecting.png);
+        background-position: center 5px;
+        background-size: 100%;
+        color: #eee;
+        text-shadow: 3px 3px 5px #222;
+        background-repeat: no-repeat;
+    }
+    
+    .vector-sources {
+        background-image: url(./images/vector-sources.png);
+        background-position: center 5px;
+        background-size: 100%;
+        color: #eee;
+        text-shadow: 3px 3px 5px #222;
+        background-repeat: no-repeat;
+    }
+    
+    .gray-land {
+        background-image: url(./images/gray-land.png);
+        background-position: center 55px;
+        background-size: 80%;
+        text-shadow: 3px 3px 5px #222;
+        background-repeat: no-repeat;
+    }
+    
+    .z6to8 {
+        background-image: url(./images/z6to8.gif);
+        background-position: center 5px;
+        background-size: 80%;
+        background-repeat: no-repeat;
+    }
+    
+    .z4to2 {
+        background-image: url(./images/z4to2.gif);
+        background-position: center 5px;
+        background-size: 80%;
+        background-repeat: no-repeat;
+    }
+    
+    .search-sf {
+        background-image: url(./images/search-sf.gif);
+        background-position: center 5px;
+        background-size: 100%;
+    }
+    
+    .buildings {
+        background-image: url(./images/buildings.png);
+        background-position: center 5px;
+        background-size: 80%;
+        text-shadow: 3px 3px 5px #222;
+        background-repeat: no-repeat;
+    }
+    
+    .white-land {
+        background-image: url(./images/white-land.png);
+        background-position: center 5px;
+        background-size: 80%;
+        text-shadow: 3px 3px 5px #222;
+        background-repeat: no-repeat;
+    }
+    
+    .buildings16 {
+        background-image: url(./images/buildings16.gif);
+        background-position: center 5px;
+        background-size: 80%;
+        background-repeat: no-repeat;
+    }
+    
+    .parks {
+        background-image: url(./images/parks.png);
+        background-position: center 5px;
+        background-size: 80%;
+        text-shadow: 3px 3px 5px #222;
+        background-repeat: no-repeat;
+    }
+    
+    .settings {
+        background-image: url(./images/settings.png);
+        background-position: center 5px;
+        background-size: 25%;
+        text-shadow: 3px 3px 5px #222;
+        background-repeat: no-repeat;
+    }
+    
+    .puppy {
+        background-image: url(./images/puppy.gif);
+        background-repeat: repeat;
+    }
+    
+    .confused {
+        background-image: url(./images/confused.gif);
+        background-size: auto;
+    }
+    
+    .pixel {
+        background-image: url(http://data.pcworld.cz/img/article_title/title_l/08/efdf19947d2f9d1b7fdab05501b87c.jpg);
+    }
+    
+    .r2 {
+        background-image: url(./images/r2.gif);
+    }
+    
+    .puppy1 {
+        background-image: url(./images/puppy1.gif);
+        background-repeat: repeat;
+    }
+    
+    .cactus {
+        background-image: url(./images/cactus.jpg);
+        background-repeat: no-repeat;
+        background-size: 75%;
+        background-position: center 5px;
+    }
+
+    /*end old GL stuff*/
+
+  .center {
+    text-align: center;
+  }
+  .quote {
+    font-family: serif;
+    letter-spacing: 2px;
+  }
+  .mindblown {
+    background-image: url(./images/mindblown.gif);
+  }
+
+  .code {
+    font-family: Courier, monospace;
+  }
+
+  .chaptermap {
+    background-image: url(./images/chaptermap.png);
+    background-repeat: no-repeat;
+    background-position: center 40px;
+    background-size: 100%;
+  }
+
+  .chapteravatars {
+    background-image: url(./images/maptime-twitter-avatars.png);
+    background-repeat: no-repeat;
+    background-position: center 40px;
+    background-size: 100%;
+  }
+
+  .octocat {
+    background-image: url('https://octodex.github.com/images/nyantocat.gif');
+    background-repeat: no-repeat;
+    background-position: center 40px;
+    background-size: 60%;
+    color: white;
+    text-shadow: 0px 0px 50px #000;
+  }
+
+  .gitmodel {
+    background-image: url('images/git-model.png');
+    background-repeat: no-repeat;
+    background-position: center 40px;
+    background-size: 35%;
+    color: white;
+    text-shadow: 0px 0px 50px #000;
+  }
+
+  .gitanimals {
+    background-image: url('images/git-animals.png');
+    background-repeat: no-repeat;
+    background-position: center 40px;
+    background-size: 100%;
+    color: white;
+    text-shadow: 0px 0px 50px #000;
+  }
+
+  .new-repo {
+    background-image: url('images/new-repo.png');
+    background-repeat: no-repeat;
+    background-position: center 40px;
+    background-size: 100%;
+    color: white;
+    text-shadow: 0px 0px 50px #000;
+  }
+
+  .leaflet-map {
+    background-image: url('images/gh-file.gif');
+    background-repeat: no-repeat;
+    background-position: center 40px;
+    background-size: 100%;
+  }
+
+  .celebrate {
+    background-image: url('images/celebrate.gif');
+    background-repeat: no-repeat;
+    background-position: center 40px;
+    background-size: 100%;
+    color: white;
+    text-shadow: 0px 0px 50px #000;
+  }
+
+  .cartodb-iframe {
+    background-image: url('images/cartodb-iframe.png');
+    background-repeat: no-repeat;
+    background-position: center 40px;
+    background-size: 100%;
+  }
+  .champion {
+    background-image: url('images/puppies.jpg');
+    background-repeat: no-repeat;
+    background-position: center 40px;
+    background-size: 100%;
+    color: white;
+    text-shadow: 0px 0px 50px #000;
+  }
+  .charts {
+    background-image: url('images/charts.png');
+    background-repeat: no-repeat;
+    background-position: center 40px;
+    background-size: 70%;
+    color: white;
+    text-shadow: 0px 0px 50px #000;
+  }
+  .projections {
+    background-image: url('images/projections.png');
+    background-repeat: no-repeat;
+    background-position: center 40px;
+    background-size: 100%;
+    color: white;
+    text-shadow: 0px 0px 50px #000;
+  }
+  .dive-in {
+    background-image: url('images/dive-in.gif');
+    background-repeat: no-repeat;
+    background-position: center 40px;
+    background-size: 100%;
+    color: white;
+    text-shadow: 0px 0px 50px #000;
+  }
+  .bye {
+    background-image: url('images/bye.gif');
+    background-repeat: no-repeat;
+    background-position: center 40px;
+    background-size: 100%;
+  }
+  .internet {
+    background-image: url('images/internet.gif');
+  }
+  </style>
+  <script src='big.js'></script>
+  </head>
+  <body>
+
+
+<div>First things first: <em>log in</em> to your Mapbox account and head to <a href='https://mapbox.com/studio'>mapbox.com/studio</a>.</div>
+<div class="image_full"><img src='./images/welcome-page.png'>If you see this page, click <strong>Home</strong> in the top right.</div>
+<div>As I mentioned in the beginning, <em>Mapbox Studio</em> is a modern design platform for <strong>managing</strong> your spatial data and
+    <strong>creating</strong> custom map styles.</div>
+<div>First we'll create a <em>new style</em>, add some <strong>data</strong>, and make some <strong>edits</strong> to it. Then we'll explore the <em>rest</em> of the platform.</div>
+<div>On the <em>Home</em> page, look for the <strong>Styles</strong> panel and click <em>New style</em>.
+    <br><img src='./images/homepagestyles.png'></div>
+<div class='image_full'><img src='./images/template.png'>You will be prompted to select a <strong>template</strong> to start with. Click <em>Basic</em>, then click <strong>Create</strong>.
+</div>
+<div class="image_full"><img src='./images/basic-style-editor.png'>
+    <br>Welcome to the Mapbox Studio style editor!</div>
+<div class="img-float">
+    <p>In the bottom right corner, you should see a <strong>blue</strong> monster that's trying to say <em>hello!</em></p>
+    <img src='./images/monstertips.png'>
+</div>
+<div class="img-float">
+  <br>
+  <p>If you don't see that, click <em>Help</em> in the top right of the page and click where it says <strong>Intro</strong> under <em>Tips</em>.</p>
+  <img src='./images/intro-tips.png'>
+</div>
+
+<div class="image_full"><img src='./images/layerstip.png'>The <strong>first</strong> thing it shows us is the <em>layers</em> pane. Each <strong>layer type</strong> has different <em>styling options</em>.
+</div>
+<div><br><img src='./images/layerstip.png'></div>
+
+<div class="image_full"><img src='./images/howlayerswork.png'>For any selected <strong>layer</strong> you can both edit its <em>style</em> and change the <em>data</em> it's styling.
+</div>
+<div><br><img src='./images/howlayerswork.png'></div>
+
+<div class="image_full"><img src='./images/directselect.png'><strong>Click</strong> anywhere on the map to see which <em>layers</em> are at that location.
+</div>
+<div><br><img src='./images/directselect.png'></div>
+
+<div class="image_full"><img src='./images/searchloc.png'><em>Search</em> applies to both <strong>geographic locations</strong> and <em>style layers</em>.
+</div>
+<div><br><img src='./images/searchloc.png'></div>
+
+<div>I want to mention a few <strong>other</strong> things before we get started.</div>
+<div><em>Layers</em> are drawn on the map from the <strong>bottom up</strong>. The ones at the <em>top</em> of the list are going to be on <em>top</em> of the others in the map.</div>
+<div>You can create <strong>multiple layers</strong> from the <em>same data</em>.</div>
+<div>The <em>template</em> maps (like the <strong>Basic</strong> map we're staring with here) use <a href='https://mapbox.com/developers/vector-tiles/mapbox-streets'>Mapbox Streets vector tiles</a>. This dataset does <strong>not</strong> have <em>all data</em> at <em>all zoom levels</em>.</div>
+
+<div class="image_full"><img src='./images/waterlayer.png'>There's a <em>lot</em> of <strong>really cool</strong> stuff you can do with <em>Mapbox Studio</em>. Let's <strong>dive right in</strong>! In the <em>Layers panel</em>, Click on the <strong>water</strong> layer.
+</div>
+<div>Click the <em>Color</em> field and change the water to a nice light purple.</div>
+
+<div class="image_full"><img src='./images/purplewater.png'>Ooh, pretty!</div>
+
+<div class="image_full"><img src='./images/stylebyzoom.png'>Now click the <em>slider</em> next to the <strong>Color</strong> field and click <em>Enable styling by zoom level</em>.</div>
+<div><br><img src='./images/stylebyzoom.png'></div>
+
+<div class="img-float">
+  <p>This is where it starts to get <strong>fun</strong>!
+  <br>This panel creates a <em>smooth transition</em> between colors as you zoom.
+  <br>Pick a <strong>dark</strong> color to fade to and <em>adjust the zoom levels</em> slightly (from <strong>5</strong> to <strong>10</strong>, say).</p>
+  <img src='./images/zoompanel.png'>
+</div>
+
+<div>Click on <em>water</em> in the layer panel to close the panel, then <strong>zoom in</strong> on the Great Lakes.</div>
+<div><em>Cool</em>, right?</div>
+<div>We can also do this with <strong>text</strong>. Open the <em>place_label_city</em> layer and click the <strong>Size</strong> field to see how it's currently set.</div>
+
+<div class="img-float">
+  <br><p><em>Edit</em> this field so instead of <strong>16px</strong> at zoom level <strong>8</strong>, the ramp goes to <em>30px</em> at zoom level <em>12</em>.</p>
+  <img src='./images/thirty-12.png'>
+</div>
+
+<div><strong>Beautiful</strong>! This map is <em>really coming along</em>.</div>
+
+<div>Let's <strong>save</strong> and poke around the rest of <em>Mapbox Studio</em> for a moment. In the top of the <strong>Layers panel</strong>, click the <em>purple</em> button that says <strong>Publish</strong>. Click <strong>Publish</strong> again at the prompt.</div>
+
+<div><img src='./images/success.png'></div>
+
+<div>Click <em>Okay</em>, then click the <strong>Home</strong> button in the left sidebar. Your new style should be there!</div>
+
+<div class="image_full"><img src='./images/infopage.png'>Click on the <em>title</em> of your map to see its <strong>style information page</strong>.</div>
+
+<div>This page shows the <em>data</em> that's being used in the map style as well as the <strong>layers</strong> that style that data. <em>bridge</em> is a good example of a <strong>single</strong> set of data that has <em>multiple</em> layers.</div>
+
+<div>In the <strong>right sidebar</strong>, there is a link to <em>Share this style</em>. <strong>Copy</strong> the link and <strong>open</strong> it in your browser.</div>
+<div>This is a <em>good time</em> to mention...</div>
+
+<div>With the introduction of <em>Mapbox GL</em> also comes a new <strong>JavaScript web mapping library</strong>: <a href='https://mapbox.com/mapbox-gl-js'>Mapbox GL JS</a>.</div>
+
+<div>Just like <strong>Leaflet</strong> and <strong>Mapbox.js</strong> know how to take <em>map tiles</em> and <em>GeoJSON</em> and draw them correctly, <strong>Mapbox GL JS</strong> knows how to take a <em>stylesheet</em> and draw it correctly.</div>
+
+<div>Other than this <em>share link</em>, <strong>Mapbox GL JS</strong> and the <strong>Mapbox mobile SDKs</strong> are the <em>only</em> way to publish your map.</div>
+
+<div>Okay, back to <em>Mapbox Studio</em>! Click <strong>Edit</strong> on the info page to go back to the style editor.</div>
+
+<div>Make some rad styles! When we come back, we'll talk <strong>Mapbox GL JS</strong>.</div>
+<div><strong>MAP TIME</strong></div>
+
+<div>Now that we've seen <em>Mapbox Studio</em>, let's talk a bit more about <strong>Mapbbox GL JS</strong>.</div>
+
+<div>This will just be a <strong>brief overview</strong>. We'll get into much more detail next time during the <em>lab</em>.</div>
+
+<div>Remember how we talked about Mapbox GL <em>stylesheets</em>? Mapbox GL JS can't do much without one.</div>
+
+<div>There are a few ways to give <em>Mapbox GL JS</em> a <strong>stylesheet</strong>.</div>
+
+<div class="img-float">
+  <br><p>1. Point to a stylesheet hosted on <strong>mapbox.com</strong>.</p>
+  <img src='./images/gl-style-url.png'>
+</div>
+
+<div>Mapbox-hosted <strong>style JSON</strong> starts with <code>mapbox://</code>
+<br>
+<pre>
+  var map = new mapboxgl.Map({
+    container: 'map', 
+    style: 'mapbox://styles/mapbox/streets-v8', 
+    center: [-74.50, 40], 
+    zoom: 9 
+  });
+</pre>
+</div>
+
+<div>2. Point to a stylesheet hosted somewhere else.
+  <br>
+  <br>
+  For example:
+  <br>
+  <br>
+  <code>https://github.com/mapbox/mapbox-gl-styles/blob/master/styles/basic-v8.json</code>
+</div>
+
+<div>3. Point to a <em>local copy</em> of your style JSON.</div>
+
+<div>3.5. Add and modify style rules <strong>on the fly</strong> with Mapbox GL JS</div>
+
+<div><img src="./images/gl-style-tweak.gif"><br><br><a href="http://bl.ocks.org/danswick/7f76b15f7ef80391e933">Try it!</a></div> 
+
+<div data-bodyclass='mindblown'></div>
+
+<div>In addition to styling on the fly, Mapbox GL JS lets you control the <strong>camera</strong>...
+<br>
+<br>
+<a href="https://www.mapbox.com/mapbox-gl-js/example/scroll-fly-to/">link</a>
+</div>
+<div><img src="./images/gl-camera.gif"></div>
+
+<div>...access information about your map's <em>underlying data</em>...
+<br>
+<br>
+<a href="https://www.mapbox.com/mapbox-gl-js/example/polygon-popup-on-click/">link</a></div>
+<div><img src="./images/gl-access-data.gif"></div>
+
+<div>...add <strong>video</strong> to your map....
+<br>
+<br>
+<a href="https://www.mapbox.com/mapbox-gl-js/example/video-on-a-map/">link</a></div>
+<div><img src="./images/gl-video.gif"></div>
+
+<div>...<em>filter</em> data on the fly...
+<br>
+<br>
+<a href="https://www.mapbox.com/mapbox-gl-js/example/using-box-queryrenderedfeatures/">link</a></div>
+<div><img src="./images/gl-filter.gif"></div>
+
+<div>...and <em>lots</em> more.</div>
+
+<div>Here are a few experiments and demos to check out:
+  <ul>
+    <li><a href="https://www.mapbox.com/blog/geofencing-london/">Geofencing London</a></li>
+    <li><a href="https://www.mapbox.com/blog/properties-philly/">Filtering property records</a></li>
+    <li><a href="http://bl.ocks.org/danswick/e25b783434a7c52ee8e2">Interactive floor plans</a></li>
+    <li><a href="http://danswick.com/adventure-map/">Adventure game concept</a></li>
+    <li><a href="http://bl.ocks.org/danswick/6309077117d356e44da9">GL drunk goggles</a></li>
+  </ul>
+</div>
+</body>
+</html>
