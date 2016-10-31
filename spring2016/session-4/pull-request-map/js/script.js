@@ -22,7 +22,7 @@ for ( var i = 0; i < locations.length; i++) {
 }
 
 // Add empty feature layer to prepare for custom markers
-L.mapbox.accessToken = "pk.eyJ1IjoiZGFuc3dpY2siLCJhIjoieUZiWmwtVSJ9.0cPQywdbPVmvHiHJ6NwdXA";
+L.mapbox.accessToken = "pk.eyJ1IjoiZGFuc3dpY2siLCJhIjoiY2l1dTUzcmgxMDJ0djJ0b2VhY2sxNXBiMyJ9.25Qs4HNEkHubd4_Awbd8Og";
 var map = L.mapbox.map('map', 'mapbox.outdoors');
 
 var pointLayer = L.mapbox.featureLayer().addTo(map);
