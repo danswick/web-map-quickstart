@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+  <title>big</title>
+  <link href='big.css' rel='stylesheet' type='text/css' />
+  <link href='highlight.css' rel='stylesheet' type='text/css' />
+  <style>
+    .new-shiny { background: #aaaaaa; }
+  </style>
+  <script src='big.js'></script>
+  <script src='highlight.js'></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body class='light'>
+  <div><p>Web Mapping <strong>Quick Start</strong></p>
+</div>
+<div><p>Hi! I&#39;m Dan. You can reach me at <a href='https://twitter.com/danswick'>@danswick</a> or <strong><a href="mailto:dan.swick@gmail.com">dan.swick@gmail.com</a></strong>.</p>
+</div>
+<div><p>I used to do <em>GIS</em> in the environmental NGO world and city government. Now I work at <strong>Mapbox</strong>!</p>
+</div>
+<div><p><strong>Who</strong> are you?
+<strong>Why</strong> are you here?</p>
+</div>
+<div><p><strong>This course</strong> is about what <em>you</em> want to learn. </p>
+</div>
+<div><p>But the <strong>goals</strong> and <strong>objectives</strong> of this course remain the <em>same</em> regardless. By the end you should:</p>
+</div>
+<div><p>Be able to <em>think critically</em> about web maps.</p>
+</div>
+<div><p><em>Understand</em> how web maps are <strong>built</strong>. </p>
+</div>
+<div><p>Have the <em>vocabulary</em> to talk about web maps (not to mention <strong>search</strong> for the things you need!). </p>
+</div>
+<div><p>Feel <em>confident</em> and <em>stoked</em> about what you&#39;ve accomplished! </p>
+</div>
+
+<div data-bodyclass='puppy'>
+  <notes>We&#39;ll be keeping things lighthearted throughout the class, so expect plenty of cute puppy gifs along the way</notes>
+</div>
+
+<div>
+  <p>We have <em>three goals</em> for today.</p>
+</div>
+
+<div>
+  <ul>
+    <li>Learn the <strong>tools of the trade</strong> we'll be using for this class.</li>
+    <li>Learn <strong>how</strong> web maps got to be the way they are today.</li>
+    <li>Set up a <strong>basic web map</strong> to use for our canvas throughout the class.</li>
+  </ul>
+</div>
+
+
+<!-- POSTMAN and JSON FORMATTER -->
+<div>
+  <p>The first tool we're going to learn: <strong>THE INTERNET ITSELF</strong>!</p>
+</div>
+<div>
+  <p>Just kidding (kinda). We're talking about <strong>web maps</strong>, right? Why not <em>dive right in</em>?</p>
+</div>
+<div>
+  <p>Step 1: install the following on your computer (you should have Google Chrome installed for these):</p>
+  <ul>
+    <li><a href="https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en">Postman</a></li>
+    <li><a href="https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?hl=en">JSON formatter</a></li>
+  </ul>
+</div>
+<div>
+  <p><em>Postman</em> is a great visual way to use your computer to <strong>ask other computers for stuff</strong>.</p>
+  <p><em>JSON formatter</em> takes ugly blobs of code and <em>makes it pretty in your browser</em>.</p>
+</div>
+
+<!-- DECK OF CARDS API -->
+<div>
+  <p>All installed? Great!</p>
+  <p>Head to <a href="https://deckofcardsapi.com">https://deckofcardsapi.com</a>. We're going to play some cards.</p>
+</div>
+<div data-background-image="./images/cards-landing.png"></div>
+<div data-background-image="./images/cards-landing.png">This is a <em>service</em> you can use to get <strong>virtual playing cards</strong>.</div>
+<div>Step 1: <strong>Open Postman on your computer</strong>.</div>
+<div>
+  <p>Step 2: get a <em>fresh deck of cards</em>!</p>
+</div>
+<div data-background-image="./images/cards-new-deck.png"><p>If it's not already selected, click the <strong>Params button</strong>.</p></div>
+<div data-background-image="./images/cards-new-deck.png"></div>
+<div data-background-image="./iamges/cards-new-deck-params.png"></
+<div>
+  <p>Click <em>SEND</em>!</p>
+  <p>Below, you should see a bunch of <em>code</em> appear like ✨magic✨.</p>
+</div>
+<div data-background-image="./images/cards-new-deck-response.png"></div>
+<div>See that line that says <strong>deck_id</strong>? Copy the <em>random-looking string of text</em> to your clipboard (you don't need the quotes).</div>
+<div>
+  <p>Next, have the computer <strong>deal you a hand of cards</strong>.</p>
+  <p>The <a href="https://deckofcardsapi.com">deck of cards API</a> documentation says we should do something like:</p>
+  <p><pre>https://deckofcardsapi.com/api/deck/<< deck_id>>/draw/?count=2</pre></p>
+  <p>Go back to <em>Postman</em> and see if you can request a <strong>hand of 7 cards</strong> from the API.</p>
+</div>
+<div>
+  <p>What's going on with <em>the response</em>?</p>
+  <p>Any ideas why you would want the response to look like this?</p>
+</div>
+
+
+
+<!-- TWITTER EXAMPLE (from s2) -->
+<div><strong>Quickly</strong>, let's talk about <em>sending information around</em> online.</div>
+<div><em>Ever notice</em> how URLs get <strong>really long</strong> after you submit a <em>form</em> on a website?</div>
+<div>That's your <strong>browser</strong> sending <em>the information you entered</em> to the <strong>server</strong> where the <em>website lives</em>.</div>
+<div>This information gives the server <strong>extra instructions</strong> on how to do whatever it's doing.</div>
+<div data-background-image='./images/twitter-search.png'></div>
+<div>In searching for "maps" on Twitter, the URL that got sent was: <code style='color:gray;'>https://twitter.com/search?q=maps&src=typd</code>.</div>
+<div>This URL includes <strong>two pieces</strong> of information: <code style='color:gray;'>q=maps</code> and <code style='color:gray;'>src=typd</code>.</div>
+<div><code style='color:gray;'>q=maps</code> is the <em>search query</em>. <code style='color:gray;'>src=typd</code> tells Twitter that I <em>typed</em> in the search request rather than <em>clicking on a link</em>.</div>
+<div>Those pieces of information <strong>helped Twitter</strong> give me the <em>information I wanted</em>.</div>
+
+<!-- STATIC MAPS API (from s2) -->
+<div>A <strong>cool</strong> thing: this can apply to <em>maps</em> too!</div>
+<div>We can send <strong>information</strong> to a server in our URL that will <em>make a map</em> for us.</div>
+<div>Let's <em>try it out</em> with the <a href='https://developers.google.com/maps/documentation/staticmaps/#quick_example'>Google Maps Static API</a>.</div>
+<div>Take a look at this map:</div>
+<div data-background-image='https://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=13&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318&markers=color:red%7Clabel:C%7C40.718217,-73.998284'>
+    <br>
+    <br>
+    <br>
+    <br>
+    <ul>
+        <li>Google basemap</li>
+        <li>Centered in Lower Manhattan</li>
+        <li>Three map markers in different colors</li>
+</div>
+<div>All of the <strong>customization</strong> in this map was made in the <em>URL</em>, which is the magic of the <strong>Google Maps Static API</strong>.</div>
+<div>The <strong>URL</strong> for this map is:</div>
+<div><p><pre>https://maps.googleapis.com/maps/api/staticmap? center=Brooklyn+Bridge,New+York,NY &zoom=13&size=600x300&maptype=roadmap &markers=color:blue%7Clabel:S%7C40.702147,-74.015794 &markers=color:green%7Clabel:G%7C40.711614,-74.012318 &markers=color:red%7Clabel:C%7C40.718217,-73.998284</pre></p></div>
+<div>Gah, <strong>so big</strong>! Each piece of the <em>URL</em> corresponds with a piece of <strong>customization</strong> on the map. Let's <em>break it down</em>.</div>
+<div>Go to <a href='https://bit.ly/gstatic'>bit.ly/gstatic</a> to <em>open</em> this link in your <strong>browser</strong>.</div>
+<div data-bodyclass='url'><strong>https://maps.googleapis.com/maps/api/staticmap?</strong>
+    <br>center=Brooklyn+Bridge,New+York,NY
+    <br>&zoom=13&size=600x300&maptype=roadmap
+    <br>&markers=color:blue
+    <br>%7Clabel:S
+    <br>%7C40.702147,-74.015794
+    <br>&markers=color:green
+    <br>%7Clabel:G
+    <br>%7C40.711614,-74.012318
+    <br>&markers=color:red
+    <br>%7Clabel:C
+    <br>%7C40.718217,-73.998284</div>
+<div>The <strong>base URL</strong> is <code style='color: gray;'>https://maps.googleapis.com/ maps/api/staticmap?</code>. Everything <em>after</em> that is something we can <strong>customize</strong>. These <strong>settings</strong> are divided by <code style='color:gray;'>&</code>'s.</div>
+<div>The <em>first thing</em> we can customize is where the map is <strong>centered</strong>.</div>
+<div>https://maps.googleapis.com/maps/api/staticmap?
+    <br><strong>center=Brooklyn+Bridge,New+York,NY</strong>
+    <br>&zoom=13&size=600x300&maptype=roadmap
+    <br>&markers=color:blue
+    <br>%7Clabel:S
+    <br>%7C40.702147,-74.015794
+    <br>&markers=color:green
+    <br>%7Clabel:G
+    <br>%7C40.711614,-74.012318
+    <br>&markers=color:red
+    <br>%7Clabel:C
+    <br>%7C40.718217,-73.998284</div>
+<div>In the <em>URL bar</em> in your browser, <strong>change</strong> <code style='color:gray;'>center=Brooklyn+Bridge,New+York,NY</code> to <code style='color:gray;'>center=San+Francisco,CA</code>. <strong>Refresh</strong> the page.</div>
+<div>Our <strong>new URL</strong> should look like <em>this</em>:</div>
+<div>https://maps.googleapis.com/maps/api/staticmap?
+    <br><strong>center=San+Francisco,CA</strong>
+    <br>&zoom=13&size=600x300&maptype=roadmap
+    <br>&markers=color:blue
+    <br>%7Clabel:S
+    <br>%7C40.702147,-74.015794
+    <br>&markers=color:green
+    <br>%7Clabel:G
+    <br>%7C40.711614,-74.012318
+    <br>&markers=color:red
+    <br>%7Clabel:C
+    <br>%7C40.718217,-73.998284</div>
+<div>And our <strong>new map</strong> should look like <em>this</em>:</div>
+<div data-background-image='https://maps.googleapis.com/maps/api/staticmap?center=San+Francisco,CA&zoom=13&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318&markers=color:red%7Clabel:C%7C40.718217,-73.998284'>
+    <br>
+    <br>
+    <br>
+    <br>
+    <ul>
+        <li>Google basemap</li>
+        <li>Centered in <strong>San Francisco</strong></li>
+        <li>No map markers</li>
+</div>
+<div><strong>Cool</strong>, right? <em>What else</em> can we customize?</div>
+<div><code style='color:gray;'>zoom=13</code> is the <strong>zoom level</strong> of the map. We will talk more about zooms <em>next week</em>, but for now enter a number between <strong>0</strong> and <strong>20</strong>.</div>
+<div><code style='color:gray;'>size=600x300</code> is the <em>size</em> of the map in <strong>pixels</strong>.</div>
+<div><code style='color:gray;'>maptype=roadmap</code> is the <em>basemap style</em>. Try <code style='color:gray;'>terrain</code> instead.</div>
+<div>Then we have the <code style='color:gray;'>markers=</code> properties, which are a little more <em>complicated</em>.</div>
+<div>The map markers themselves have a series of <strong>customizable elements</strong> separated by <code style='color:gray;'>%7C</code>, which is the ASCII-encoded version of <em>|</em> (pipe).</div>
+<div><code style='color:gray;'>markers=color:blue<br>%7Clabel:S<br>%7c40.702147,-74.015794</code></div>
+<div><code style='color:gray;'>color:blue</code> defines the <strong>color</strong> of the marker.</div>
+<div><code style='color:gray;'>label:S</code> defines the <strong>label</strong> of the marker.</div>
+<div><code style='color:gray;'>40.702147,-74.015794</code> defines the <strong>location</strong> of the marker.</div>
+<div>Now that we know more about markers, how would you <strong>change</strong> the URL for our SF map?</div>
+<div>Two challenges:
+  <ul>
+    <li><em>Try</em> adding your <em>own marker</em> somewhere in <strong>San Francisco</strong>.</li>
+    <li><em>Try</em> requesting the map using <strong>Postman</strong> and the <em>Params</em> button.</li>
+  </ul>
+</div>
+<div>You can <strong>read more</strong> about the <em>Google Maps Static API</em> <a href='https://developers.google.com/maps/documentation/staticmaps/#quick_example'>here</a>.</div>
+
+<div><strong>BREAK</strong></div>
+
+<!-- How the internet works (from s4) -->
+<div><em>How the Internet works:</em> <strong>extreme CliffsNotes edition</strong>.</div>
+<div data-bodyclass="internet">THE INTERNET</div>
+<div>The Internet is a <em>network of networks</em></div>
+<div data-background-image="./images/confused.gif"></div>
+<div>The Internet is a whole bunch of <strong>computers</strong> that are <em>talk to one another</em> because they <strong>speak the same language</strong> and are <em>connected</em>.</div>
+<div>This is the essential <em>Magic</em> that makes the Internet possible.</div>
+<div>When we think, <strong>"the Internet"</strong>, we're usually thinking about the <em>World Wide Web</em>, but there are also crazy <em>telephony</em>, <strong>email</strong>, <em>peer-to-peer</em> sharing, etc things going on.</div>
+<div>The <em>WWW</em> consists of all the <strong>connected documents</strong> we work with every day.</div>
+<div><ul>
+  <li>Leaflet maps</li>
+  <li>CCSFGIS.org</li>
+  <li>facebook</li>
+  <li>etc...</li>
+</ul></div>
+<div>When you want to visit a web page, <em>how do you get to it</em>?</div>
+<div>Every web page has a unique <em>address</em> called a <strong>URL</strong> or <strong>universal resource locator</strong>.</div>
+<div data-background-image="./images/url-directions.jpg" data-bodyclass="image-center"></div>
+<div>Put another way...</div>
+<div>You tell <em>your computer</em> (the <strong>client</strong>) to ask <em>another computer</em> (the <strong>server</strong>) to please give you a web page.</div>
+<div>This <em>client</em> ⟺ <em>server</em> relationship is core to everything web maps need to do</div>
+<div>While we're ofting asking a server to <strong>give us things</strong>, <em>what else</em> can we ask a server to do?</div>
+<div>BOOM! Perfect transition.</div>
+<div>Let's talk about <em>requests</em> and <strong>responses</strong></div>
+<div>I'm summarizing the great info created by my <em>super smart</em> colleauge <a target="_blank" href="https://twitter.com/lyzidiamond">Lyzi</a> on <a target="_blank" href="https://github.com/lyzidiamond/explains/blob/master/how-the-internet-works.md">this page.</a> Check it out for a more detailed explanation!</div>
+<div>We talked about <em>clients</em> and <strong>servers</strong> earlier. The <strong>server's</strong> job is to receive <em>requests</em> from other computers, <strong>interpret</strong> those requests, and <em>send back a response</em>.</div>
+<div>Sometimes, that response in includes a <em>resource</em> (like a Leaflet map tile!).</div>
+<div>How requests are made</div>
+<div>There are a bunch of ways to make a request, but we're just going to talk about one: via a <em>web browser</em> using <strong>HTTP</strong>.</div>
+<div>We know what a <em>web browser</em> is, but how about <strong>HTTP</strong>?</div>
+<div>HTTP stands for <em>hypertext transfer protocol</em> and it <strong>defines</strong> a <em> set of common types of requests and responses</em> that can be <strong>interpreted</strong> by all devices.</div>
+<div>Remember earlier when we said that part of the <em>magic of the Internet</em> is that all devices can speak the <strong>same language</strong>?</div>
+<div>This is that!</div>
+<div>Let's talk about <strong>request structure</strong></div>
+
+<div data-background-image="./images/yougotthis.gif">YOU GOT THIS</div>
+
+<div>Just like a web page, an HTTP request has a <em>head</em> and a <strong>body</strong></div>
+<div>Also like a web page, the <em>head</em> of an HTTP request contains <strong>meta information</strong> about the request, while the <strong>body</strong> contains the <strong>resources</strong> intended to accompany a request.</div>
+<div><em>Unlike a web page</em>, HTTP requests don't always include a <strong>body</strong></div>
+
+<div>One <em>super important</em> component of the request's <strong>head</strong> is the <em>request type</em></div>
+
+<div>
+  There are many request types, but the most common ones you'll see are:
+  <ul>
+    <li>GET</li>
+    <li>POST</li>
+    <li>DELETE</li>
+    <li>PUT</li>
+  </ul>
+</div>
+
+<div data-background-image="./images/get-request.gif">GET</div>
+<div>The <em>client</em> requests a resource from the <strong>server</strong>, but is not sending any resources along with the request.</div>
+<div>Ex: typing www.facebook.com into your browser and hitting <em>enter</em>.</div>
+<div data-background-image="./images/post-request.gif">POST</div>
+<div>The <em>client</em> sends a request <strong>along with a resource</strong> to be posted to the <em>server</em>.</div>
+<div>Ex: making a new Facebook status update. The content of your status update is sent to the server in the <em>body</em> of the request.</div>
+<div data-background-image="./images/delete-request.gif">DELETE</div>
+<div>The <em>client</em> sends a request to <strong>delete</strong> a resource to the <em>server</em>.</div>
+<div>Ex: deleting your Facebook status update</div>
+<div data-background-image="./images/put-request.gif">PUT</div>
+<div>The <em>client</em> sends a request to <strong>post</strong> something to the server. If there is already something at the specified location, it is modified.</div>
+<div>Ex: editing an existing Facebook status.</div>
+
+<div>RESOURCES</div>
+<div>The <em>resource</em> identifies <strong>where on the server</strong> you are making your request to</div>
+<div>https://hostname:port/path-or-endpoint/resource?query=parameter</div>
+<div>https://<em>hostname:port</em>/path-or-endpoint/resource?query=parameter</div>
+<div>This is the <strong>main location of the server</strong>. Most of the time, the port is not explicitly defined and instead is handled by the server.</div>
+<div>https://hostname:port/<em>path-or-endpoint</em>/resource?query=parameter</div>
+<div><em>path-or-endpoint</em>: once on the server, this is where to look for the resource. In the case of web pages, this is considered to be a <strong>path</strong>. When engaging with an API, it is often called an <strong>endpoint</strong></div>
+<div>https://hostname:port/path-or-endpoint/<em>resource</em>?query=parameter</div>
+<div><em>resource</em>: the actual resource being requested. This can be a <strong>webpage</strong> (like index.html), an <em>image</em> (like puppies.jpg), or some other resource.</div>
+<div>https://hostname:port/path-or-endpoint/resource?<em>query=parameter</em></div>
+<div><em>query=parameter</em>: query parameters allow you to send additional information along with the request. (remember the <strong>twitter example</strong>?</div>
+
+<div>RESPONSES</div>
+<div>Once the <em>server</em> has received your request, it has to <strong>interpret</strong> that request and send back a <em>response</em>.</div>
+<div>Responses include <em>status codes</em> and sometimes <strong>resources</strong></div>
+<div>Have you ever gotten a <em>404</em> page? This is the <strong>HTTP status code</strong> for <em>not found</em>.</div>
+<div>Some common HTTP status codes:
+  <ul>
+    <li><em>200 OK</em> Success! Everything went as expected</li>
+    <li><em>404 not found</em> there is nothing at the location of the request</li>
+    <li><em>403 forbidden</em> the server received your request, but doesn't think you're authorized to receive the resource you asked for</li>
+    <li><em>503 service unavailable</em> the server is down for some reason</li>
+  </ul>
+</div>
+<div>Read more at <a target="_blank" href="https://httpstatusdogs.com/">HTTP status dogs</a></div>
+<div><img src="https://httpstatusdogs.com/img/405.jpg"></div>
+<div>
+  <p><em>BREAK</em></p>
+  <p>Next up: how <strong>web pages</strong> work 🖥</p>
+</div>
+
+
+<!-- CHROME DEV TOOLS -->
+<!-- WTF IS A WEBPAGE -->
+<!-- BREAK THE CCSF PAGE -->
+<!-- FLOPPY BIRD -->
+<!-- RECAP -->
+<!-- WHAT IS A WEBPAGE? HTML, CSS, AND JAVASCRIPT -->
+
+<div>Hold up a sec. <strong>What is a webpage</strong>?</div>
+<div>A <em>hypertext document</em> that <strong>is connected to the World Wide Web</strong> <a target="blank" href="https://en.wikipedia.org/wiki/Web_page">link</a></div>
+<div data-background-image="./images/eyeroll.gif"></div>
+<div>A webpage is a <em>document</em> that is usually written in <strong>three</strong> languages:</div>
+<div>HTML!</div>
+<div><strong>HTML</strong> is the <em>language</em> of websites.</div>
+<div><strong>HTML</strong> gives your document <em>structure</em>.</div>
+<div><strong>CSS</strong> is the <em>styling language</em> of websites.</div>
+<div><strong>CSS</strong> describes the way your document should <em>look</em>.</div>
+<div><strong>JavaScript</strong> is the <em>dynamic language</em> of websites.</div>
+<div><strong>JavaScript</strong> makes your document <em>do stuff</em>.</div>
+<div>If you think about a web page like a <em>sentence</em>, <strong>HTML</strong> is the <strong>noun</strong>, <strong>CSS</strong> is the <strong>adjective</strong>, and <strong>JavaScript</strong> is the <strong>verb</strong>.</div>
+<div>HTML makes up the <em>skeleton</em> of everything on the page, CSS gives it <em>style</em>, and JavaScript makes it <em>do things</em>.</div>
+<div>Have <em>you</em> heard any other useful metaphors for HTML, CSS, and JavaScript?</div>
+<div>We can't add <strong>JavaScript</strong> to a web page without adding <em>HTML</em>, because then there would be <strong>nothing</strong> for us to work with!</div>
+<div>It would be like I asked you to <em>go move your car</em> and you're like <strong>wait a second, I don't even own a car</strong>.</div>
+<div>
+  <p><em>Move the car</em>: JavaScript</p>
+  <p><em>The car</em>: HTML</p>
+  <p><em>CSS</em>: what do you think?</p>
+</div>
+<div>That's enough metaphors for now.</div>
+<div><strong>Every</strong> website is made up of these three things, whether it has a <em>map</em> or <strong>images</strong> or <em>input boxes</em> or <strong>forms</strong> or...</div>
+<div>ANYWAY</div>
+
+<div>Let's learn more about webpages by <em>breaking</em> one.</div>
+<div>Open up <em>Chrome</em> and head to <a target="blank" href='http://ccsfgis.org/'>ccsfgis.org/</a></div>
+<div><strong>Right click</strong> on the first article's title and click <em>Inspect Element</em>.</div>
+<div data-background-image='./images/inspect-element.png'></div>
+<div>These are the <strong>Chrome Developer Tools</strong>. They are <em>super</em> helpful.</div>
+<div>Let's start by looking at <strong>Elements</strong>.</div>
+<div data-background-image='./images/elements.gif'></div>
+
+<div>Time to vandalize!</div>
+<div>Double click on the highlighted element that we <strong>inspected</strong> earlier.</div>
+<div>WHAT? I CAN EDIT THIS?</div>
+<div>Yep! <strong>type a message</strong> and hit <em>enter/return</em>.</div>
+<div data-background-image="./images/mindblown.gif"></div>
+<div><strong>What else</strong> can we do?</div>
+<div>See the <em>styles</em> tab? Click over there.</div>
+<div data-background-image='./images/inspect-styles.png'></div>
+<div>Click where it says <strong>element.style</strong> and type: <br><em>color</em>, then hit <strong>tab</strong>, then type <em>pink</em>.</div>
+<div data-background-image="./images/mindblown.gif"></div>
+
+<div>Take a few minutes and try to <em>break</em> some other stuff. Can you <strong>delete</strong> elements? What else?</div>
+
+<div>Click over to <strong>Network</strong> and then <em>reload</em> the page.</div>
+<div data-background-image='./images/inspect-network.gif'></div>
+<div><em>What</em> do you think this tab is telling us? <em>Why</em> might you use this tool?</div>
+<div>Click <strong>Sources</strong>. What do you <em>see</em> here?</div>
+
+<div>Now click <strong>Console</strong>.</div>
+<div>The <strong>Console</strong> is a <em>JavaScript environment</em>. You can put <code><pre>console.log()</pre></code> in your code to print to the Console.</div>
+<div>You can <em>also</em> use it to <strong>play around with JavaScript</strong>!</div>
+<div>In the <strong>Console</strong>, type <code>x = 4</code>.</div>
+<div>Now just type <code>x</code>.</div>
+<div>Did the console print <code>4</code> back at you?</div>
+<div><strong>Awesome!</strong> Now <code>x</code> is synonymous with <code>4</code>.</div>
+<div>Try <code>x + 4</code>.</div>
+<div>What did the console print?</div>
+<div>This is a <strong>great</strong> way to try out some JavaScript.</div>
+<div>Let's make a <em>variable</em> called <code>name</code> and have it store our names.</div>
+<div><code>name = "Chauncey"</code></div>
+<div><code>name</code> should print out <code>"Chauncey"</code></div>
+<div>Our <code>name</code> variable is a <strong>string</strong>, which is a type of data in JavaScript.</div> 
+<div>Type in <code>typeof(name)</code> and hit enter. What does the console say?</div>
+<div>When we create a <strong>string</strong>, it is automatically given some properties.</div>
+<div>Type <code>name.length</code> and hit enter. What happens?</div>
+<div>Neat!</div>
+<div>Let's play a <strong>game</strong>.</div>
+<div>Head to <a target="blank" href="http://danswick.com/floppybird/">danswick.com/floppybird/</a>.</div>
+<div>Look familar? :) This game is <em>infuriating</em>, but with our new JavaScript knowledge, we can <strong>cheat</strong>.</div>
+<div>In another tab, open <a target="blank" href="https://github.com/danswick/floppybird/blob/gh-pages/js/main.js">github.com/danswick/floppybird/blob/gh-pages/js/main.js</a></div>
+<div>See anything in here that looks <em>useful</em>?</div>
+<div>Head back to the <em>game</em> and open your <strong>console</strong>.</div>
+<div>
+  <p>Start <em>breaking</em> things!</p>
+  <p>A couple of hints: look for <strong>vars</strong>. Remember <strong>query parameters</strong> from earlier?</p>
+</div>
+
+<div>BREAK</div>
+
+
+
+<!-- SUBLIME TEXT -->
+<!-- MAKE A MAP WITH LEAFLET -->
+<!-- WHERE DID WEB MAPS EVEN COME FROM -->
+
+<!-- MAP FROM SCRATCH -->
+<div>Head to <a target="blank" href='http://danswick.com/leaflet.html'>danswick.com/leaflet.html</a> and open up the <em>Console</em> (right click, <strong>Inspect Element</strong>).</div>
+<div>Now right-click anywhere on the page and click <em>View Page Source</em>. The <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong> that make up the page should open in a new tab.</div>
+<div>Let's talk through this <em>line by line</em> and talk about what's happening.</div>
+<div>The library we're going to see today is called <a target="blank" href='https://leafletjs.com'>Leaflet</a>. It is <em>by far</em> the most popular web mapping library and lots of <em>companies</em> build off of it.</div>
+<div><a target="blank" href='https://mapbox.com/mapbox.js'>Mapbox.js</a> is just an extension of <strong>Leaflet</strong>. <em>CARTO</em> uses Leaflet to power its maps and even <em>Esri</em> is getting in on the Leaflet fun.</div>
+<div>Back to the webpage.</div>
+<div>Let's examine this page using our <em>text editor</em>.</div>
+<div>Web mappers rely heavily on their text editors to get stuff done!</div>
+<div>We're going to be using <a href="https://www.sublimetext.com/">Sublime Text 3</a> in this class.</div>
+<div>I'm going to give you some <em>starter code</em> and you're going to <em>code along</em> with me to get your map set up.</div>
+<div>
+  <ol>
+    <li>Highlight all of the code on the following slide</li>
+    <li>Copy the code to your clipboard</li>
+    <li>Paste the code into Sublime text</li>
+    <li>Save your new text file as <em>index.html</em></li>
+  </ol>
+</div>
+<div>
+  <pre><xmp>
+    <!doctype html>
+    <html>
+    <head>
+    <!-- Adding in the Leaflet CSS file -->
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
+    <!--[if lte IE 8]>
+         <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
+    <![endif]-->
+    <!-- Adding Leaflet JavaScript file -->
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
+    <!-- Adding styling info for the map -->
+    <style type="text/css">
+    #map { height: 600px; }
+    </style>
+    </head>
+
+    <body>
+      <!-- Our map will go here -->
+    </body>
+    </html>
+  </xmp></pre>
+</div>
+<div>What happened when you <em>saved</em> the file?</div>
+<div>Alright, let's <em>walk through the code</em>.</div>
+<div>An <em>HTML</em> file is broken into two parts: <code>head</code> and <code>body</code>.</div>
+<div>The <code>head</code> section includes styling, links to external resources, and other things the page might need to load properly.</div>
+<div>The <code>body</code> section includes all the elements that will be rendered on the page.</div>
+<div>Oh: and the whole thing should be bookended by <code>html</code> tags.</div>
+<div>In order to make our web map work, there are several things that need to be added to the <code>head</code> section of the page.</div>
+<div>First, we need to add the Leaflet <em>CSS</em> file to the page. This allows us to add predefined mappy elements.</div>
+<div>Then we need to add the Leaflet <em>JavaScript</em> file. This will allow us to make a map object in which we can pan, zoom, and do other mappy activities.</div>
+<div>Finally, we need to add some of our own CSS to make the map as big or small as we want. We set it to a height of <strong>600 pixels</strong>.</div>
+<div>Now let's add some code inside the <code>body</code>.</div>
+<div>Step one is to make a <code>div</code> to contain our map.</div>
+<div>
+  <pre>
+    <xmp>
+      <body>
+        <!-- Creating the map div -->
+        <div id="map"></div>
+        ...
+      </body>
+    </xmp>
+  </pre>
+</div>
+<div>Then, also inside the <code>body</code>, we add a <code>script</code> tag. The page knows that anything inside <code>script</code> tags is JavaScript!</div>
+<div>
+  <pre>
+    <xmp>
+      <!-- The JavaScript that's powering the map -->
+      <script>
+        // Initialize the map
+        var map = L.map('map').setView([37.754700, -122.420790], 14);
+      </script>
+    </xmp>
+  </pre>
+</div>
+
+<div>The first step is to <strong>initialize</strong> a map, <strong>set its view</strong> to San Francisco, and set a <strong>zoom level</strong>.</div>
+<div>Hooray! Now there's a map in our map div, with the center in SF, set at zoom level 14.</div>
+<div>But... there's nothing on the map. We have to add some <strong>map tiles</strong>!</div>
+<div>
+  <pre>
+    <xmp>
+      <!-- The JavaScript that's powering the map -->
+      <script>
+        // Initialize the map
+        var map = L.map('map').setView([37.754700, -122.420790], 14);
+
+        // Add tiles
+        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+      </script>
+    </xmp>
+  </pre>
+</div>
+<div>Now we have to close the <code>script</code> tag, close the <code>body</code> tag, and close the <code>html</code> tag.</div>
+<div>But a map of just tiles is kind of boring, right? Let's add a <strong>map marker</strong>.</div>
+<div>
+  <pre>
+    <xmp>
+      <!-- The JavaScript that's powering the map -->
+      <script>
+        // Initialize the map
+        var map = L.map('map').setView([37.754700, -122.420790], 14);
+
+        // Add tiles
+        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        // Add a marker
+        var marker = L.marker([37.754700, -122.420790]).addTo(map);
+      </script>
+    </xmp>
+  </pre>
+</div>
+<div>Let's also give that point a <strong>popup</strong>.</div>
+<div><em>Leaflet really likes popups.</em> They're baked right into the JavaScript library! Let's <strong>add</strong> one for our marker that says "CCSF" on it.</div>
+<div>
+  <pre>
+    <xmp>
+      <!-- The JavaScript that's powering the map -->
+      <script>
+        // Initialize the map
+        var map = L.map('map').setView([37.754700, -122.420790], 14);
+
+        // Add tiles
+        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        // Add a marker
+        var marker = L.marker([37.754700, -122.420790]).addTo(map);
+        // Add a popup to the marker
+        marker.bindPopup("CCSF");
+      </script>
+    </xmp>
+  </pre>
+</div>
+
+<div><em>Woohoo!</em> That's how this map works!</div>
+<div>(This is based off of the <a target="blank" href='http://leafletjs.com/examples/quick-start.html'>Leaflet Quick Start Guide</a> which goes further in depth if you want to check it out.)</div>
+
+<div>Okay, this is cool and all, but why is this map the way it is?</div>
+<div>📚 Quick history diversion. I'm going to borrow from a great <em>Maptime</em> presentation, then we'll come back here
+        <br><a href="http://maptime.io/anatomy-of-a-web-map/#33">LINK</a></div>
+<div><strong>RECAP</strong>:
+  <br>
+  <ul>
+      <li>Tiles are <em>raster images</em></li>
+      <li>Tiles are <em>standardized</em> so that a given z/x/y coordinate will always give you a tile at the same location</li>
+      <li>Tiles allow maps to <em>load fast</em></li>
+</div>
+<div>One more thing:
+  <br> <em>Nowadays</em> we also have <strong>vector tiles</strong></div>
+<div>More on that later, but <strong>vector</strong> tiles are made of vector data! They enable all kinds of <em>dynamic visualizations</em> that aren't possible with <strong>raster</strong> (image) tiles</div>
+
+
+<!-- RECAP -->
+<div>Quick recap! <em>What have we learned so far</em>?</div>
+<div>HOW THE INTERNET WORKS and HOW TO MAKE HTTP REQUESTS WITH <em>POSTMAN</em></div>
+<div><ul>
+  <li>Why is HTTP a thing?</li>
+  <li>Why do APIs like the deck of cards thing exist?</li>
+  <li>What kinds of requests do you make in your daily life?</li>
+</ul></div>
+<div>HOW WEBPAGES WORK and HOW TO BREAK THEM WITH <em>CHROME DEV TOOLS</em></div>
+<div><ul>
+  <li>What's a good metaphor for HTML, CSS, and JavaScript?</li>
+  <li>What would you use Chrome Dev Tools for?</li>
+  <li>What is the JavaScript console?</li>
+</ul></div>
+<div>HOW WEB MAPS WORK and HOW TO CODE YOUR OWN WITH <em>SUBLIME TEXT 3</em></div>
+<div>
+  <ul>
+    <li>Why do "slippy maps" exist?</li>
+    <li>Why would you want to install a dedicated text editor?</li>
+    <li>What is Leaflet?</li>
+  </ul>
+</div>
+
+
+<!-- HOMEWORK -->
+<div>THANK YOU! You kicked 🍑 today and absorbed <em>a TON</em> of new information.</div>
+<div><em>Next week</em> we'll talk about <em>DATA</em>. Before then, a bit of <strong>homework</strong>.</div>
+<div>
+  <p>For <em>next week</em>:</p>
+  <ul>
+    <li>Swap out the map tiles in your Leaflet map for some different tiles.</li>
+    <li>Using the <em>network inspector</em> and <em>Postman</em>, make a standalone request for a single map tile.</li>
+    <li>Bring some <em>geospatial data</em> you want to try putting on a map.</li>
+    <li>Create a document (MS word, plain .txt file, google doc, etc) to serve as your <em>class yournal</em>. In you own words, respond to all of the <em>recap questions</em> on the previous slides.</li>
+  </ul>
+</div>
+
+
+</body>
+</html>
