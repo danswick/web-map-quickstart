@@ -196,4 +196,15 @@ div.imageText {
 pre {
   word-break: break-all;
   white-space: pre-wrap;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 0px 10px;
+  background-color: #FFF;
+}
+
+code {
+ border: 1px solid #ddd;
+border-radius: 5px; 
+padding: 0px 10px;
+background-color: #FFF; 
 }

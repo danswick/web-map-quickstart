@@ -14,8 +14,8 @@
   <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body class='light'>
-  <div><p>Web Mapping <strong>Quick Start</strong></p>
-</div>
+<div><p>Web Mapping <strong>Quick Start</strong></p><p>Wifi: <em>Mapbox Guest</em> // <em>longitudelatitude</em></p></div>
+<div>To follow along, go to <em>danswick.com/web-map-quickstart/spring2018/class1</em></div>
 <div><p>Hi! I&#39;m Dan. You can reach me at <a href='https://twitter.com/danswick'>@danswick</a> or <strong><a href="mailto:dan.swick@gmail.com">dan.swick@gmail.com</a></strong>.</p>
 </div>
 <div><p>I used to do <em>GIS</em> in the environmental NGO world and city government. Now I work at <strong>Mapbox</strong>!</p>
@@ -36,7 +36,7 @@
 <div><p>Feel <em>confident</em> and <em>stoked</em> about what you&#39;ve accomplished! </p>
 </div>
 
-<div data-bodyclass='puppy'>
+<div data-background-image='http://i.giphy.com/LPQ943m8yMcpy.gif'>
   <notes>We&#39;ll be keeping things lighthearted throughout the class, so expect plenty of cute puppy gifs along the way</notes>
 </div>
 
@@ -111,7 +111,7 @@
 <div>That's your <strong>browser</strong> sending <em>the information you entered</em> to the <strong>server</strong> where the <em>website lives</em>.</div>
 <div>This information gives the server <strong>extra instructions</strong> on how to do whatever it's doing.</div>
 <div data-background-image='./images/twitter-search.png'></div>
-<div>In searching for "maps" on Twitter, the URL that got sent was: <code style='color:gray;'>https://twitter.com/search?q=maps&src=typd</code>.</div>
+<div>In searching for "maps" on Twitter, the URL that got sent was: <pre>https://twitter.com/search?q=maps&src=typd</pre></div>
 <div>This URL includes <strong>two pieces</strong> of information: <code style='color:gray;'>q=maps</code> and <code style='color:gray;'>src=typd</code>.</div>
 <div><code style='color:gray;'>q=maps</code> is the <em>search query</em>. <code style='color:gray;'>src=typd</code> tells Twitter that I <em>typed</em> in the search request rather than <em>clicking on a link</em>.</div>
 <div>Those pieces of information <strong>helped Twitter</strong> give me the <em>information I wanted</em>.</div>
@@ -188,7 +188,7 @@
         <li>No map markers</li>
 </div>
 <div><strong>Cool</strong>, right? <em>What else</em> can we customize?</div>
-<div><code style='color:gray;'>zoom=13</code> is the <strong>zoom level</strong> of the map. We will talk more about zooms <em>next week</em>, but for now enter a number between <strong>0</strong> and <strong>20</strong>.</div>
+<div><code style='color:gray;'>zoom=13</code> is the <em>zoom level</em> of the map. We will talk more about zooms later, but for now enter a number between <em>0</em> and <em>20</em>.</div>
 <div><code style='color:gray;'>size=600x300</code> is the <em>size</em> of the map in <strong>pixels</strong>.</div>
 <div><code style='color:gray;'>maptype=roadmap</code> is the <em>basemap style</em>. Try <code style='color:gray;'>terrain</code> instead.</div>
 <div>Then we have the <code style='color:gray;'>markers=</code> properties, which are a little more <em>complicated</em>.</div>
@@ -210,15 +210,16 @@
 
 <!-- How the internet works (from s4) -->
 <div><em>How the Internet works:</em> <strong>extreme CliffsNotes edition</strong>.</div>
-<div data-bodyclass="internet">THE INTERNET</div>
+<div data-background-image="./images/internet.gif">THE INTERNET</div>
 <div>The Internet is a <em>network of networks</em></div>
 <div data-background-image="./images/confused.gif"></div>
-<div>The Internet is a whole bunch of <strong>computers</strong> that are <em>talk to one another</em> because they <strong>speak the same language</strong> and are <em>connected</em>.</div>
+<div>The Internet is a whole bunch of <strong>computers</strong> that <em>talk to one another</em> because they <strong>speak the same language</strong> and are <em>connected</em>.</div>
 <div>This is the essential <em>Magic</em> that makes the Internet possible.</div>
+<div>Like so many things in life, the Internet works because of <em>effective communication</em>. <br/>🗣</div>
 <div>When we think, <strong>"the Internet"</strong>, we're usually thinking about the <em>World Wide Web</em>, but there are also crazy <em>telephony</em>, <strong>email</strong>, <em>peer-to-peer</em> sharing, etc things going on.</div>
 <div>The <em>WWW</em> consists of all the <strong>connected documents</strong> we work with every day.</div>
 <div><ul>
-  <li>Leaflet maps</li>
+  <li>Interactive maps</li>
   <li>CCSFGIS.org</li>
   <li>facebook</li>
   <li>etc...</li>
@@ -229,12 +230,12 @@
 <div>Put another way...</div>
 <div>You tell <em>your computer</em> (the <strong>client</strong>) to ask <em>another computer</em> (the <strong>server</strong>) to please give you a web page.</div>
 <div>This <em>client</em> ⟺ <em>server</em> relationship is core to everything web maps need to do</div>
-<div>While we're ofting asking a server to <strong>give us things</strong>, <em>what else</em> can we ask a server to do?</div>
+<div>While we're often asking a server to <strong>give us things</strong>, <em>what else</em> can we ask a server to do?</div>
 <div>BOOM! Perfect transition.</div>
 <div>Let's talk about <em>requests</em> and <strong>responses</strong></div>
 <div>I'm summarizing the great info created by my <em>super smart</em> colleauge <a target="_blank" href="https://twitter.com/lyzidiamond">Lyzi</a> on <a target="_blank" href="https://github.com/lyzidiamond/explains/blob/master/how-the-internet-works.md">this page.</a> Check it out for a more detailed explanation!</div>
 <div>We talked about <em>clients</em> and <strong>servers</strong> earlier. The <strong>server's</strong> job is to receive <em>requests</em> from other computers, <strong>interpret</strong> those requests, and <em>send back a response</em>.</div>
-<div>Sometimes, that response in includes a <em>resource</em> (like a Leaflet map tile!).</div>
+<div>Sometimes, that response in includes a <em>resource</em> (like a 🗺 map tile or a 🃏 deck of virtual cards!).</div>
 <div>How requests are made</div>
 <div>There are a bunch of ways to make a request, but we're just going to talk about one: via a <em>web browser</em> using <strong>HTTP</strong>.</div>
 <div>We know what a <em>web browser</em> is, but how about <strong>HTTP</strong>?</div>
@@ -320,8 +321,10 @@
 <div>HTML!</div>
 <div><strong>HTML</strong> is the <em>language</em> of websites.</div>
 <div><strong>HTML</strong> gives your document <em>structure</em>.</div>
+<div>CSS!</div>
 <div><strong>CSS</strong> is the <em>styling language</em> of websites.</div>
 <div><strong>CSS</strong> describes the way your document should <em>look</em>.</div>
+<div>JavaScript!</div>
 <div><strong>JavaScript</strong> is the <em>dynamic language</em> of websites.</div>
 <div><strong>JavaScript</strong> makes your document <em>do stuff</em>.</div>
 <div>If you think about a web page like a <em>sentence</em>, <strong>HTML</strong> is the <strong>noun</strong>, <strong>CSS</strong> is the <strong>adjective</strong>, and <strong>JavaScript</strong> is the <strong>verb</strong>.</div>
@@ -361,8 +364,8 @@
 
 <div>Click over to <strong>Network</strong> and then <em>reload</em> the page.</div>
 <div data-background-image='./images/inspect-network.gif'></div>
-<div><em>What</em> do you think this tab is telling us? <em>Why</em> might you use this tool?</div>
-<div>Click <strong>Sources</strong>. What do you <em>see</em> here?</div>
+<div><em>What</em> do you think this tab is telling us?<br /> <em>Why</em> might you use this tool? <br />Do you notice anything familiar to what we saw with <em>Postman</em>?</div>
+<div>Click <strong>Sources</strong>. What do you <em>see</em> here? <br />How do you think this is <em>different</em> from the <strong>elements</strong> tab?</div>
 
 <div>Now click <strong>Console</strong>.</div>
 <div>The <strong>Console</strong> is a <em>JavaScript environment</em>. You can put <code><pre>console.log()</pre></code> in your code to print to the Console.</div>
@@ -384,7 +387,7 @@
 <div>Neat!</div>
 <div>Let's play a <strong>game</strong>.</div>
 <div>Head to <a target="blank" href="http://danswick.com/floppybird/">danswick.com/floppybird/</a>.</div>
-<div>Look familar? :) This game is <em>infuriating</em>, but with our new JavaScript knowledge, we can <strong>cheat</strong>.</div>
+<div>Look familar? :) This game is <em>infuriating</em>, but with our new JavaScript knowledge, we can <strong>cheat</strong>.<br />😈</div>
 <div>In another tab, open <a target="blank" href="https://github.com/danswick/floppybird/blob/gh-pages/js/main.js">github.com/danswick/floppybird/blob/gh-pages/js/main.js</a></div>
 <div>See anything in here that looks <em>useful</em>?</div>
 <div>Head back to the <em>game</em> and open your <strong>console</strong>.</div>
@@ -467,6 +470,7 @@
     </xmp>
   </pre>
 </div>
+<div><p>What's a <em>div</em> anyway?</p><br /><br /><br /><p>🙋</p></div>
 <div>Then, also inside the <code>body</code>, we add a <code>script</code> tag. The page knows that anything inside <code>script</code> tags is JavaScript!</div>
 <div>
   <pre>
@@ -480,7 +484,8 @@
   </pre>
 </div>
 
-<div>The first step is to <strong>initialize</strong> a map, <strong>set its view</strong> to San Francisco, and set a <strong>zoom level</strong>.</div>
+<div>That last step <strong>initialized</strong> a map, <strong>set its view</strong> to San Francisco, and set a <strong>zoom level</strong>.</div>
+<div>In <em>Sublime Text</em>, <strong>right click</strong> anywhere in your code and choose <em>Open in browser</em>.</div>
 <div>Hooray! Now there's a map in our map div, with the center in SF, set at zoom level 14.</div>
 <div>But... there's nothing on the map. We have to add some <strong>map tiles</strong>!</div>
 <div>
