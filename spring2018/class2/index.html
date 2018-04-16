@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+  <title>Big</title>
+  <link href='big.css' rel='stylesheet' type='text/css' />
+  <link href='highlight.css' rel='stylesheet' type='text/css' />
+  <style>
+    .new-shiny { background: #aaaaaa; }
+  </style>
+  <script src='big.js'></script>
+  <script src='highlight.js'></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body class='light'>
+  <div><p>Web Mapping <strong>Quick Start</strong></p><p>Wifi: <em>Mapbox Guest</em> // <em>longitudelatitude</em></p></div>
+  <div>To follow along, go to <em>danswick.com/web-map-quickstart/spring2018/class2</em></div>
+  <div><em><strong>AGENDA</strong></em><p>
+    <ul>
+      <li>Recap last week's class</li>
+      <li>Geodata show and tell</li>
+      <li>Geodata code-along with GeoJSON</li>
+      <li>Geodata "lecture"</li>
+      <li>Geodata code together</li>
+      <li>Wrap up!</li>
+    </ul>
+  </p></div>
+  <div><em>First:</em><p>We covered a lot of ground last week and you might have left feeling a little overwhelmed. Let's recap our goals for the class.</p></div>
+  <div><p>Be able to <em>think critically</em> about web maps.</p></div>
+  <div><p><em>Understand</em> how web maps are <strong>built</strong>. </p></div>
+  <div><p>Have the <em>vocabulary</em> to talk about web maps (not to mention <strong>search</strong> for the things you need!). </p></div>
+  <div><p>Feel <em>confident</em> and <em>stoked</em> about what you&#39;ve accomplished! </p></div>
+  <div data-background-image="http://danswick.com/img/tiny-cactus.jpg" data-bodyclass="image-center"></div>
+  <div><em>BACK TO THE RECAP</em></div>
+  <div>We learned that much of the <em>internet</em> runs because of this thing called <strong>HTTP</strong>.</div>
+  <div><ul>
+    <li>Why is HTTP a thing?</li>
+    <li>Why do APIs like the deck of cards thing exist?</li>
+    <li>What kinds of requests do you make in your daily life?</li>
+  </ul></div>
+  <div>How did it go using <em>Postman</em> to request a single map tile?</div>
+  <div>We learned about how <em>web pages</em> are structured and that they're all comprised of three languages. We also <em>vandalized</em> some sites with <strong>Chrome Dev Tools</strong></div>
+  <div>How did it go using the <em>Network Inspector</em> to examine how map tiles are requested?</div>
+  <div>
+    <ul>
+      <li>What's a good metaphor for HTML, CSS, and JavaScript?</li>
+      <li>What would you use Chrome Dev Tools for?</li>
+      <li>What is the JavaScript console?</li>
+    </ul>
+  </div>
+  <div>We learned how <em>web maps</em> work with <em>Leaflet</em> and made our own with <em>Sublime text</em>.</div>
+  <div>How did it go swapping in some other <em>map tiles</em> in the Leaflet example we worked on last week?</div>
+  <div>
+    <ul>
+      <li>Why would you want to install a dedicated text editor?</li>
+      <li>What is Leaflet?</li>
+    </ul>
+  </div>
+  <div>Let's take a few minutes to break up into pairs or threes and <em>compare our Leaflet maps</em> or maybe <em>troubleshoot through some bugs</em> together.</div>
+
+  <div><em><strong>ALRIGHT!</strong></em><p>Let's talk <strong>GEODATA</strong></p></div>
+  <div>Part of your <em>homework</em> was to bring some geodata you're interested in working with. Now is a good time to <strong>fire up that data</strong> on your computer. Let's go around the room and share.</div>
+  <div><ul>
+    <li>What does your data describe?</li>
+    <li>Where did you get it?</li>
+    <li>What <em>format</em> is it in?</li>
+  </ul></div>
+  <div><em>AWESOME</em></div>
+  <div>Break out your <em>text editors</em>. We're going to do a code-along.</div>
+  <div>Step 1: head to this url and <em>view source</em>: <br /><a href="http://danswick.com/web-map-quickstart/spring2018/class2/code-along-shell.html">http://danswick.com/web-map-quickstart/spring2018/class2/code-along-shell.html</a>.</div>
+  <div>A few resources we'll be drawing from:<ul>
+    <li>The <a href="http://leafletjs.com/">Leaflet documentation</a></li>
+    <li>Some <a href="http://danswick.com/web-map-quickstart/spring2018/class2/code-along-geojson.js">sample geojson</li>
+    <li>⚠️ The <em>finished product</em> is <a href="http://danswick.com/web-map-quickstart/spring2018/class2/code-along-shell.html">here</a> if you get stuck or want to reference them later.</li>
+  </ul></div>
+  <div>Nice! Let's process that exercise.</div>
+  <div>💆
+    <ul>
+      <li>Thinking about the first <em>Marker</em> we added (in the center of the Presidio) vs the <em>drinking fountain</em> markers, what is the <em>difference</em> between those two approaches? Why might you choose one over the other?</li>
+      <li>What evidence do you see that supports my earlier comment that <em>GeoJSON is a geodata format <strong>for the web</strong></em>?</li>
+      <li>What <strong>questions</strong> do you have?</li>
+    </ul>
+  </div>
+  <div><em>NEXT UP</em>: let's talk about geospatial data you're likely to run into in your work.</div>
+  <div>Head to <a href="http://dansiwck.com/geodata">dansiwck.com/geodata</a>.</div>
+
+  <div>Whew!</div>
+
+  <div>Let's break out our text editors for one last coding session. <em>Pair up or work in threes</em>. <strong>Your mission</strong>: <ul>
+    <li>Pick one of the bits of geodata you brought in</li>
+    <li>Use one of the tools we mentioned earlier to <em>convert your data to GeoJSON</em>. (if your data is in an extra funky format, raise your hand and I'll come help!)</li>
+    <li>Add your <strong>newly converted</strong> data to your map!</li>
+  </ul></div>
+  <div>How did that go? What <em>challenges</em> did you encounter?</div>
+  <div>Let's recap what we covered today</div>
+  <div>We <em>practiced setting up a Leaflet map</em></div>
+  <div>We learned about <em>common geospatial formats</em></div>
+  <div>We learned how to <em>add data</em> to a Leaflet map.</div>
+  <div data-background-image="./images/awesome.gif"></div>
+  <div>Let's talk <em>homework</em>:
+    <ul>
+      <li>Keep learning! Follow the Leaflet tutorials on <a href="http://leafletjs.com/examples/geojson/">GeoJSON</a> and <a href="http://leafletjs.com/examples/custom-icons/">Custom Marker Icons</a></li>
+      <li>For next week, head to the <a href="https://www.mapbox.com/mapbox-gl-js/example/simple-map/">Mapbox GL JS examples page</a> and look under the <strong>user interactions</strong> section. Describe the <em>types</em> of user interactions you see. What <em>questions</em> do you have while looking at these examples?</li>
+    </ul>
+    For your <em>class journal</em>:
+    <ul>
+      <li>What are the ways you can identify that a file is a <em>shapefile</em>?</li>
+      <li>What is the difference between <strong>raster</strong> and <strong>vector</strong> data?</li>
+      <li>Why might you choose to add features to a Leaflet map with <strong>GeoJSON</strong> vs Leaflet's built-in <em>Marker, Line, and Polygon</em> methods?</li>
+    </ul>
+  </div>
+  <div data-background-image="http://danswick.com/img/tiny-cactus.jpg" data-bodyclass="image-center"></div>
+
+
+
+</body>
+</html>
