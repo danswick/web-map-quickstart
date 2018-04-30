@@ -203,7 +203,12 @@
   <div>Let's build a map together! You can either code along with me or watch.</div>
   <div>If you'd like to code along, grab the starter code here: <a href="https://github.com/danswick/web-map-quickstart/tree/gh-pages/spring2018/class4">https://github.com/danswick/web-map-quickstart/tree/gh-pages/spring2018/class4</a></div>
   <div>Step one: what the heck are we gonna make?</div>
-  <div>We're going to make a <em>choropleth</em> map of restaurants categorized as <strong>High</strong> or <strong>Medium</strong> risk by SF's health inspectors.<p>Lots of people will see this map, so we should be sure to add a <em>legend</em> and use <em>interactivity</em> to let our map users explore</p>.</div>
+  <div>We're going to make a <em>choropleth</em> map of restaurants categorized as <strong>High</strong> or <strong>Medium</strong> risk by SF's health inspectors.<p>Lots of people will see this map, so we should be sure to add a <em>legend</em> and use <em>interactivity</em> to let our map users explore.</p></div>
+  <div><em>Step 0</em>: set up a Leaflet map for later.</div>
+  <div>CODE TIME</div>
+  <div>
+      <iframe src="http://danswick.com/web-map-quickstart/spring2018/class4/project/starter.html" width="1200" height="800" frameborder="0" scrolling="no"></iframe>
+  </div>
   <div><em>Getting the data</em>: what data do we need?</div>
   <div><ol>
     <li>Inspection records</li>
@@ -224,8 +229,10 @@
   </ol></div>
   <div>Add the data to the map to see what it looks like</div>
   <div>CODE TIME</div>
-  <div>RAW DATA EXAMPLE GOES HERE</div>
-  <div>How are we gonna get the inspection counts into those polygons? I tried two options:<ul>
+  <div>
+      <iframe src="http://danswick.com/web-map-quickstart/spring2018/class4/project/data-added.html" width="1200" height="800" frameborder="0" scrolling="no"></iframe>
+  </div>
+  <div>How are we gonna <em>get the inspection counts into those polygons</em>? I tried two options:<ul>
     <li>Conduct a <strong>spatial join</strong> ahead of time using QGIS.</li>
     <li>Join the data in the browser using <strong>Turf.js</strong>.</li>
   </ul></div>
@@ -233,12 +240,16 @@
   <div>👀 Watch up here to see how I did it. <p>Otherwise, the pre-joined data is available in the project folder as <pre>districts_count.js</pre>.</p></div>
   <div>Make a <em>choropleth</em>! There's a <a href="http://leafletjs.com/examples/choropleth/">great Leaflet choropleth tutorial</a>, but I wanted a few more options, so we're going to use <a href="https://github.com/timwis/leaflet-choropleth">this Leaflet plugin</a> instead.</div>
   <div>CODE TIME</div>
-  <div>CHOROPLETH EXAMPLE GOES HERE</div>
+  <div>
+      <iframe src="http://danswick.com/web-map-quickstart/spring2018/class4/project/choropleth.html" width="1200" height="800" frameborder="0" scrolling="no"></iframe>
+  </div>
   <div>Remember how we learned to <em>lie with maps</em> earlier? Let's check that out.</div>
   <div>CODE TIME</div>
   <div>Next, let's add a legend and some click interactivity. To do so, I followed <a href="https://github.com/timwis/leaflet-choropleth/blob/gh-pages/examples/legend/demo.js">this example</a> from the Leaflet choropleth plugin GitHub repo.</div> 
   <div>CODE TIME</div>
-  <div>LEGEND/INTERACTIVITY EXAMPLE GOES HERE</div>
+  <div>
+      <iframe src="http://danswick.com/web-map-quickstart/spring2018/class4/project/legend-and-interactivity.html" width="1200" height="800" frameborder="0" scrolling="no"></iframe>
+  </div>
   <div>That's it! Any concerns about this map?</div>
   <div>I have a couple:<ol>
     <li>This data isn't normalized by anything (shame). Maybe it doesn't have to be?</li>
