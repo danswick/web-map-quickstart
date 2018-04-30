@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+  <title>Big</title>
+  <link href='big.css' rel='stylesheet' type='text/css' />
+  <link href='highlight.css' rel='stylesheet' type='text/css' />
+  <style>
+    .new-shiny { background: #aaaaaa; }
+  </style>
+  <script src='big.js'></script>
+  <script src='highlight.js'></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body class='light'>
+  <div><p>Web Mapping <strong>Quick Start</strong></p><p>Wifi: <em>Mapbox Guest</em> // <em>longitudelatitude</em></p></div>
+  <div>To follow along, go to <em>danswick.com/web-map-quickstart/spring2018/class4</em></div>
+  <div><em><strong>AGENDA</strong></em><p>
+    <ul>
+      <li>Recap last week's class</li>
+      <li>Putting it all together to tell a story: let's make a map together!</li>
+      <li>🗣 Information design for web maps</li>
+      <li>🗣 Planning your web map</li>
+      <li>Planning our map together</li>
+      <li>🛠 Let's build that map!</li>
+      <li>Wrap up!</li>
+    </ul>
+  </p></div>
+  <div>Let's recap <em>homework</em>:
+    <ul>
+      <li><em>Show and tell!</em> Find a cool web map online and bring the link with you next week. What type of web map it is and why do you think it's cool? How does it use interactions effectively and ineffectively?</li>
+      <li>Using Leaflet, create a web map that uses a type of interactivity we haven't built thus far in code. There are lots of great tutorials just a Google search away! Bring your map to class next week to share with the group. Maybe a hover interaction? How about a go-to-my-location button?</li>
+      <li>For your class journal: What are events? What are some different kinds of interactions? How can interactions be overused in today's web mapping libraries?</li>
+    </ul>
+  </div>
+  <div>Today's class is all about <strong>putting it all together</strong> to <em>tell a story with a web map</em>.</div>
+  <div>Today we're going to <em>work together</em> to make a map for the City. Here's our (theoretical) prompt:</div>
+  <div>The <strong>SF Dept of Public Health</strong> has a new program to help struggling restaurant owners get their restaurants <em>up to code</em>. They've asked us to help them prioritize <em>where to allocate their resources</em>.</div>
+  <div>Our <em>tools of the trade</em>:
+    <ul>
+      <li>Sublime text</li>
+      <li>The SF open data portal</li>
+      <li>Leaflet</li>
+      <li>Turf.js</li>
+      <li>Our browsers!</li>
+    </ul>
+  </div>
+  <div>Throughout this class, we'll <em>plan</em> our map, gather and prep our <em>data</em>, and <em>code</em> a working demo to present to the city.</div>
+  <div data-background-image="http://danswick.com/img/tiny-cactus.jpg" data-bodyclass="image-center"></div>
+  
+  <!-- INFORMATION DESIGN -->
+  <div>Information design for web maps</div>
+  <div>In print or on the web, <strong>maps</strong> are <em>information design</em>.</div>
+  <div><em>Cartographers</em> have been thinking about how to do that effectively in print for <strong>hundreds of years</strong>.</div>
+  <div>Too often in web mapping, design decisions are <em>constrained</em> by the <strong>tools available</strong>.</div>
+  <div data-bodyclass='quote'>"Cartographers limit themselves – because of a lack of software skills or a client’s desired final product – to using <em>pre-fabricated tools</em> for Web map design (e.g., Google Maps, Esri’s ArcGIS Online). By the time data-organization and design decisions are considered, the potential efficacy of the map’s communication is already <em>grossly constrained</em> by the <em>limitations of the tool chosen</em>." - <a href="https://twitter.com/iMuehlenhaus">Ian Muehlenhaus</a> in <a href="http://utpjournals.metapress.com/content/q765k1l7423732l6/?p=81fc8c6f7eb8460f9ec9aba4318ddb07">Going Viral: The Look of Online Persuasive Maps</a></div>
+  <div><em>Developers</em> and <strong>mappers</strong> don't always speak the same language, which leads to poor information design decisions.</div>
+  <div><em>For the rest of today:</em> some <strong>vocabulary</strong> and <strong>key concepts</strong> in mapping to help us <em>think more critically</em> about web maps.</div>
+  <div>There are <strong>several</strong> types of maps, but we can mostly break them down into <em>two</em> categories:</div>
+  <div><em>Thematic maps</em></div>
+  <div>and <strong>Reference maps</strong>.</div>
+  <div data-bodyclass='quote'>"<strong>Thematic maps</strong> are data maps of a <em>specific subject</em> or for a <em>specific purpose</em>. Statistical thematic maps include a variety of different <strong>map types</strong> such as choropleth or shaded maps, dot maps, proportional symbol maps, and isarithmic maps." - <a href="https://www.census.gov/geo/maps-data/maps/thematic.html">U.S. Census Bureau</a></div>
+  <div>Some <em>examples</em>:</div>
+  <div data-bodyclass="image-contain" data-background-image='./images/team-gb.png'></div>
+  <div data-bodyclass="image-contain" data-background-image='./images/cartogram.jpg'></div>
+  <div data-bodyclass="image-contain" data-background-image='./images/dot-density.png'></div>
+  <div data-bodyclass="image-contain" data-background-image='./images/dotmap.png'></div>
+  <div data-bodyclass="image-contain">"A <strong>reference map</strong> is a map that emphasizes the <em>geographic location</em> of features. ... For these maps, the goal is to display a lot of <em>different kinds of information</em> without drawing the reader's attention to any one theme of information more than any other theme." - <a href="http://mappingcenter.esri.com/index.cfm?fa=maps.aboutReference">Esri Mapping Center</a></div>
+  <div><em>Why</em> might you use a <strong>reference map</strong>?</div>
+  <div data-bodyclass="image-contain" data-background-image='./images/wayfinding1.png'>Wayfinding</div>
+  <div data-bodyclass="image-contain" data-background-image='./images/wayfinding2.png'></div>
+  <div data-bodyclass="image-contain" data-background-image='./images/transit.png'>Transit</div>
+  <div data-bodyclass="image-contain" data-background-image='./images/navigation.png'>Navigation</div>
+  <div data-bodyclass="image-contain" data-background-image='./images/topographic.png'>Topographic</div>
+  <div>All of these <strong>map classes</strong> are well described in <em>print cartography</em>, but they have corollaries in <em>web cartography</em> as well.</div>
+  <div><strong>Historically</strong>, web mapping has evolved without much <em>cartographic theory</em>.</div>
+  <div>There was <strong>Google</strong>, and then there were <em>mashups</em>....</div>
+  <div data-background-image='./images/mashups.jpg'>
+      <br>
+      <br><a href="http://www.programmableweb.com/news/5-years-ago-today-web-mashup-was-born/2010/04/08">HousingMaps.com</a>, by <strong>Paul Rademacher</strong>, 2005</div>
+  <div>... which led to an <em>explosion</em> in <strong>special thematic maps</strong>...</div>
+  <div data-background-image='./images/catmap.png'></div>
+  <div>... that <em>defy classification</em>.</div>
+  <div>
+      <ul>
+          <li><a href="http://en.wikipedia.org/wiki/Dot_distribution_map#One-to-one" target="_blank">one-to-one dot maps</a></li>
+          <li><a href="http://en.wikipedia.org/wiki/Choropleth_map" target="_blank">choropleth</a> or <a href="http://wiki.gis.com/wiki/index.php/Chorochromatic_Maps" target="_blank">chorochromatic</a> maps</li>
+          <li>"<a href="http://xkcd.com/1138/" target="_blank">heat maps</a>"</li>
+      </ul>
+  </div>
+  <div data-bodyclass="image-contain" data-background-image='./images/webdotmap.png'></div>
+  <div data-bodyclass="image-contain" data-background-image='./images/poly.png'></div>
+  <div data-bodyclass="image-contain" data-background-image='./images/heatmap2.png'></div>
+  <div>Many cartographers <strong>not fond</strong> of heat maps.</div>
+  <div>The term <em>"heatmap"</em> is imprecise. <strong>Isopleth</strong>? <strong>Point density</strong>? <strong>Interpolation</strong>?</div>
+  <div data-bodyclass="image-contain" data-background-image='./images/interpolation.png'></div>
+  <div>On the web it usually means <em>kernel density</em> and usually just shows <a href="http://xkcd.com/1138/" target="_blank">population density</a>.</div>
+  <div data-bodyclass="image-contain" data-background-image='./images/heatmap_xkcd.png'></div>
+  <div>Where the points are <strong>sparse</strong> or <strong>coincident</strong>, <em>kernel density</em> generates a <em>meaningless blur</em>:</div>
+  <div>
+      <table>
+          <tr>
+              <td><img src="./images/hmblur2.png"></td>
+          </tr>
+          <tr>
+              <td><img src="./images/hmblur.png"></td>
+          </tr>
+      </table>
+  </div>
+  <div>Common JavaScript libraries that generate <em>"heat maps"</em> dynamically use <strong>zoom level</strong> as a proxy for <strong>kernel size</strong>, which <em>makes no sense</em> analytically.</div>
+  <!-- <div data-bodyclass="image-contain" data-background-image='./images/kerneldensity.png'></div> -->
+  <div>The default color scheme is <strong>horrid</strong>. (Nicknames: <em>"Tacky Angry Rainbow"</em> and <em>"Angry Fruit Salad"</em>.)</div>
+  <div data-bodyclass="image-contain" data-background-image='./images/tackyangryrainbow.png'>Tacky Angry Rainbow</div>
+  <div data-bodyclass="image-contain" data-background-image='./images/angryfruitsalad.png'>Angry
+      <br>Fruit
+      <br>Salad</div>
+  <div>They arise from demand from people who <strong>don't know what they are doing</strong>, but know they want to <em>show a lot of points on a map</em>.</div>
+  <div>Alternative: <strong>clustering</strong>.</div>
+  <div data-bodyclass="image-contain" data-background-image='./images/googlegeo.png'></div>
+  <div>Entirely <em>different</em> (although they <strong>look similar</strong>): <a href="http://support.esri.com/en/knowledgebase/GISDictionary/term/dot%20density%20map">dot density maps</a>.</div>
+  <div>
+      <iframe src="https://demographics.virginia.edu/DotMap/index.html" width="1200" height="800" frameborder="0" scrolling="no"></iframe>
+  </div>
+  <div>Someone <em>clever</em> putting <strong>a lot of points</strong> on maps quite <strong>artfully</strong>: <a href="https://www.flickr.com/photos/walkingsf/sets/">Eric Fischer</a>.</div>
+  <div data-bodyclass="image-contain" data-background-image='./images/enf_nyc.jpg'></div>
+  <div data-bodyclass="image-contain" data-background-image='./images/enf_london.jpg'></div>
+  <div data-bodyclass="image-contain" data-background-image='./images/enf_sf.jpg'></div>
+  <div>We should still strive for <strong>sound cartography</strong> in <em>mashups</em>.</div>
+  <div>A few <strong>high level concepts</strong> from cartography, which is a <em>visual</em> enterprise:</div>
+  <div>Don't worry if you don't catch all of this right away. We're glossing over topics that people dedicate entire careers to. There are links along the way for you to explore later if you want more!</div>
+  <div>1. Visual variables
+      <notes>The differences in map elements as perceived by the human eye. There are 7 classical categories of visual variables: position, size, shape, value, color, orientation, and texture.</notes>
+  </div>
+  <div>A French cartographer named Jacques Bertin identified seven main categories of visual variables: <em>position</em>, <strong>size</strong>, <em>shape</em>, <strong>value</strong>, <em>color</em>, <strong>orientation</strong>, and <em>texture</em>.</div>
+  <div data-bodyclass="image-contain" data-background-image='./images/visual_variables.png'></div>
+  <div data-bodyclass="image-contain" data-background-image='./images/visual_variables2.png'></div>
+  <div><a href="http://wiki.gis.com/wiki/index.php/Visual_Variables">Further reading</a> on visual variables.</div>
+  <div>2. Visual hierarchy
+      <notes>Visual hierarchy is the order in which the human eye (brain) perceives what it sees. As cartographyers, this helps us prioritize information and help guide our viewers and users through the information we've designed. How is this concept different from visual variables?</notes>
+  </div>
+  <div>
+      <table>
+          <tr>
+              <td><img src="./images/82_congo_elements_plopped.gif"></td>
+              <td>BAD
+                  <br>←
+                  <br>
+                  <br>GOOD
+                  <br>→ </td>
+              <td><img src="./images/83_congo_portrait.gif"></td>
+          </tr>
+      </table>
+  </div>
+  <div>(I've been told that this slide is more about "layout" than hierarchy, but hopefully you get the point!)</div>
+  <div><a href="http://wiki.gis.com/wiki/index.php/Visual_hierarchy">Further reading</a> on visual hierarchy.</div>
+  <div>3. Visual argument
+      <notes>Use visual elements to map relationships between map elements from one image, the base, to another image(s), the target. https://books.google.com/books?id=29uSBQAAQBAJ&pg=PA54&lpg=PA54&dq=cartography+%22visual+argument%22&source=bl&ots=u0-7yaF8aJ&sig=WncXbrfxVAjFmuxQnFDGCy-2b7I&hl=en&sa=X&ved=0ahUKEwjyhvLCptfKAhULw2MKHYLtByIQ6AEIIjAB#v=onepage&q=cartography%20%22visual%20argument%22&f=false. Not a single transfer of features or properties, but a mapping of a whole web of relations between nodes. Also visual analogy.</notes>
+  </div>
+  <div data-bodyclass="image-contain" data-background-image='./images/visual_argument.png'></div>
+
+  <!-- PLANNING YOUR WEB MAP -->
+  <div>Earlier today, we talked about a <em>project idea</em>. Let's talk more about <strong>planning</strong> that project before we get any deeper down the <em>code</em> rabbit hole.</div>
+  <div><strong>Before</strong> you start making your map, ask yourself: <em>Why are you making your map?</em></div>
+  <div data-bodyclass='quote'>"Prior to making a map, clarify your intent. Simply writing out the purpose of the map prior to making it will clarify goals; help determine relevant data, map design, and symbolization choices; and will lead to a better map."</div>
+  <div>An <strong>example</strong> of intent (Krygier and Wood):</div>
+  <div>In a couple of slides, there's a map showing a proposed Black Heritage Trail in Eli County, VA. The map is the visual centerpiece for a proposal for grants to develop the trail ad its associated sites, and must visually tantalize granting agencies.</div>
+  <div>Note that the <em>intent</em> includes both what you want to <strong>show</strong> as well as the <em>story</em> you want to tell.</div>
+  <div data-bodyclass="image-contain" data-background-image='./images/map-intent.png'></div>
+  <div>Think about your <strong>map project</strong> and its <em>intent</em>.</div>
+  <div>The <strong>intent</strong> of the map helps us to consider <em>other</em> parts of the map.</div>
+  <div>For example: <em>data</em>!</div>
+  <div><strong>What</strong> data do you need? <strong>Where</strong> will you get it? <strong>How</strong> will you need to <em>process</em> it to work in your map?</div>
+  <div>Some sources for data include:<br><ul><li><a target="blank" href='https://osm.org'>OpenStreetMap</a></li><li>government open data portals</li><li>individuals/groups</li><li>self-created data</li></ul></div>
+  <div>Once you <strong>have</strong> data, you should <em>inspect it</em>.</div>
+  <div>Questions to ask:<br><ul><li>Is it <strong>vector</strong> or <em>raster</em> data?</li><li>Is it <strong>qualitative</strong> or <em>quantitative</em>?</li><li>Do I have to <em>transform</em> the data at all?</li><li>Is it <strong>accurate</strong> and <em>complete</em>?</li></ul></div>
+  <div data-bodyclass="image-contain" data-background-image='./images/oakland-parking.png'></div>
+  <div>Based on the <strong>map intent</strong> you wrote down earlier, what kinds of <em>data</em> would you need? <strong>Where</strong> might you find that data? Let's talk about some examples from our <em>projects</em>. How do they <strong>answer</strong> these <em>questions</em>:</div>
+  <div><ul><li><strong>What</strong> data do you need?</li><li><strong>Where</strong> will you get it?</li><li><strong>How</strong> will you need to <em>process</em> it to work in your map?</li><li>Is it <strong>vector</strong> or <em>raster</em> data?</li><li>Is it <strong>qualitative</strong> or <em>quantitative</em>?</li><li>Do I have to <em>transform</em> the data at all?</li><li>Is it <strong>accurate</strong> and <em>complete</em>?</li></div>
+  <div>So once you <em>have</em> your data, you have to figure out how to <strong>display</strong> it.</div>
+
+  <!-- used to be more cartography here -->
+
+  <div>Data classification!</div>
+  <div>Is your data <strong>quantitative</strong> or <em>qualitative</em>?</div>
+  <div>What <strong>design choices</strong> must you make to maintain your <em>cartographic integrity</em>?</div>
+  <div data-bodyclass='quote'>"Choropleth maps portray geographic patterns for regions composed of areal units such as states, counties, and voting precincts. Usually two to six graytone symbols, on a scale from light to dark, represent two to six nonoverlapping categories for an intensity index such as population density or the percentage of the adult population voting in the last election."</div>
+  <div data-bodyclass='quote'>"The breaks between these categories can markedly affect the mapped pattern, and the cautious map author tests the effects of different sets of class breaks. ... Too commonly, the naive or noncritical user accepts this arbitrary display as the standard solution, not merely as a starting point, and ignores the invitation ... to explore other approaches to data classification." - Mark Monmonier, <strong>How To Lie With Maps</strong></div>
+  <div data-bodyclass="image-contain" data-background-image='http://1.bp.blogspot.com/-aPQp1JK58PQ/Up3A14o0-JI/AAAAAAAAOBo/J997rsmfnoc/s1600/q2+4+maps.jpg'></div>
+  <div>What <strong>colors</strong> do you use? What <em>symbols</em>?</div>
+  <div><a target="blank" href='http://misguidedmaps.com/'>Misguided Maps</a></div>
+  <div><strong>How</strong> do you avoid making an <em>ugly</em> or <strong>confusing</strong> map?</div>
+  <div>Guess what?</div>
+  <div>It's <em>really</em>, <strong>really</strong> hard.</div>
+  <div>A fun exercise: do a search for <em>"cool maps"</em> or <em>"buzzfeed maps"</em> or <em>"40 maps"</em> and pick out the <strong>design flaws</strong> in each of them.</div>
+  <div>BREAK</div>
+
+  <!-- MAKE A DANG MAP -->
+
+  <div>Let's <em>make a dang map</em>!</div>
+  <div>Step 1: planning. On your own, <em>sketch</em> your map. What <em>story</em> do you want to tell? Who is your <em>audience</em>? What <em>data</em> will you use? How will you use the concepts we just discussed to <em>get your point across</em>?</div>
+  <div>Great!</div>
+  <div>Let's build a map together! You can either code along with me or watch.</div>
+  <div>If you'd like to code along, grab the starter code here: <a href="https://github.com/danswick/web-map-quickstart/tree/gh-pages/spring2018/class4">https://github.com/danswick/web-map-quickstart/tree/gh-pages/spring2018/class4</a></div>
+  <div>Step one: what the heck are we gonna make?</div>
+  <div>We're going to make a <em>choropleth</em> map of restaurants categorized as <strong>High</strong> or <strong>Medium</strong> risk by SF's health inspectors.<p>Lots of people will see this map, so we should be sure to add a <em>legend</em> and use <em>interactivity</em> to let our map users explore</p>.</div>
+  <div><em>Getting the data</em>: what data do we need?</div>
+  <div><ol>
+    <li>Inspection records</li>
+    <li>District boundaries</li>
+  </ol></div>
+  <div>SF open data portal is <em>AWESOME</em>: <ul>
+    <li><a href="https://data.sfgov.org/Health-and-Social-Services/Restaurant-Scores-LIVES-Standard/pyih-qa8i">Inspections</a></li>
+    <li><a href="https://data.sfgov.org/Geographic-Locations-and-Boundaries/Current-Supervisor-Districts/8nkz-x4ny">Supervisor districts</a></li>
+  </ul></div>
+  <div><em>Preparing the data</em>: we can download the supervisor districts in <strong>GeoJSON</strong> format. Great!</div>
+  <div><em>Preparing the data</em>: the inspections will be a little trickier. Here's how I prepared: <ol>
+    <li>Import the CSV data into QGIS.</li>
+    <li>Convert the data into GeoJSON</li>
+    <li>OMG this data is <em>huge</em>! Let's massage it a bit to get the size down</li>
+    <li>Remove anything that has <em>low or no risk</em>.</li>
+    <li>Remove all of the unnecessary columns in the attribute table. Attributes take up a TON of space!</li>
+    <li>Save as GeoJSON</li>
+  </ol></div>
+  <div>Add the data to the map to see what it looks like</div>
+  <div>CODE TIME</div>
+  <div>RAW DATA EXAMPLE GOES HERE</div>
+  <div>How are we gonna get the inspection counts into those polygons? I tried two options:<ul>
+    <li>Conduct a <strong>spatial join</strong> ahead of time using QGIS.</li>
+    <li>Join the data in the browser using <strong>Turf.js</strong>.</li>
+  </ul></div>
+  <div>I did both (and you can find examples in this project folder), but we're going to go with option 1: <em>QGIS</em>.</div>
+  <div>👀 Watch up here to see how I did it. <p>Otherwise, the pre-joined data is available in the project folder as <pre>districts_count.js</pre>.</p></div>
+  <div>Make a <em>choropleth</em>! There's a <a href="http://leafletjs.com/examples/choropleth/">great Leaflet choropleth tutorial</a>, but I wanted a few more options, so we're going to use <a href="https://github.com/timwis/leaflet-choropleth">this Leaflet plugin</a> instead.</div>
+  <div>CODE TIME</div>
+  <div>CHOROPLETH EXAMPLE GOES HERE</div>
+  <div>Remember how we learned to <em>lie with maps</em> earlier? Let's check that out.</div>
+  <div>CODE TIME</div>
+  <div>Next, let's add a legend and some click interactivity. To do so, I followed <a href="https://github.com/timwis/leaflet-choropleth/blob/gh-pages/examples/legend/demo.js">this example</a> from the Leaflet choropleth plugin GitHub repo.</div> 
+  <div>CODE TIME</div>
+  <div>LEGEND/INTERACTIVITY EXAMPLE GOES HERE</div>
+  <div>That's it! Any concerns about this map?</div>
+  <div>I have a couple:<ol>
+    <li>This data isn't normalized by anything (shame). Maybe it doesn't have to be?</li>
+    <li>Does this have to be a <em>map</em> to get our point across?</li>
+  </ol></div>
+  <div><em>HOLY CARPS, Y'ALL!</em> That's awesome!</div>
+  <div>You <strong>totally kicked butt</strong> today. <em>Pat yourself on the back.</em></div>
+  <div>Keep playing! <strong>Keep making stuff!</strong> It just gets <em>more fun</em>!</div>
+  <div data-background-image="http://danswick.com/img/tiny-cactus.jpg" data-bodyclass="image-center"></div>
+
+  <div>Thanks a ton for being a great class!</div>
+  <div>Feel free to reach out via <a target="_blank" href="mailto:dan.swick@gmail.com">email</a> or <a target="_blank" href="http://www.twitter.com/danswick">Twitter</a> at any time if you have questions or just want to <strong>geek out about maps</strong>.</div>
+  <div data-background-image="./images/bye.gif"></div>
+
+
+</body>
+</html>
