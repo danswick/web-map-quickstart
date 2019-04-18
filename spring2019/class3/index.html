@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+  <title>Big</title>
+  <link href='big.css' rel='stylesheet' type='text/css' />
+  <link href='highlight.css' rel='stylesheet' type='text/css' />
+  <style>
+    .new-shiny { background: #aaaaaa; }
+  </style>
+  <script src='big.js'></script>
+  <script src='highlight.js'></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body class='light'>
+  <div><p>Web Mapping <strong>Quick Start</strong></p><p>Wifi: <em>Mapbox Guest</em> // <em>longitudelatitude</em></p></div>
+  <div>To follow along, go to <em>danswick.com/web-map-quickstart/spring2018/class3</em></div>
+  <div><em><strong>AGENDA</strong></em><p>
+    <ul>
+      <li>Recap last week's class</li>
+      <li>Interactions group work</li>
+      <li>🗣 History of web maps</li>
+      <li>Interaction code-along</li>
+      <li>🗣 Interactions and events</li>
+      <li>Map planning activity</li>
+      <li>Wrap up!</li>
+    </ul>
+  </p></div>
+  <div>Let's recap <em>homework</em>:
+    <ul>
+      <li>Keep learning! Follow the Leaflet tutorials on <a href="http://leafletjs.com/examples/geojson/">GeoJSON</a> and <a href="http://leafletjs.com/examples/custom-icons/">Custom Marker Icons</a></li>
+      <li>For next week, head to the <a href="https://www.mapbox.com/mapbox-gl-js/example/simple-map/">Mapbox GL JS examples page</a> and look under the <strong>user interactions</strong> section. Describe the <em>types</em> of user interactions you see. What <em>questions</em> do you have while looking at these examples?</li>
+    </ul>
+  </div>
+  <div>Let's recap <em>homework</em>:
+    For your <em>class journal</em>:
+    <ul>
+      <li>What are the ways you can identify that a file is a <em>shapefile</em>?</li>
+      <li>What is the difference between <strong>raster</strong> and <strong>vector</strong> data?</li>
+      <li>Why might you choose to add features to a Leaflet map with <strong>GeoJSON</strong> vs Leaflet's built-in <em>Marker, Line, and Polygon</em> methods?</li>
+    </ul>
+  </div>
+
+  <div>Let's dive into our topic for today: <em>interactions</em>!</div>
+  <div>Break up into groups of two or three and head to <a href="https://evictionlab.org/map">https://evictionlab.org/map</a></div>
+  <div><em>Spend 5 or so minutes working on your own to familiarize yourself with this map</em> and what it's trying to convey. <br />Then, work with your partner to see if you can <strong>identify all of the types of interaction possible with this map</strong>. No interaction is too small!</div>
+  <div>What did you find? Which types of interaction are <em>critical</em> to the message of the map?</div>
+  <div>Nice! Next, we're going to get into the details of <em>interactions</em>.</div>
+  <div><strong>But first</strong>, let's add a little context. How did we get to this wild world of maps you can <em>pan</em> and <em>zoom</em> and <em>click</em> and <em>tap</em>?</div>
+  <div>Let's take a field trip to Maptime: <a href="http://maptime.io/anatomy-of-a-web-map/#0">http://maptime.io/anatomy-of-a-web-map/</a>.</div>
+
+  <div><em>Cool!</em> Now that we have some context, let's get our hands dirty.</div>
+  <div>Step 1: open your text editors.</div>
+  <div>Step 2: grab the code on this page and paste it in your text editor: <a href="http://danswick.com/web-map-quickstart/spring2018/class3/code-along.html">danswick.com/web-map-quickstart/spring2018/class3/code-along.html</a>.</div>
+  <div><em>hint</em>:<br />
+    <pre>    
+      L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}@2x.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+        maxZoom: 18,
+        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+            '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+            'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+        id: 'mapbox.streets'
+    }).addTo(map);</pre>
+  </div>
+  <div>For your reference, here's the finished version of the code-along: <a href="http://danswick.com/web-map-quickstart/spring2018/class3/code-along-finished.html">danswick.com/web-map-quickstart/spring2018/class3/code-along-finished.html</a></div>
+
+  <!-- interactions -->
+  <div>Let's talk <em>interactions</em>!</div>
+  <div>What kinds of <em>interactions</em> did we identify earlier?</div>
+  <div>An <strong>important concept</strong> for web cartography is <em>"screen real-estate"</em>.</div>
+    <div data-background-image='./images/phonemap.jpg' data-bodyclass="image-contain"></div>
+    <div>
+        <ul>
+            <li>Space is <em>scarce</em></li>
+            <li><strong>Mobile</strong> vs. <strong>desktop</strong></li>
+            <li><em>Fluid</em> vs. <em>compartmentalized</em> layout</li>
+          </ul>
+    </div>
+    <div><em>Panning</em> and <em>zooming</em>, which we will talk more about next time, are a way <strong>around</strong> all of this but.... for some maps it is <strong>overkill</strong> & potentially a <strong>cop-out</strong>.</div>
+    <div>
+        <iframe src="http://leafletjs.com/examples/choropleth-example.html" width="1200" height="800" frameborder="0" scrolling="no"></iframe>
+    </div>
+    <div>The main thing the <strong>web</strong> brings to <strong>cartography</strong> is <em>interactivity</em>, which can take many forms.</div>
+    <div>In <em>web design and development</em>, people make <strong>entire careers</strong> out of <em>designing for interactivity</em>.</div>
+    <div>The field is called <strong>UI/UX</strong>, which is shorthand for <em>user interface and user experience</em>.</div>
+    <div>It means you <strong>think through</strong> how people who visit your site will <em>interact</em> with it, and you design the <strong>interface</strong> to guide the user toward the <em>experience</em> you want them to have.</div>
+    <div>UI/UX is a <strong>really important</strong> component in web mapping.</div>
+    <div>(<strong>Project managers</strong> creating government web portals for geospatial data, <em>I am talking to you</em>.)</div>
+    <div>For this reason, while it makes sense in <strong>print cartography</strong> to talk about <em>map readers</em>, in <strong>web cartography</strong> we talk about <em>map users</em>.</div>
+  
+    <div>Panning and Zooming</div>
+    <div data-background-image='./images/panzoom.png' data-bodyclass="image-contain"></div>
+    <div>Info Boxes</div>
+    <div data-background-image='./images/infobox.png' data-bodyclass="image-contain"></div>
+    <div>Tooltips</div>
+    <div>
+        <iframe src="https://www.greenpeace.org/archive-international/Global/international/artwork/oceans/2010/mrmap/index.html" width="1200" height="800" frameborder="0" scrolling="no"></iframe>
+    </div>
+    <div>Highlighting</div>
+    <div>
+        <iframe src="http://cf.datawrapper.de/YI8Ha/22/" frameborder="0" allowtransparency="true" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen width="800" height="600"></iframe>
+    </div>
+    <div>Charts</div>
+    <div data-background-image='./images/chart.png' data-bodyclass='image-contain'></div>
+    <div>Embedded images/video</div>
+    <div data-background-image='./images/embed.png' data-bodyclass='image-contain'></div>
+    <div>Geocode box</div>
+    <div data-background-image='./images/geocode.png' data-bodyclass='image-contain'></div>
+    <div>"Zoom to my location" button</div>
+    <div data-background-image='./images/gotolocation.png' data-bodyclass='image-contain'></div>
+    <div>Animation</div>
+    <div>
+        <p><strong>You might need to pan to the east to see this one.</strong></p>
+        <iframe src="http://cartodb.github.com/oldweather_wwi/" width="1000" height="800" frameborder="0" scrolling="no"></iframe>
+    </div>
+    <div>All these <em>whizz-bangs</em> are <strong>neato</strong>!</div>
+    <div>But we must use them <strong>sparingly</strong>, <strong>wisely</strong>, and <strong>with purpose</strong>.</div>
+    <div>So, you have some <em>homework</em>. But it's <em>fun homework</em>.</div>
+    <div><em>FIRST:</em> Find a <strong>cool web map</strong> online and <em>bring the link</em> with you next week.</div>
+    <div>Think about what <em>type</em> of web map it is and <strong>why</strong> you think it's a cool web map.</div>
+    <div>Also think about how it uses interactions <em>effectifly</em> and <em>ineffectively</em>.</div>
+    <div>(I'll recapt this homework at the end)</div>
+
+<!-- events -->
+
+  <div>WTF are <em>events</em> and do I have to RSVP?</div>
+  <div>When you write a <em>script</em>, it is often designed to <em>execute some task</em>, then be done. Example: given a folder full of <em>CSV</em> data, go through each row and combine the <strong>house number</strong> and <strong>street name</strong> columns.</div>
+  <div>Computers are really good at doing <em>repetitive</em> work!</div>
+  <div>But what if you want to write a program that builds a webpage and <em>responds</em> to its users' actions?</div>
+  <div>This is where <em><strong>EVENTS</strong></em> come in!</div>
+  <div>(this is a pretty rich topic and we're going to gloss over it <em>real fast</em>)</div>
+  <div>The <em>super smart</em> people who design and build web mapping libraries (like <strong>Leaflet</strong>) know that their end users want to <em>interact</em> with <em>stuff</em>, not just look at a plain ol' static map.</div>
+  <div>To make that possible, they write their mapping programs to do two things:<ol>
+    <li><em>Create</em> and <em>raise</em> events</li>
+    <li><em>Listen</em> for events</li>
+  </ol></div>
+  <div data-background-image="./images/confuse.gif"></div>
+  <div><em><strong>You got this!</strong></em></div>
+  <div>Creating and raising events is <em>very complex</em>, but the gist is: an event is an <em>object</em> that contains very specific information about <em>what just happened</em>.</div>
+  <div>Let's go to the dev tools!</div>
+  <div data-background-image="./images/dev-tools-event.png" data-bodyclass="image-contain"></div>
+  <div><em>Raising</em> an event means putting it in a place where someone could find it, should they want to.</div>
+  <div>🚨 VOCAB WORD ALERT 🚨 <p>in your map travels, you'll almost certainly run into this term and be like, "WTF does this have do do with listening?"</p><br /><p><em><strong>EVENT LISTENER</strong></em></p></div>
+  <div>WTF</div>
+  <div>An <em>event listener</em> is <strong>a function whose job is to listen for an event, then, when that event occurs, trigger other stuff to happen</strong>.</div>
+  <div data-background-image="./images/confuse.gif"></div>
+  <div>I think about it like this:</div>
+  <div data-background-image="./images/home-alone-1.gif"></div>
+  <div><ol>
+    <li>Wait for the burglar to walk into the string</li>
+    <li>Turn on the fan in front of the pile of feathers</li>
+  </ol></div>
+  <div data-background-image="./images/home-alone-2.gif"></div>
+  <div><ol>
+    <li>Wait for the user to click on the map</li>
+    <li>Open a popup with some lat/lon info where the user clicked</li>
+  </ol></div>
+  <div>With this in mind, let's take one more look at the code we wrote earlier.</div>
+  <div><em><strong>Nice work!</strong></em> We covered a lot of ground and I have some <em>super fun homework</em> for you for next week</div>
+  <div><ol>
+    <li>Find a <strong>cool web map</strong> online and <em>bring the link</em> with you next week. What <em>type</em> of web map it is and <strong>why</strong> do you think it's cool? How does it use interactions <em>effectifly</em> and <em>ineffectively</em>?</li>
+    <li>Using <em>Leaflet</em>, create a web map that uses a type of interactivity we haven't seen thus far. There are lots of great tutorials just a Google search away! Bring your map to class next week to share with the group.</li>
+    <li>For your class journal: What are events? What are some different kinds of interactions? How can interactions be overused in today's web mapping libraries?</li>
+  </ol>
+  </div>
+  <div data-background-image="http://danswick.com/img/tiny-cactus.jpg" data-bodyclass="image-center"></div>
+</body>
+</html>
+
+
+
+
+

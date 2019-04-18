@@ -43,7 +43,29 @@
         id: 'mapbox.streets'
     }).addTo(map);
 
-    
+
+    /* 
+     * Use the choropleth plugin to create a choropleth from our discticts with inspections already summed 
+                                       specify the variable containing our Geojson here */ 
+    var supBounds = L.choropleth(districts_count, {
+        valueProperty: 'NUMPOINTS', // which property in the features to use
+        scale: ['#ffffcc', '#a1dab4', '#41b6c4', '#2c7fb8', '#253494'], // chroma.js scale - include as many as you like
+        steps: 5, // number of breaks or steps in range
+        mode: 'k', // q for quantile, e for equidistant, k for k-means
+        style: {
+            color: '#fff', // border color
+            weight: 2,
+            fillOpacity: 0.8
+        },
+        onEachFeature: function(feature, layer) {
+            layer.bindPopup("<strong>Count</strong>: " + feature.properties.NUMPOINTS + '<br /><strong>Supervisor</strong>: ' + feature.properties.supname);
+        }
+    }).addTo(map);
+
+    /* 
+     * Add a legend using the leaflet-choropleth plugin (don't forget to add the CSS from index.html)
+     * https://github.com/timwis/leaflet-choropleth
+     */
 
     
 
