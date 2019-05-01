@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <title>Mapbox GL JS choropleth</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.css' rel='stylesheet' />
+    <!-- This is the data we'll be adding to the map -->
+    <script src='./sf_housing_geojson.js'></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <style>
+        .legend {
+            background-color: #fff;
+            border-radius: 3px;
+            bottom: 30px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.10);
+            font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+            padding: 10px;
+            position: absolute;
+            right: 10px;
+            z-index: 1;
+        }
+
+        .legend h4 {
+            margin: 0 0 10px;
+        }
+
+        .legend div span {
+            border-radius: 50%;
+            display: inline-block;
+            height: 10px;
+            margin-right: 5px;
+            width: 10px;
+        }
+
+    </style>
+
+    <div id='map'></div>
+
+    <div id='legend' class='legend'>
+        <h4>Title</h4>
+        <!-- The values below are according to the Jenks natural breaks algorithm -->
+        <div><span style='background-color: #723122'></span>4332</div>
+        <div><span style='background-color: #8B4225'></span>3158</div>
+        <div><span style='background-color: #A25626'></span>1470</div>
+        <div><span style='background-color: #B86B25'></span>1086</div>
+        <div><span style='background-color: #CA8323'></span>737</div>
+        <div><span style='background-color: #DA9C20'></span>418</div>
+        <div><span style='background-color: #E6B71E'></span>119</div>
+        <div><span style='background-color: #EED322'></span>48</div>
+        <div><span style='background-color: #F2F12D'></span>-1</div>
+    </div>
+
+    <script>
+
+        /* NOTE:
+         * In order to test this file locally, you'll need to start up a local web server. 
+         * One way to do this is to open your terminal and type in `python -m SimpleHTTPServer 9001`
+         * You can also try using a service like jsfiddle
+         */
+
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZGFuc3dpY2siLCJhIjoiY2l1dTUzcmgxMDJ0djJ0b2VhY2sxNXBiMyJ9.25Qs4HNEkHubd4_Awbd8Og';
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/light-v10',
+            center: [-122.43598, 37.76091], //CENTER ME ON SAN FRANCISCO
+            zoom: 12.3 // PICK AN APPROPRIATE ZOOM LEVEL
+        });
+
+        map.on('load', function () {
+
+            map.addSource('SOURCENAME', {
+                'type': 'geojson',
+                'data': housingCountByNeighborhood // This is the variable name in the `sf_housing_geojson.js` data file
+            });
+
+            map.addLayer({
+                'id': 'LAYER-ID',
+                'source': 'SOURCENAME',
+                'type': 'fill',
+                'paint': {
+                    'fill-color': [
+                        'interpolate',
+                        ['linear'],
+                        ['get', 'COUNT'],
+                        -1, '#F2F12D',
+                        48, '#EED322',
+                        119, '#E6B71E',
+                        418, '#DA9C20',
+                        737, '#CA8323',
+                        1086, '#B86B25',
+                        1470, '#A25626',
+                        3158, '#8B4225',
+                        4332, '#723122'
+                    ],
+                    'fill-opacity': 0.75
+                }
+            }, 'waterway-label');
+
+            // Add an interaction that puts a polygon's count value in a popup when the user clicks on it
+            map.on('click', 'LAYER-ID', function (e) {
+                var coordinates = e.lngLat
+                var name = e.features[0].properties.nhood;
+                var count = e.features[0].properties.COUNT;
+
+                var popupContent = '<div><strong>Neighborhood: </strong>' + name + '</div></br>' + '<div>Housing units added since 2005: ' + count + '</div>'
+
+                new mapboxgl.Popup()
+                    .setLngLat(coordinates)
+                    .setHTML(popupContent)
+                    .addTo(map);
+            });
+
+            // Change the cursor to a pointer when the mouse is over the places layer.
+            map.on('mouseenter', 'LAYER-ID', function () {
+                map.getCanvas().style.cursor = 'pointer';
+            });
+
+            // Change it back to a pointer when it leaves.
+            map.on('mouseleave', 'LAYER-ID', function () {
+                map.getCanvas().style.cursor = '';
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
