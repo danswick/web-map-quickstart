@@ -4,33 +4,72 @@
     <meta charset='utf-8' />
     <title>Display a map</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <!-- Add Mapbox GL JS script tag -->
-    <!-- Add Mapbox GL JS style tag -->
-    <!-- Additional styles to set the map container's position, height, and width -->
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
 </head>
 <body>
 
 <!-- Add a container to hold your map -->
+<div id="map"></div>
 
 <script>
-// Add your access token to mapboxgl - pk.eyJ1IjoiZGFuc3dpY2siLCJhIjoiY2p2NWRqaTFxMzA1aTN5bzBuZHNwb3Q3OCJ9.xivebtxwzFVYK-nBnWpoaA
+// Add your access token to mapboxgl 
+mapboxgl.accessToken = "pk.eyJ1IjoiZGFuc3dpY2siLCJhIjoiY2p2NWRqaTFxMzA1aTN5bzBuZHNwb3Q3OCJ9.xivebtxwzFVYK-nBnWpoaA";
 
 // Create a variable called `map` that stores a new mapboxgl Map
+var map = new mapboxgl.Map({
     // Set to the Mapbox Streets Style
+    style: 'mapbox://styles/mapbox/streets-v10',
     // Set the center to the Presidio
+    center: [-122.4700,37.8011],
     // Set the zoom to 14
+    zoom: 14,
+    // Put the map inside the container with ID 'map'
+    container: 'map' 
+});
+    
 
 /* 
   Wait for the map to load, then add a new symbol layer. The symbol layer should have
   a geojson source with a single feature: {"type":"Feature","properties":{"popupContent":"A neat popup!"},"geometry":{"type":"Point","coordinates":[-122.4700,37.8011]}} 
 */
+map.on('load', function() {
+    map.addLayer({
+        'type': 'symbol',
+        'id': 'myMarker',
+        'source': {
+            'type': 'geojson',
+            'data': {"type":"Feature","properties":{"popupContent":"A neat popup!"},"geometry":{"type":"Point","coordinates":[-122.4700,37.8011]}}
+        },
+        'layout': {
+            'icon-image': 'zoo-15',
+            'icon-size': 2
+        }
+    });
+});
 
-// When a click event occurs on a feature in the places layer, open a popup at the
+// When a click event occurs on a feature in the myLayer layer, open a popup at the
 // location of the feature, with description content from its properties.
+map.on('click', 'myMarker', function(e) {
+    var coordinates = e.features[0].geometry.coordinates.slice();
+    var description = e.features[0].properties.popupContent;
+
+    var myPopup = new mapboxgl.Popup().setLngLat(coordinates).setHTML(description).addTo(map);
+});
 
 // Change the cursor to a pointer when the it enters a feature in the 'symbols' layer.
+map.on('mouseenter', 'myMarker', function() {
+    map.getCanvas().style.cursor = 'pointer'
+});
 
 // Change it back to a pointer when it leaves.
+map.on('mouseleave', 'myMarker', function() {
+    map.getCanvas().style.cursor = '';
+});
 
 </script>
 
