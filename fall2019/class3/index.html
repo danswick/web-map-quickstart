@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+  <title>Big</title>
+  <link href='big.css' rel='stylesheet' type='text/css' />
+  <link href='highlight.css' rel='stylesheet' type='text/css' />
+  <style>
+    .new-shiny { background: #aaaaaa; }
+  </style>
+  <script src='big.js'></script>
+  <script src='highlight.js'></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <style>.img-float {
+    padding: 0 2em 2em 2em;
+  }
+  .img-float img {
+    float: right;
+    width: 50%
+  }
+  .img-float p {
+    font-size: 2.5em;
+    line-height: 1em;
+    float: left;
+    display: block;
+    width: 47%
+  }
+
+  .quote {
+      font-family: serif;
+      letter-spacing: 2px;
+  }
+  
+  .roadtrippers {
+      background-image: url(./images/roadtrippers.png);
+      background-size: 100%;
+  }
+  
+  .wheatpaste {
+      background-image: url(./images/wheatpaste.png);
+      background-size: 100%;
+  }
+  
+  .pencil {
+      background-image: url(./images/pencil.png);
+      background-size: 100%;
+  }
+  
+  .studio {
+      background-image: url(./images/mapbox-studio.png);
+      background-position: center 5px;
+      background-size: 20%;
+  }
+  
+  .vector {
+      background-image: url(./images/vectortiles.png);
+      background-position: center 5px;
+      background-size: 20%;
+      text-shadow: 3px 3px 5px #222;
+  }
+  
+  .ready {
+      background-image: url(http://i.giphy.com/75yYfqYy5tmHm.gif);
+      background-position: center 5px;
+  }
+  
+  .tiles {
+      background-image: url(http://i.giphy.com/J2LWi9tyE2xeE.gif);
+      text-shadow: 3px 3px 5px #222;
+      color: #eee;
+  }
+  
+  .tilegif {
+      background-image: url(./images/tiles.gif);
+      background-repeat: no-repeat;
+      background-position: center 60px;
+  }
+  
+  .jstile {
+      background-image: url(./images/jstile.png);
+  }
+  
+  .mindblown {
+      background-image: url(http://i.giphy.com/DqSw5gyRQ5yPC.gif);
+      background-repeat: repeat;
+  }
+  
+  .studio {
+      background-image: url(./images/studio.png);
+      background-size: 100%;
+  }
+  
+  .save {
+      background-image: url(./images/save.png);
+      background-position: center 5px;
+      background-size: 80%;
+      color: #eee;
+      text-shadow: 3px 3px 5px #222;
+      background-repeat: no-repeat;
+  }
+  
+  .tour {
+      background-image: url(./images/tour.png);
+      background-position: center 5px;
+      background-size: 30%;
+      background-repeat: no-repeat;
+  }
+  
+  .style-editor {
+      background-image: url(./images/style-editor.png);
+      background-position: center 5px;
+      background-size: 35%;
+      background-repeat: no-repeat;
+      text-shadow: 3px 3px 5px #222;
+  }
+  
+  .inspecting {
+      background-image: url(./images/inspecting.png);
+      background-position: center 5px;
+      background-size: 100%;
+      color: #eee;
+      text-shadow: 3px 3px 5px #222;
+      background-repeat: no-repeat;
+  }
+  
+  .vector-sources {
+      background-image: url(./images/vector-sources.png);
+      background-position: center 5px;
+      background-size: 100%;
+      color: #eee;
+      text-shadow: 3px 3px 5px #222;
+      background-repeat: no-repeat;
+  }
+  
+  .gray-land {
+      background-image: url(./images/gray-land.png);
+      background-position: center 55px;
+      background-size: 80%;
+      text-shadow: 3px 3px 5px #222;
+      background-repeat: no-repeat;
+  }
+  
+  .z6to8 {
+      background-image: url(./images/z6to8.gif);
+      background-position: center 5px;
+      background-size: 80%;
+      background-repeat: no-repeat;
+  }
+  
+  .z4to2 {
+      background-image: url(./images/z4to2.gif);
+      background-position: center 5px;
+      background-size: 80%;
+      background-repeat: no-repeat;
+  }
+  
+  .search-sf {
+      background-image: url(./images/search-sf.gif);
+      background-position: center 5px;
+      background-size: 100%;
+  }
+  
+  .buildings {
+      background-image: url(./images/buildings.png);
+      background-position: center 5px;
+      background-size: 80%;
+      text-shadow: 3px 3px 5px #222;
+      background-repeat: no-repeat;
+  }
+  
+  .white-land {
+      background-image: url(./images/white-land.png);
+      background-position: center 5px;
+      background-size: 80%;
+      text-shadow: 3px 3px 5px #222;
+      background-repeat: no-repeat;
+  }
+  
+  .buildings16 {
+      background-image: url(./images/buildings16.gif);
+      background-position: center 5px;
+      background-size: 80%;
+      background-repeat: no-repeat;
+  }
+  
+  .parks {
+      background-image: url(./images/parks.png);
+      background-position: center 5px;
+      background-size: 80%;
+      text-shadow: 3px 3px 5px #222;
+      background-repeat: no-repeat;
+  }
+  
+  .settings {
+      background-image: url(./images/settings.png);
+      background-position: center 5px;
+      background-size: 25%;
+      text-shadow: 3px 3px 5px #222;
+      background-repeat: no-repeat;
+  }
+  
+  .puppy {
+      background-image: url(./images/puppy.gif);
+      background-repeat: repeat;
+  }
+  
+  .confused {
+      background-image: url(./images/confused.gif);
+      background-size: auto;
+  }
+  
+  .pixel {
+      background-image: url(http://data.pcworld.cz/img/article_title/title_l/08/efdf19947d2f9d1b7fdab05501b87c.jpg);
+  }
+  
+  .r2 {
+      background-image: url(./images/r2.gif);
+  }
+  
+  .puppy1 {
+      background-image: url(./images/puppy1.gif);
+      background-repeat: repeat;
+  }
+  
+  .cactus {
+      background-image: url(./images/cactus.jpg);
+      background-repeat: no-repeat;
+      background-size: 75%;
+      background-position: center 5px;
+  }
+  </style>
+</head>
+<body class='light'>
+  <div><p>Mapping viz with <strong>JavaScript</strong></p><p>Wifi: <em>Mapbox Guest</em> // <em>longitudelatitude</em></p></div>
+  <div>To follow along, go to <em>danswick.com/web-map-quickstart/spring2019/class3</em></div>
+  <div><em><strong>AGENDA</strong></em><p>
+    <ul>
+      <li>Recap last week's class</li>
+      <li>Mapbox GL JS choropleth code-along</li>
+      <li>🗣 How web maps get rendered</li>
+      <li>🗣 Intro to Mapbox GL JS</li>
+      <li>Events code-along</li>
+      <li>Make a new choropleth on your own!</li>
+      <li>Wrap up!</li>
+    </ul>
+  </p></div>
+  <div>Let's recap <em>homework</em>:
+    <ul>
+      <li>Keep learning! Follow the Leaflet tutorials on <a href="http://leafletjs.com/examples/geojson/">GeoJSON</a> and <a href="http://leafletjs.com/examples/custom-icons/">Custom Marker Icons</a></li>
+      <li>For next week, head to the <a href="https://www.mapbox.com/mapbox-gl-js/example/simple-map/">Mapbox GL JS examples page</a> and get some practice with Mapbox GL JS. Do parts 1, 2, and 3 of the add points to a map tutorial series.</li>
+      <li>Do the build a store locator tutorial. This one's a bit tougher, so get as far as you can!</li>
+    </ul>
+  </div>
+  <div>Let's recap <em>the optional reading</em>:
+    <ul>
+      <li>What the heck are vector tiles and why would you use them?</li>
+      <li>Any questions about <em>putting external data on a map</em>, <strong>converting data formats for the web</strong>, or <em>doing analysis in the browser</em>?</li>
+    </ul>
+  </div>
+  <div>Let's recap <em>homework</em>:
+    For your <em>class journal</em>:
+    <ul>
+      <li>What are the ways you can identify that a file is a shapefile?</li>
+      <li>What is the difference between raster and vector data?</li>
+      <li>Why might you choose to add features to a Leaflet map with GeoJSON vs Leaflet's built-in Marker, Line, and Polygon methods?</li>
+    </ul>
+  </div>
+
+  <div>Mapbox GL JS <em>code-along</em></div>
+  <div>Head to <a href="https://drive.google.com/file/d/1iVLTswNBK6RXIcQ55yRk6UhGWiA6QAVY/view?usp=sharing">this Google Drive link</a> and download and unzip the file. We're going to start with the bits in the <em>choropleth</em> folder. Don't look at the solution yet! 🙈</div>
+  <div>Open the file named <code>choropleth.html</code> and follow along with me. We're going to write our code first, then cover questions once we've got a working map.</div>
+  <div><strong>Step 1: </strong> let's fill in all the things we know how to do already.</div>
+  <div><strong>Step 2: </strong> let's go to the <a href="https://www.mapbox.com/mapbox-gl-js/">Mapbox GL JS docs</a> to figure out the rest.</div>
+  <div>What's different here compared to <em>Leaflet?</em></div>
+  <div><ul>
+    <li>Setting the access token</li>
+    <li>Sources?</li>
+    <li>Layers?</li>
+    <li>Style URLs?</li>
+    <li>What's that <code>map.on('load', ...)</code>thing all about?</li>
+  </ul></div>
+
+  <!-- GL AND THINGS -->
+
+  <div>Talking time: <em>HISTORY OF RENDERING WEB MAPS</em></div>
+<div>A <strong>brief</strong> history of web maps.</div>
+    <div>Before <em>modern interactive maps</em>, what were the <strong>basic steps</strong> to make a <em>digital</em> map?</div>
+    <div>
+        <ul>
+            <li><strong>Add</strong> data</li>
+            <li><strong>Style</strong> data at specific scale and extent</li>
+            <li><strong>Export</strong> to PDF/image</li>
+        </ul>
+    </div>
+    <div>With <strong>static</strong> and <strong>print</strong> maps, there was <em>one</em> extent and <em>one</em> scale to style for.</div>
+    <div>This is <strong>not</strong> to say that print cartography is <em>easy</em>...</div>
+    <div data-bodyclass='center'><img src='./images/badmap.png'></div>
+    <div>... but rather to say that it is <strong>straightforward</strong>.</div>
+    <div>But on an <em>interactive map</em>, there are <strong>multiple</strong> scales and extents to design for.</div>
+    <div class="image_full"><img src='./images/mapquest.jpg'>
+        <br>
+        <br>
+        <br>In <em>1996</em>, <strong>MapQuest</strong> launched the <em>first</em> online map service.</div>
+    <div>Their <em>solution</em> to the cartography problem was to create a <strong>bunch</strong> of static maps at <em>pre-determined</em> scales and extents.</div>
+    <div>Every <strong>"pan"</strong> of the map was really a <em>fully new, pre-created</em> image loading on the page.</div>
+    <div>In <em>2005</em>, <strong>Google</strong> took this idea a step further when it launched <strong>Google Maps</strong> and introduced the world to <em>map tiles</em>.</div>
+    <div><em>Map tiles</em> are 256x256 pixel PNG <strong>images</strong> that only load at the scale and extent of the <em>map container</em>.</div>
+    <div>This makes the map <strong>faster</strong> and more <em>agile</em> -- instead of loading the <em>whole world</em> or <strong>giant images</strong>, the page loads <strong>tiny images</strong> only in the places you're looking.</div>
+    <div data-bodyclass='center'><img src='./images/zoom13.png'></div>
+    <div>Tiling <em>also</em> introduced <strong>standardization</strong> to interactive maps, which facilitated a <em>thriving ecosystem</em> of mapping tools.</div>
+    <div>The standard includes:
+        <ul>
+            <li>A preset list of <strong>map scales ("zoom levels")</strong></li>
+            <li>For each zoom level, a preset <em>number of tiles</em> it takes to cover the whole world</li>
+            <li>For each tile at each zoom, a <strong>specific location</strong> the tile covers</li>
+        </ul>
+    </div>
+    <div data-bodyclass='center'><img src='./images/tiles.gif'></div>
+    <div>This created an <em>amazing</em>, <strong>collaborative</strong>, <em>open source</em> mapping world that facilitated lots of <strong>interesting growth</strong>...</div>
+    <div class='img-float'><p>...including a little company called <em>Mapbox</em> and a little tool called <strong>TileMill</strong>.</p><br>
+    <img src='./images/tilemill-vertical.png'>
+    </div>
+    <div class="image_full"><img src='./images/hero-tilemill@2x.png'>
+        <br><strong>TileMill</strong> was the first design tool from <em>Mapbox</em>. It was for creating <strong>interactive</strong> maps.</div>
+    <div>Thinking back, what were the <em>three main steps</em> to designing a <strong>print map</strong>?</div>
+    <div>
+        <ul>
+            <li><strong>Add</strong> data</li>
+            <li><strong>Style</strong> data at specific scale and extent</li>
+            <li><strong>Export</strong> to PDF/image</li>
+        </ul>
+    </div>
+    <div>For <em>interactive</em> maps, you want to do a lot of the <strong>same things</strong>, right?</div>
+    <div>You want to <em>add</em> data, <em>style</em> it, and <em>export</em> it.</div>
+    <div>The <strong>difference</strong> is you want to style for <em>multiple</em> scales and a <strong>global extent</strong>, and you want to export to <em>map tiles</em>.</div>
+    <div>The <em>TileMill</em> process:
+        <ul>
+            <li>Add data</li>
+            <li>Style data at <strong>pre-determined scales and a global extent</strong></li>
+            <li>Export to <strong>map tiles</strong></li>
+        </ul>
+    </div>
+    <div><strong>Radical!</strong> But the magic of <em>TileMill</em> was all happening <strong>beneath the surface</strong>.</div>
+    <div>At its core, <em>TileMill</em> was a <strong>visual interface</strong> for interacting with a much more <em>powerful</em> tool: <a href='http://mapnik.org'>Mapnik</a>.</div>
+    <div class="img-float">
+      <p><strong>Mapnik</strong> is the monster that <em>eats data and stylesheets</em> and <strong>poops out map tiles</strong> with the <em>exact</em> right extents, at the <em>exact</em> right zoom levels, stored in the <em>exact</em> right structure.</p>
+      <img src='http://cliparts.co/cliparts/pc7/KrE/pc7KrEkEi.png'>
+    </div>
+    <div data-bodyclass='center'><strong>Mapnik</strong> is magical. All hail <strong>Mapnik</strong>.
+        <br>
+        <br><img src='http://i.giphy.com/MUeQeEQaDCjE4.gif'></div>
+    <div>In <em>TileMill</em>, users defined styles with a styling language called <strong>CartoCSS</strong>. In <strong>CartoCSS</strong>, you define how each <em>data layer</em> should be styled at each <em>zoom level</em>.</div>
+    <div><p></p><img src='./images/parks.png' style='background-size: 100%'></div>
+    <div>Would it <strong>blow your mind</strong> if I told you that <em>CartoCSS</em> was really just a <strong>pre-processor</strong> for Mapnik's XML styling specification?</div>
+    <div data-bodyclass='mindblown'></div>
+    <div>So <em>TileMill</em> took your data and your CartoCSS style and fed them to <strong>Mapnik</strong> to create map tiles.</div>
+    <div>(Interactivity? <a href="https://github.com/mapbox/utfgrid-spec" alt="utfgrid spec"> UTFGrids</a>.)</div>
+    <div>You could then add your <em>map tiles</em> to a map using <strong>Mapbox.js</strong>, <em>OpenLayers</em>, <strong>Leaflet</strong>, or one of many other <em>web mapping libraries</em> that facilitate interactions. The tiles were <strong>stored online</strong> and loaded in the browser <em>on request</em>.</div>
+    <div>So that was <em>TileMill</em>. And it worked <strong>really well</strong> for a <strong>long time</strong>.</div>
+    <div>But it had some <em>limitations</em>.</div>
+    <div data-bodyclass='pixel'>1. Image quality</div>
+    <div><img src='https://rules.ssw.com.au/PublishingImages/size-stories-bad-example.jpg'>2. Size</div>
+    <div><img src='http://i.giphy.com/7EtJ3F5iqSL3q.gif'>3. Malleability and updates</div>
+    <div data-bodyclass='puppy1'><strong>What to do?!</strong></div>
+    <div>In an <strong>ideal world</strong>, you could create map tiles <em>on the fly</em> based on desired <strong>image quality</strong> and <strong>styling rules</strong> instead of <em>storing</em> a bunch of <em>similar but different</em> tilesets.</div>
+    <div>Enter <strong>vector tiles</strong> and the <em>Mapbox vector tile specification</em>.</div>
+    <div><em>Vector tiles</em> are similar to <strong>map tiles</strong> (the world, in a grid, created with <strong>Mapnik</strong>), but they contain <em>vector data</em> instead of images.</div>
+    <div>Vector tiles use a <strong>super compact</strong> file type called <em>protocol buffers</em>, or <em>pbfs</em>, to keep the data both <strong>small</strong> and <strong>fully intact</strong>.</div>
+    <div><em>Vector tiles</em> added a new level of <strong>efficiency</strong> to the map tile creation process.</div>
+    <div>Vector tiles separate <em>data storage</em> from <strong>map rendering</strong>.</div>
+    <div>With the <em>raster tile</em> model, <strong>rendering</strong> was the core of the operation, as <em>images</em> were stored. With <em>vector tiles</em>, <strong>rendering</strong> only needs to happen at the <em>very end</em> of the process.</div>
+    <div><p></p><img style="position: relative; top: -50px;" src='https://cloud.githubusercontent.com/assets/2180540/6983490/89762a92-d9ec-11e4-80ff-d38c3d06f704.png'>
+        <br>
+        <p style="position: relative; top: -50px; font-size: 1em; line-height: 1em;"><strong>Mapbox Studio Classic</strong> was released as a <em>new</em> desktop design tool to <strong>replace</strong> TileMill, focusing on this <em>separated data/style paradigm</em>.</p>
+    </div>
+    <div>It has two parts: <em>source mode</em> and <strong>style mode</strong>.</div>
+    <div><em>Source mode</em> is for <strong>converting</strong> your vector data (GeoJSON, shapefiles, etc.) into <em>vector tiles</em>.</div>
+    <div><p></p><img style="width: 100%;" src='https://cloud.githubusercontent.com/assets/3952537/4005631/de34440e-2995-11e4-8907-33905a36a73b.png'></div>
+    <div><em>Style mode</em> is for <strong>creating stylesheets</strong> based on those sources. <img src='https://cloud.githubusercontent.com/assets/83384/3870363/c7b51674-20c9-11e4-8393-9da2f75b5d67.png'></div>
+    <div>This makes the process for using <em>Mapbox Studio Classic</em> a little bit <strong>different</strong> than using <strong>TileMill</strong>:</div>
+    <div>
+        <ul>
+            <li>In <em>Mapbox Studio Classic</em> <strong>source</strong> mode, add your vector data</li>
+            <li><strong>Upload</strong> to Mapbox to <em>convert</em> the data to <em>vector tiles</em></li>
+            <li>Grab the <strong>ID</strong> of the newly-uploaded source and <em>add</em> it in <strong>Mapbox Studio Classic</strong> <em>style</em> mode</li>
+            <li><em>Style</em> that source data at pre-determined scales and a global extent with <strong>CartoCSS</strong></li>
+            <li><em>Upload</em> <strong>style</strong> to Mapbox</li>
+        </ul>
+    </div>
+    <div data-bodyclass='confused'></div>
+    <div>It's okay. <em>YOU GOT THIS.</em></div>
+    <div>When using <strong>TileMill</strong>, your <em>output</em> was a set of <em>map tiles</em>. What is the <em>output</em> from <strong>Mapbox Studio Classic</strong>?</div>
+    <div>A <em>source</em> and a <em>style</em>. <strong>No raster tiles are created at all...</strong></div>
+    <div>... until you <em>ask for them</em>.</div>
+    <div>Mapbox <strong>stores</strong> your style and its associated vector tile dataset. When a <em>web map is created</em> using your style's ID and the <strong>browser requests tiles</strong>, the style and source are <em>passed to Mapnik</em> to render into map tiles <strong>ON THE FLY</strong>.</div>
+    <div data-bodyclass='mindblown'></div>
+    <div>You can even use some <a href='https://mapbox.com/developers/vector-tiles'>Mapbox-provided vector tile datasets</a>!</div>
+    <div>So this is the <em>solution</em> to the <strong>problems</strong> we outlined before, right?</div>
+    <div>Images generated <strong>on the fly</strong> mean no <em>storage</em> or <em>malleability</em> issues.</div>
+    <div>But... there are <strong>still limitations</strong> to this pattern.</div>
+    <div><em>Mapbox Studio Classic</em> signaled a shift in the way <strong>sources</strong> and <strong>styles</strong> were managed on the <em>server</em> side...</div>
+    <div>... but the <em>client-side behavior</em> did not change: <strong>image tiles</strong> served to the browser <strong>in a grid</strong>, loaded <strong>when necessary</strong> at <strong>specific zoom levels</strong>.</div>
+    <div>The <em>outputs</em> of <strong>Mapbox Studio Classic</strong> are essentially <em>basemaps</em> with no <strong>truly interactive</strong> data.</div>
+    <div>To add <em>interactive data</em>, you need to add an <strong>overlay</strong> using your <em>web mapping library</em> and <strong>GeoJSON</strong> data, and there are <em>limitations</em>...</div>
+    <div>Unless you enjoy <strong>crashing browsers</strong>, of course!</div>
+    <div>Another <em>bummer</em> is the <strong>jumpyness</strong> when going bewteen <em>zoom levels</em>. And tile loading is <strong>fast</strong>, but not <em>that</em> fast.</div>
+    <div data-bodyclass='puppy'><em>What to do?!</em></div>
+    <div>We <strong>separated</strong> <em>styles</em> from <em>sources</em> when implementing vector tiles, so now the two are <strong>independent</strong> of each other.</div>
+    <div>Who says we need to keep using <em>Mapnik</em> to render <strong>image tiles</strong>? Why don't we just use a <strong>different renderer</strong> that better meets our mappy needs?</div>
+    <div>So we did. And we called it <strong>Mapbox GL</strong>.</div>
+    <div>How <strong>GL</strong> works.</div>
+    <div><strong>Mapbox GL</strong> is a way to render maps with <em>vectors</em> in the <em>browser</em> rather than as <em>images</em> on the <em>server</em>.</div>
+    <div><a href='https://www.mapbox.com/gallery/'>The part where I show off pretty GL maps</a></div>
+    <div>Up until now, all <strong>rendering</strong> has been happening <em>server-side</em> with <strong>Mapnik</strong>. <em>Vector tiles</em> are combined with <strong>CartoCSS</strong> styles, fed to <em>Mapnik</em>, and <strong>raster tiles</strong> are created and <em>served</em> to the browser.</div>
+    <div>With <strong>Mapbox GL</strong>, the rendering happens <em>in your browser</em> with the help of your device's <strong>graphics processing unit</strong>.</div>
+    <div>This makes map loading <em>hella crazy stupid fast</em>. It also means you can do <strong>cool stuff</strong> like <em>rotating</em> and <strong>tilting</strong> the map, <em>smooth/infinite zooming</em>, and more!</div>
+    <div>So in a <strong>practical</strong> sense, how does this work?</div>
+    <div>Because maps are being rendered in the <em>browser</em> (or on a <em>device</em>), we have to give some <strong>guidance</strong> on <em>what</em> to draw and <em>how</em> to draw it.</div>
+    <div>We do this by sending the browser a <strong>stylesheet</strong> written as <em>JSON</em> in the <a href='https://mapbox.com/mapbox-gl-style-spec'>Mapbox GL Style Specification</a>.</div>
+    <div><img src='./images/style-spec.png'></div>
+    <div>The stylesheet contains <strong>all</strong> the information needed to <em>draw your map</em>, including <strong>references to data</strong>, <strong>fonts</strong>, <strong>images</strong>, and, most importantly, <strong>styling rules</strong>.</div>
+    <div>These <em>styling rules</em> are defined in the spec as <strong>layers</strong> -- <em>styled representations</em> of data in your map.</div>
+    <div><img src='./images/gl-stylesheet.png'></div>
+    <div>So what does <em>Mapbox Studio</em> do? It is a <strong>visual interface</strong> for creating GL stylesheets.</div>
+    <div data-bodyclass='mindblown'></div>
+    <div>Plus it's like, totally <strong>intuitive</strong> and <em>pretty</em> and <strong>easy to use</strong>.</div>
+    <div>Almost everything you do in <em>Mapbox Studio</em> relates directly to something in the <strong>Mapbox GL Style Specification</strong> -- <em>especially</em> creating and editing <strong>layers</strong>.</div>
+    <div>OK that's a <em>fast crash course</em> in how maps get rendered. </br><div>🙋‍♀️ <strong>Who has questions?</strong></div></div>
+
+    <div>Next up: a brief overview of <em>events.</em> In our next few code adventures, we'll need to use 'em, so let's talk about 'em.</div>
+
+  <!-- events -->
+
+  <div>WTF are <em>events</em> and do I have to RSVP?</div>
+  <div>When you write a <em>script</em>, it is often designed to <em>execute some task</em>, then be done. Example: given a folder full of <em>CSV</em> data, go through each row and combine the <strong>house number</strong> and <strong>street name</strong> columns.</div>
+  <div>Computers are really good at doing <em>repetitive</em> work!</div>
+  <div>But what if you want to write a program that builds a webpage and <em>responds</em> to its users' actions?</div>
+  <div>This is where <em><strong>EVENTS</strong></em> come in!</div>
+  <div>(this is a pretty rich topic and we're going to gloss over it <em>real fast</em>)</div>
+  <div>The <em>super smart</em> people who design and build web mapping libraries (like <strong>Leaflet</strong>) know that their end users want to <em>interact</em> with <em>stuff</em>, not just look at a plain ol' static map.</div>
+  <div>To make that possible, they write their mapping programs to do two things:<ol>
+    <li><em>Create</em> and <em>raise</em> events</li>
+    <li><em>Listen</em> for events</li>
+  </ol></div>
+  <div data-background-image="./images/confuse.gif"></div>
+  <div><em><strong>You got this!</strong></em></div>
+  <div>Creating and raising events is <em>very complex</em>, but the gist is: an event is an <em>object</em> that contains very specific information about <em>what just happened</em>.</div>
+  <div>Let's go to the dev tools!</div>
+  <div data-background-image="./images/dev-tools-event.png" data-bodyclass="image-contain"></div>
+  <div><em>Raising</em> an event means putting it in a place where someone could find it, should they want to.</div>
+  <div>🚨 VOCAB WORD ALERT 🚨 <p>in your map travels, you'll almost certainly run into this term and be like, "WTF does this have do do with listening?"</p><br /><p><em><strong>EVENT LISTENER</strong></em></p></div>
+  <div>WTF</div>
+  <div>An <em>event listener</em> is <strong>a function whose job is to sit around and wait for a specific thing to happen, then, when that thing happens, make other stuff happen in response</strong>.</div>
+  <div data-background-image="./images/confuse.gif"></div>
+  <div>I think about it like this:</div>
+  <div data-background-image="./images/home-alone-1.gif"></div>
+  <div><ol>
+    <li>Wait for the burglar to walk into the string</li>
+    <li>Turn on the fan in front of the pile of feathers</li>
+  </ol></div>
+  <div data-background-image="./images/home-alone-2.gif"></div>
+  <div><ol>
+    <li>Wait for the user to click on the map</li>
+    <li>Open a popup with some lat/lon info where the user clicked</li>
+  </ol></div>
+  <div>With this in mind, let's go back to <em>Mapbox GL JS</em> and write some more code.</div>
+  <div>Go back to the files you downloaded earlier and open <code>/events/code-along.html</code>. This time, let's <em>go around the room</em>. Each time we get to a code comment, the next person in line will <em>describe what code to write</em>. Don't worry about all the nitty gritty details. Just try to describe the concepts and I'll fill in the details.</div>
+  <div data-background-image="http://danswick.com/img/tiny-cactus.jpg" data-bodyclass="image-center"></div>
+  <div>Let's <em>recap: </em><ul>
+    <li>What are <code>sources</code> and <code>layers</code>?</li>
+    <li>How do these GL maps differ from the old <em>basemap-overlay</em> paradigm we used to see in web maps?</li>
+    <li>What are event listeners? Can someone walk us through all of the event listeners in the code we just wrote?</li>
+  </ul></div>
+  <div>Great work!</div>
+  <div>For the rest of class, I'd like you to spend some time <em>coding on your own</em>. I'll walk around to help out and you should feel free to work together 👯‍♀️</div>
+  <div>Go back to the files you downloaded earlier and open <code>/code on your own/starter.html</code>. Don't peek at the solution until you're ready!</div>
+  <div><em><strong>Nice work!</strong></em> We covered a lot of ground and I have some <em>super fun homework</em> for you for next week</div>
+  <div>Try to complete the following before next class: <ol>
+    <li>Keep practicing Mapbox GL JS! Pick a tutorial from the Mapbox help section on web apps and finish it before next time: <a href="https://docs.mapbox.com/help/tutorials/#web-apps">https://docs.mapbox.com/help/tutorials/#web-apps</a>. We'll do a show and tell together next time!</li>
+    <li>Get some practice with D3! There are some <em>great tutorials</em> out there, but they're mostly for an older version of D3, unfortunately. <a href="https://alignedleft.com/tutorials/d3">This one by Scott Murray</a> is the best I've seen for learning D3's <em>concepts</em>, but is a couple of versions behind. <a href="https://github.com/sgratzl/d3tutorial">This one by GitHub user <strong>sgratzl</strong></a> does a nice job covering the basics for the latest version of D3. Try completing both!</li>
+  </ol>
+  </div>
+  <div>For your class journal:<ul>
+    <li>How has web map rendering changed over the years?</li>
+    <li>Why are <em>events</em> a thing?</li>
+    <li>What is the <em>basemap-overlay</em> paradigm and how are GL maps different?</li>
+  </ul></div>
+  <div data-background-image="http://danswick.com/img/tiny-cactus.jpg" data-bodyclass="image-center"></div>
+</body>
+</html>
+
+
+
+
+
