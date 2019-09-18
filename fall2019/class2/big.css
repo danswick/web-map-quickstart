@@ -1,12 +1,31 @@
 @font-face {
   font-family: 'Rubik';
-  font-style: normal;
   font-weight: 400;
+  font-style: normal;
   src:
-    local('Rubik'),
-    local('Rubik-Regular'),
-    url('./rubik-v4-latin-regular.woff2') format('woff2'),
-    url('./rubik-v4-latin-regular.woff') format('woff');
+    url('./fonts/Rubik-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Rubik';
+  font-weight: 700;
+  font-style: normal;
+  src:
+    url('./fonts/Rubik-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Rubik';
+  font-weight: 900;
+  font-style: normal;
+  src:
+    url('./fonts/Rubik-Black.ttf') format('truetype');
+}
+
+strong {
+  font-weight:900;
+}
+
+.almost-full-width {
+  width: 90vw;
 }
 
 html {
@@ -15,6 +34,8 @@ html {
 
 body {
   font-family: Rubik, -apple-system, BlinkMacSystemFont, 'avenir next', avenir, helvetica, 'helvetica neue', ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
+  font-weight: normal;
+  color: #333;
   margin: 0;
   padding: 0;
 }
@@ -26,65 +47,29 @@ p {
   margin: 0;
 }
 
-a {
-  color: #fff;
-  text-decoration-skip: ink;
-  border-radius: 6px;
-}
-
 em {
   font-style: normal;
-}
-
-.dark {
-  background: #272c32;
-  color: #fff;
-}
-
-.dark em {
-  color: #fadb03;
-}
-
-.dark a {
-  color: #7cbfe5;
-}
-
-.dark a:hover {
-  background: #4e5b6f;
-}
-
-.light {
-  background: #f5f5f5;
-  color: #34383e;
-}
-
-.light em {
   color: #d13787;
 }
 
-.light a {
-  color: #0889d1;
+.nowrap {
+  white-space: nowrap;
 }
 
-.light a:hover {
-  color: #0069a4;
-}
-
-img {
-  width: 100%;
+* {
+  box-sizing: border-box;
 }
 
 div.slide-container {
   background-size: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 div.slide {
-  box-sizing: border-box;
   cursor: pointer;
   cursor: hand;
-  padding: 4%;
 }
 
 div.imageText {
@@ -92,7 +77,7 @@ div.imageText {
 }
 
 /* normally not good, but ok in context of full screen directional navigation */
-:focus {
+.talk-mode .slide:focus {
   outline: 0;
 }
 
@@ -107,13 +92,14 @@ body.print-mode {
   background: #fff;
   color: #000;
   font-weight: normal;
-  padding: 30px 20px;
+  padding: 0px;
 }
 
 body.print-mode div.sub-container {
   padding: 10px 20px;
   display: flex;
   flex-flow: row wrap;
+  break-inside: avoid;
 }
 
 ul.notes-list {
@@ -145,66 +131,23 @@ body.jump-mode div.slide-container:hover {
   border: 1px solid rgba(255, 255, 255, 0.8);
 }
 
-/*
- * 
- * User styles 
- * ===========
- * 
- */
-
-/*text-on-text (doesn't work)*/
-.t-t * {
-  text-shadow: 0px 0px 6px rgba(255,255,255,0.7) !important;
+.layout {
+  display: grid;
 }
 
-
-body.image-center div.slide-container {
-  background-size: 80%;
-  background-repeat: no-repeat;
-  background-position: center
+.layout div {
+  display: flex;
+  align-items: center;
 }
 
-div.imageText {
-  color: rgba(255,255,255,0.8);
-  text-shadow: 0px 0px 25px rgba(0,0,0,0.7) !important;
-  font-weight: bold;
+.layout img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
 }
 
-.puppy {
-    background-image: url(http://i.giphy.com/LPQ943m8yMcpy.gif);
-    background-repeat: no-repeat;
-    /*background-position: center 255px;*/
-}
-
-.cards-landing {
-  background-image: url(./images/cards-landing.png);
-  background-repeat: no-repeat;
-}
-.cards-new-deck {
-  background-image: url(./images/cards-new-deck.png);
-  background-repeat: no-repeat;
-}
-.cards-new-deck-params {
-  background-image: url(./images/cards-new-deck-params.png);
-  background-repeat: no-repeat;
-}
-.cards-new-deck-response {
-  background-image: url(./images/cards-new-deck-response.png);
-  background-repeat: no-repeat;
-}
-
-pre {
-  word-break: break-all;
-  white-space: pre-wrap;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 0px 10px;
-  background-color: #FFF;
-}
-
-code {
- border: 1px solid #ddd;
-border-radius: 5px; 
-padding: 0px 10px;
-background-color: #FFF; 
+div.slide > img:only-child,
+div.slide > canvas:only-child,
+div.slide > video:only-child {
+  width: 100%;
 }

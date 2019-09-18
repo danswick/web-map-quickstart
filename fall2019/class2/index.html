@@ -16,9 +16,19 @@
 <body class='light'>
   <div><p>JS for Maps and Geographic <strong>Visualizations</strong></p><p>Wifi: <em>Mapbox Guest</em> // <em>longitudelatitude</em></p></div>
   <div>To follow along, go to <em>danswick.com/web-map-quickstart/spring2019/class2</em></div>
-  <div><em><strong>AGENDA</strong></em><p>
+  <div><strong>AGENDA</strong><p>
     <ul>
       <li>Recap last week's class</li>
+      <li>Geodata show and tell</li>
+      <li>Geodata code-along with GeoJSON</li>
+      <li>Geodata "lecture"</li>
+      <li>Geodata code together</li>
+      <li>Wrap up!</li>
+    </ul>
+  </p></div>
+  <div><strong>AGENDA</strong><p>
+    <ul>
+      <li><em>Recap last week's class</em></li>
       <li>Geodata show and tell</li>
       <li>Geodata code-along with GeoJSON</li>
       <li>Geodata "lecture"</li>
@@ -31,35 +41,41 @@
   <div><p><em>Understand</em> how web maps are <strong>built</strong>. </p></div>
   <div><p>Have the <em>vocabulary</em> to talk about web maps (not to mention <strong>search</strong> for the things you need!). </p></div>
   <div><p>Feel <em>confident</em> and <em>stoked</em> about what you&#39;ve accomplished! </p></div>
-  <div data-background-image="http://danswick.com/img/tiny-cactus.jpg" data-bodyclass="image-center"></div>
+  <div>
+    <img src="http://danswick.com/img/tiny-cactus.jpg" alt="tiny cactus image"/>
+  </div>
   <div><em>BACK TO THE RECAP</em></div>
   <div>We learned that much of the <em>internet</em> runs because of this thing called <strong>HTTP</strong>.</div>
   <div><ul>
-    <li>Why is HTTP a thing?</li>
-    <li>Why do APIs like the deck of cards thing exist?</li>
-    <li>What kinds of requests do you make in your daily life?</li>
+    <li>Protocols, standards, and specifications make it possible for computers to talk to one another, including computers running <strong>web maps</strong>!</li>
+    <li>There are lots of APIs out there that help us do things without having to write a bunch of code from scratch. <em>What are some APIs we talked about</em>?</li>
   </ul></div>
-  <div>How did it go using <em>Postman</em> to request a single map tile?</div>
+  <div>How did it go using <em>Postman</em> to request a single map tile? Did you find anything surprising?</div>
   <div>We learned about how <em>web pages</em> are structured and that they're all comprised of three languages. We also <em>vandalized</em> some sites with <strong>Chrome Dev Tools</strong></div>
   <div>How did it go using the <em>Network Inspector</em> to examine how map tiles are requested?</div>
   <div>
     <ul>
-      <li>What's a good metaphor for HTML, CSS, and JavaScript?</li>
-      <li>What would you use Chrome Dev Tools for?</li>
-      <li>What is the JavaScript console?</li>
+      <li>We talked about some metaphors for HTML, CSS, and JS.</li>
+      <li>We explored Chrome Dev Tools. Did anyone continue exploring after the last class?</li>
+      <li>We used th JavaScript console to manipulate some <em>variables</em> and call some <strong>functions</strong>.</li>
     </ul>
   </div>
   <div>We learned how <em>web maps</em> work with <em>Leaflet</em> and made our own with <em>Sublime text</em>.</div>
   <div>How did it go swapping in some other <em>map tiles</em> in the Leaflet example we worked on last week?</div>
-  <div>
-    <ul>
-      <li>Why would you want to install a dedicated text editor?</li>
-      <li>What is Leaflet?</li>
-    </ul>
-  </div>
   <div>Let's take a few minutes to break up into pairs or threes and <em>compare our Leaflet maps</em> or maybe <em>troubleshoot through some bugs</em> together.</div>
 
+  <div><strong>AGENDA</strong><p>
+    <ul>
+      <li>Recap last week's class</li>
+      <li><em>Geodata show and tell</em></li>
+      <li>Geodata code-along with GeoJSON</li>
+      <li>Geodata "lecture"</li>
+      <li>Geodata code together</li>
+      <li>Wrap up!</li>
+    </ul>
+  </p></div>
   <div><em><strong>ALRIGHT!</strong></em><p>Let's talk <strong>GEODATA</strong></p></div>
+  
   <div>Part of your <em>homework</em> was to bring some geodata you're interested in working with. Now is a good time to <strong>fire up that data</strong> on your computer. Let's go around the room and share.</div>
   <div><ul>
     <li>What does your data describe?</li>
@@ -67,14 +83,64 @@
     <li>What <em>format</em> is it in?</li>
   </ul></div>
   <div><em>AWESOME</em></div>
+  <div><strong>AGENDA</strong><p>
+    <ul>
+      <li>Recap last week's class</li>
+      <li>Geodata show and tell</li>
+      <li><em>Geodata code-along with GeoJSON</em></li>
+      <li>Geodata "lecture"</li>
+      <li>Geodata code together</li>
+      <li>Wrap up!</li>
+    </ul>
+  </p></div>
   <div>Break out your <em>text editors</em>. We're going to do a code-along.</div>
   <div>Step 1: head to this url and <em>view source</em>: <br /><a href="http://danswick.com/web-map-quickstart/spring2019/class2/code-along-shell.html">http://danswick.com/web-map-quickstart/spring2019/class2/code-along-shell.html</a>.</div>
+  <div>Leaflet 👉 <em><strong>Mapbox GL JS</strong></em></div>
+  <div
+    class='layout'
+    style='grid-template-columns: 1fr;grid-template-rows:20% 70% 10%;'>
+    <div class='almost-full-width'>Mapbox GL JS...</div>
+    <img src="./images/camera-spin.gif" alt="gl js camera spin gif"/>
+    <div><a target="_blank" href="./mbxgl-js-demos/camera.html">demo</a></div>
+  </div>
+  <div
+    class='layout'
+    style='grid-template-columns: 1fr;grid-template-rows:20% 70% 10%;'>
+    <div class='almost-full-width'>Is...</div>
+    <img src="./images/line-animation.gif" alt="gl js line animation gif"/>
+    <div><a target="_blank" href="./mbxgl-js-demos/line-animation.html">demo</a></div>
+  </div>
+  <div
+    class='layout'
+    style='grid-template-columns: 1fr;grid-template-rows:20% 70% 10%;'>
+    <div class='almost-full-width'>Freakin...</div>
+    <img src="./images/color-switcher.gif" alt="gl js color switcher gif"/>
+    <div><a target="_blank" href="./mbxgl-js-demos/color-switcher.html">demo</a></div>
+  </div>
+  <div
+    class='layout'
+    style='grid-template-columns: 1fr;grid-template-rows:20% 70% 10%;'>
+    <div class='almost-full-width'><strong><em>AWESOME</em></strong></div>
+    <img src="./images/cluster.gif" alt="gl js cluster gif"/>
+    <div><a target="_blank" href="./mbxgl-js-demos/cluster.html">demo</a></div>
+  </div>
   <div>A few resources we'll be drawing from:<ul>
-    <li>The <a href="http://leafletjs.com/">Leaflet documentation</a></li>
+    <li>The <a href="https://docs.mapbox.com/mapbox-gl-js/api/">Mapbox GL JS documentation</a></li>
     <li>Some <a href="http://danswick.com/web-map-quickstart/spring2018/class2/code-along-geojson.js">sample geojson</a></li>
     <li>⚠️ The <em>finished product</em> is <a href="http://danswick.com/web-map-quickstart/spring2019/class2/code-along-shell-cheat.html">here</a> if you get stuck or want to reference them later.</li>
   </ul></div>
   <div>Nice! Let's process that exercise.</div>
+  <div><em>Break up into pairs or threes</em> again and discuss how the process of <em>intializing</em> this map and <strong>adding a marker</strong> were different from the Leaflet exercise we did last week.</div>
+  <div>
+    <p><em>Next</em>! Let's go back to our text editors and <strong>add some GeoJSON</strong>! (this class is about geodata after all).</p>
+    <p>We'll add some data <em>together</em>, then you'll add the last bit <em>on your own</em>.</p>
+  </div>
+  <div
+    class="layout"
+    style="grid-template-columns: 1fr;grid-template-rows: 50% 50%;">
+    <div class="almost-full-width">💐 Nice work!</div>
+    <img src="./images/good-job.gif" alt="good job gif" />
+  </div>
   <div>💆
     <ul>
       <li>Thinking about the first <em>Marker</em> we added (in the center of the Presidio) vs the <em>drinking fountain</em> markers, what is the <em>difference</em> between those two approaches? Why might you choose one over the other?</li>
@@ -83,35 +149,60 @@
     </ul>
   </div>
   <div><em>NEXT UP</em>: let's talk about geospatial data you're likely to run into in your work.</div>
+  <div><strong>AGENDA</strong><p>
+    <ul>
+      <li>Recap last week's class</li>
+      <li>Geodata show and tell</li>
+      <li>Geodata code-along with GeoJSON</li>
+      <li><em>Geodata "lecture"</em></li>
+      <li>Geodata code together</li>
+      <li>Wrap up!</li>
+    </ul>
+  </p></div>
   <div>Head to <a href="http://danswick.com/geodata">danswick.com/geodata</a>.</div>
 
-  <div>Whew!</div>
+  <div>Whew! Let's take a quick <em>break</em>. Be back in 5 🙏</div>
 
+  <div><strong>AGENDA</strong><p>
+    <ul>
+      <li>Recap last week's class</li>
+      <li>Geodata show and tell</li>
+      <li>Geodata code-along with GeoJSON</li>
+      <li>Geodata "lecture"</em></li>
+      <li><em>Geodata code together</em></li>
+      <li>Wrap up!</li>
+    </ul>
+  </p></div>
   <div>Let's break out our text editors for one last coding session. <em>Pair up or work in threes</em>. <strong>Your mission</strong>: <ul>
     <li>Pick one of the bits of geodata you brought in</li>
     <li>Use one of the tools we mentioned earlier to <em>convert your data to GeoJSON</em>. (if your data is in an extra funky format, raise your hand and I'll come help!)</li>
     <li>Add your <strong>newly converted</strong> data to your map!</li>
+    <li><strong>Stretch goal</strong>: for one of your custom layers, try adding a popup. You can check out the examples in the <em>Mapbox GL JS docs</em> for clues!</li>
   </ul></div>
   <div>How did that go? What <em>challenges</em> did you encounter?</div>
   <div>Let's recap what we covered today</div>
-  <div>We <em>practiced setting up a Leaflet map</em></div>
+  <div>We <em>practiced setting up a Mapbox GL JS map</em></div>
   <div>We learned about <em>common geospatial formats</em></div>
-  <div>We learned how to <em>add data</em> to a Leaflet map.</div>
-  <div data-background-image="./images/awesome.gif"></div>
+  <div>We learned how to <em>add data</em> to a Mapbox GL JS map.</div>
+  <div>
+    <img src="./images/awesome.gif" alt="awesome gif"/>
+  </div>
   <div>Let's talk <em>homework</em>:
     <ul>
-      <li>Keep learning! Follow the Leaflet tutorials on <a href="http://leafletjs.com/examples/geojson/">GeoJSON</a> and <a href="http://leafletjs.com/examples/custom-icons/">Custom Marker Icons</a></li>
-      <li>For next week, get some practice with Mapbox GL JS. Do parts 1, 2, and 3 of the <a href="https://docs.mapbox.com/studio-manual/help/#add-points-to-a-map">add points to a map</a> tutorial series.</li>
       <li>Do the <a href="https://docs.mapbox.com/help/tutorials/building-a-store-locator/">build a store locator</a> tutorial. This one's a bit tougher, so get as far as you can!</li>
+      <li>Keep learning! Try one more of the <em>Web apps</em> tutorials on <a href="https://docs.mapbox.com/help/tutorials/">the Mapbox help page</a>.</li>
       <li>Head to the <a href="https://www.mapbox.com/mapbox-gl-js/example/simple-map/">Mapbox GL JS examples page</a> and look under the <strong>user interactions</strong> section. Describe the <em>types</em> of user interactions you see. What <em>questions</em> do you have while looking at these examples?</li>
+      <li>If you weren't able to add a popup to your custom layer during class, <em>try to do so before next week</em>.</li>
     </ul>
     For your <em>class journal</em>:
     <ul>
       <li>What are the ways you can identify that a file is a <em>shapefile</em>?</li>
       <li>What is the difference between <strong>raster</strong> and <strong>vector</strong> data?</li>
-      <li>Why might you choose to add features to a Leaflet map with <strong>GeoJSON</strong> vs Leaflet's built-in <em>Marker, Line, and Polygon</em> methods?</li>
+      <li>Why might you choose to add point features to a Mapbox GL JS map as a <strong>symbol layer</strong> vs Mapbox GL JS's built-in <em>Marker</em> method?</li>
     </ul>
   </div>
-  <div data-background-image="http://danswick.com/img/tiny-cactus.jpg" data-bodyclass="image-center"></div>
+  <div>
+    <img src="http://danswick.com/img/tiny-cactus.jpg" alt="tiny cactus image"/>
+  </div>
 </body>
 </html>

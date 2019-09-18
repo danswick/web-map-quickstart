@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Quick Start - Leaflet</title>
+  <title>Quick Start - Mapbox GL JS</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
@@ -67,26 +67,7 @@
      * Once that event has been fired, you will add sources and
      * layers inside the map's listener function 
      */
-    map.on('load', function() {
-      /* Add a drinking fountain layer to your map for drinking fountain GeoJSON. ref: https://docs.mapbox.com/mapbox-gl-js/api/#map#addlayer
-       * `id` can be whatever you like!
-       * This layer should have `type` "symbol", 
-       * `source` should be `type` "geojson" and `data` should be set to your geojson from above.
-       * Inside `layout`: 
-         * `icon-image` should be "drinking-water-15" 
-       */
-      map.addLayer({
-        "id": "fountains",
-        "type": "symbol",
-        "source": {
-          "type": "geojson",
-          "data": fountains
-        },
-        "layout": {
-          "icon-image": "drinking-water-15"
-        }
-      });
-      
+    map.on('load', function() { 
       /* Add a park boundaries layer to your map for the parkBounds geojson. 
        * `id` can be whatever you like!
        * This layer should have `type` "fill",
@@ -104,7 +85,27 @@
         },
         "paint": {
           "fill-color": "#088",
+          "fill-outline-color": "#000",
           "fill-opacity": 0.3
+        }
+      });
+
+      /* Add a drinking fountain layer to your map for drinking fountain GeoJSON. ref: https://docs.mapbox.com/mapbox-gl-js/api/#map#addlayer
+       * `id` can be whatever you like!
+       * This layer should have `type` "symbol", 
+       * `source` should be `type` "geojson" and `data` should be set to your geojson from above.
+       * Inside `layout`: 
+         * `icon-image` should be "drinking-water-15" 
+       */
+       map.addLayer({
+        "id": "fountains",
+        "type": "symbol",
+        "source": {
+          "type": "geojson",
+          "data": fountains
+        },
+        "layout": {
+          "icon-image": "drinking-water-15"
         }
       });
     });
