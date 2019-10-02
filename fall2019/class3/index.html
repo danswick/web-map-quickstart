@@ -237,10 +237,11 @@
   <div><em><strong>AGENDA</strong></em><p>
     <ul>
       <li>Recap last week's class</li>
-      <li>Mapbox GL JS choropleth code-along</li>
-      <li>🗣 How GL rendering works</li>
-      <li>Events code-along</li>
-      <li>Make a new choropleth on your own!</li>
+      <li>🛠 Mapbox GL JS choropleth code-along</li>
+      <li>🗣 Recap how GL rendering works</li>
+      <li>🛠 Events code-along</li>
+      <li>🗣 Web map interactions</li>
+      <li>🛠 Make a new choropleth on your own!</li>
       <li>Wrap up!</li>
     </ul>
   </p></div>
@@ -263,7 +264,7 @@
   </div>
 
   <div>Mapbox GL JS <em>code-along</em></div>
-  <div>Head to <a href="https://drive.google.com/file/d/1dU7F2IXdVh71KJoftY17O3XqMcg3aP9o/view?usp=sharing">this Google Drive link</a> and download and unzip the file. We're going to start with the bits in the <em>choropleth</em> folder. Don't look at the solution yet! 🙈</div>
+  <div>Head to <a href="https://drive.google.com/file/d/1gaPeYMMGQWG0C30B3NKBZgm7Oz0EoMhn/view?usp=sharing">this Google Drive link</a> and download and unzip the file. We're going to start with the bits in the <em>choropleth</em> folder. Don't look at the solution yet! 🙈</div>
   <div>Open the file named <code>choropleth.html</code> and follow along with me. We're going to write our code first, then cover questions once we've got a working map.</div>
   <div><strong>Step 1: </strong> let's fill in all the things we know how to do already.</div>
   <div><strong>Step 2: </strong> let's go to the <a href="https://www.mapbox.com/mapbox-gl-js/">Mapbox GL JS docs</a> to figure out the rest.</div>
@@ -291,7 +292,9 @@
     <div>These <em>styling rules</em> are defined in the spec as <strong>layers</strong>: <em>styled representations</em> of data in your map.</div>
     <div><img src='./images/gl-stylesheet.png'></div>
     <div>So what does <em>Mapbox Studio</em> do? It is a <strong>visual interface</strong> for creating GL stylesheets.</div>
-    <div data-bodyclass='mindblown'></div>
+    <div data-bodyclass='mindblown'>
+      <img src="http://i.giphy.com/DqSw5gyRQ5yPC.gif" />
+    </div>
     <div>Plus it's like, totally <strong>intuitive</strong> and <em>pretty</em> and <strong>easy to use</strong>.</div>
     <div>Almost everything you do in <em>Mapbox Studio</em> relates directly to something in the <strong>Mapbox GL Style Specification</strong> -- <em>especially</em> creating and editing <strong>layers</strong>.</div>
     <div>OK that's a <em>fast crash course</em> in how maps get rendered. </br><div>🙋‍♀️ <strong>Who has questions?</strong></div></div>
@@ -311,7 +314,9 @@
     <li><em>Create</em> and <em>raise</em> events</li>
     <li><em>Listen</em> for events</li>
   </ol></div>
-  <div data-background-image="./images/confuse.gif"></div>
+  <div>
+    <img src="./images/confuse.gif" />
+  </div>
   <div><em><strong>You got this!</strong></em></div>
   <div>Creating and raising events is <em>very complex</em>, but the gist is: an event is an <em>object</em> that contains very specific information about <em>what just happened</em>.</div>
   <div>Let's go to the dev tools! <br />Back in your <em>sample code</em> folder, open <pre>/events/code-along-solution.html</pre> in your browser.</div>
@@ -351,11 +356,83 @@
     <li>What are event listeners? Can someone walk us through all of the event listeners in the code we just wrote?</li>
   </ul></div>
   <div>Great work!</div>
+
+<!-- Interactions -->
+<div>Let's dive into our topic for today: <em>interactions</em>!</div>
+  <div>Break up into groups of two or three and head to <a href="https://evictionlab.org/map">https://evictionlab.org/map</a></div>
+  <div><em>Spend 5 or so minutes working on your own to familiarize yourself with this map</em> and what it's trying to convey. <br />Then, work with your partner to see if you can <strong>identify all of the types of interaction possible with this map</strong>. No interaction is too small!</div>
+  <div>What did you find? Which types of interaction are <em>critical</em> to the message of the map?</div>
+  <div>Let's talk <em>interactions</em>!</div>
+  <div>An <strong>important concept</strong> for web cartography is <em>"screen real-estate"</em>.</div>
+    <div>
+      <img src='./images/phonemap.jpg' />
+    </div>
+    <div>
+        <ul>
+            <li>Space is <em>scarce</em></li>
+            <li><strong>Mobile</strong> vs. <strong>desktop</strong></li>
+            <li><em>Fluid</em> vs. <em>compartmentalized</em> layout</li>
+          </ul>
+    </div>
+    <div><em>Panning</em> and <em>zooming</em>, which we will talk more about next time, are a way <strong>around</strong> all of this but.... for some maps it is <strong>overkill</strong> & potentially a <strong>cop-out</strong>.</div>
+    <div>
+        <iframe src="http://leafletjs.com/examples/choropleth-example.html" width="1200" height="800" frameborder="0" scrolling="no"></iframe>
+    </div>
+    <div>The main thing the <strong>web</strong> brings to <strong>cartography</strong> is <em>interactivity</em>, which can take many forms.</div>
+    <div>In <em>web design and development</em>, people make <strong>entire careers</strong> out of <em>designing for interactivity</em>.</div>
+    <div>The field is called <strong>UI/UX</strong>, which is shorthand for <em>user interface and user experience</em>.</div>
+    <div>It means you <strong>think through</strong> how people who visit your site will <em>interact</em> with it, and you design the <strong>interface</strong> to guide the user toward the <em>experience</em> you want them to have.</div>
+    <div>UI/UX is a <strong>really important</strong> component in web mapping.</div>
+    <div>(<strong>Project managers</strong> creating government web portals for geospatial data, <em>I am talking to you</em>.)</div>
+    <div>For this reason, while it makes sense in <strong>print cartography</strong> to talk about <em>map readers</em>, in <strong>web cartography</strong> we talk about <em>map users</em>.</div>
+  
+    <div>Panning and Zooming</div>
+    <div>
+      <img src='./images/panzoom.png' />
+    </div>
+    <div>Info Boxes</div>
+    <div>
+      <img src='./images/infobox.png'/>
+    </div>
+    <div>Tooltips</div>
+    <div>
+        <iframe src="https://www.greenpeace.org/archive-international/Global/international/artwork/oceans/2010/mrmap/index.html" width="1200" height="800" frameborder="0" scrolling="no"></iframe>
+    </div>
+    <div>Highlighting</div>
+    <div>
+        <iframe src="http://cf.datawrapper.de/YI8Ha/22/" frameborder="0" allowtransparency="true" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen width="800" height="600"></iframe>
+    </div>
+    <div>Charts</div>
+    <div>
+      <img src='./images/chart.png' />
+    </div>
+    <div>Embedded images/video</div>
+    <div>
+      <img src='./images/embed.png' />
+    </div>
+    <div>Geocode box</div>
+    <div>
+      <img src='./images/geocode.png'/>
+    </div>
+    <div>"Zoom to my location" button</div>
+    <div>
+      <img src='./images/gotolocation.png'/>
+    </div>
+    <div>Animation</div>
+    <div>
+        <img src="./images/wind-map.gif" />
+        <a href="http://hint.fm/wind/">link</a>
+    </div>
+    <div>All these <em>whizz-bangs</em> are <strong>neato</strong>!</div>
+    <div>But we must use them <strong>sparingly</strong>, <strong>wisely</strong>, and <strong>with purpose</strong>.</div>
+    <div>What kinds of interactions have we worked with so far today?</div>
+
+
   <div>For the rest of class, I'd like you to spend some time <em>coding on your own</em>. I'll walk around to help out and you should feel free to work together 👯‍♀️</div>
   <div>Go back to the files you downloaded earlier and open <code>/code on your own/starter.html</code>. Don't peek at the solution until you're ready!</div>
   <div><em><strong>Nice work!</strong></em> We covered a lot of ground and I have some <em>super fun homework</em> for you for next week</div>
   <div>Try to complete the following before next class: <ol>
-    <li>Keep practicing Mapbox GL JS! Pick a tutorial from the Mapbox help section on web apps and finish it before next time: <a href="https://docs.mapbox.com/help/tutorials/#web-apps">https://docs.mapbox.com/help/tutorials/#web-apps</a>. We'll do a show and tell together next time!</li>
+    <li>Keep practicing Mapbox GL JS! Poke through the API docs and examples and see if there are other events and interaction types you can experiment with. Can you add a <em>hover interaction</em> to your choropleth map? What else?</li>
     <li>Get some practice with D3! There are some <em>great tutorials</em> out there, but they're mostly for an older version of D3, unfortunately. <a href="https://alignedleft.com/tutorials/d3">This one by Scott Murray</a> is the best I've seen for learning D3's <em>concepts</em>, but is a couple of versions behind. <a href="https://github.com/sgratzl/d3tutorial">This one by GitHub user <strong>sgratzl</strong></a> does a nice job covering the basics for the latest version of D3. Try completing both!</li>
   </ol>
   </div>
