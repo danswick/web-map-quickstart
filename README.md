@@ -13,4 +13,4 @@ Four-session course on web mapping taught through the GIS Education Center (http
 - [Session 1](http://danswick.com/web-map-quickstart/fall2016/session-1)
 - [Session 2](http://danswick.com/web-map-quickstart/fall2016/session-2)
 - [Session 3](http://danswick.com/web-map-quickstart/fall2016/session-3)
-- [Session 4](http://danswick.com/web-map-quickstart/fall2016/session-4)
+- [Session 4](http://danswick.com/web-map-quickstart/fall2016/session-4) 
